@@ -1,0 +1,196 @@
+.. MTH337_F20 documentation master file, created by
+   sphinx-quickstart on Wed Aug 19 11:58:41 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. _contents:
+
+MTH 337 table of contents
+=========================
+
+Contents:
+~~~~~~~~~~~~
+
+
+.. toctree::
+   :maxdepth: 1
+
+   Syllabus <index>
+   Project Report Guide <report_guide>
+   Useful Links <useful_links>
+   Phyton Tools <python_tools>
+   Projects <projects>
+   Weekly Schedule  <weekly_schedule>
+
+
+=================
+Syllabus
+=================
+
+Distance Learning
+-----------------
+This class will be delivered with a distance learning technique. 
+We will use `Discord <http://www.discord.com>`_, and `Gradescope <http://gradescope.com>`_ platforms. You will receive detailed information regarding these platforms via email, before the beginnig of the semester. 
+
+| **MTH 337 Introduction to Scientific and Mathematical Computing**
+
+| **Class times:** MW 12:40 PM - 2:30 PM, online, Zoom meeting ID: TBA. 
+| A video of the lectures will be posted on UBLearns.
+|
+
+
+Instructor
+----------
+
+
+| Simone Cassani
+| **Office:** 321 Mathematics Building
+| **E-mail:** `scassani@buffalo.edu <scassani@buffalo.edu>`_
+| **Office Hours:** W 3:00 PM-5:00 PM, online, on class Discord Server,
+|							and by appointment.
+|
+
+
+Course Resources
+----------------
+
+**Laptop.** We will be programming during all class meetings, so you should bring
+a laptop to every class. Any operating system (Windows/Mac/Linux) is fine.
+
+**Software.** We will be using the `Anaconda distribution of Python 3.8 <https://www.anaconda.com/distribution/>`_.
+This is free software. Even if you have Python already installed on your computer you should install this
+distribution since it includes Jupyter notebook and several Python modules we will need.
+
+
+
+**Textbook.** There is no required textbook for this course but the following resorces may be helpful:
+
+    * `MTH 337 notes <http://www.acsu.buffalo.edu/~adamcunn/spring2017/_downloads/MTH337ClassnotesSpring2017.pdf>`_ by prof. Adam Cunningham.
+      These notes provide a concise introduction to Jupyter notebook and Python.
+    * `Markdown cheatsheet <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>`_.  Markdown is a scheme used
+      to format text in Jupyter notebook.
+    * `LaTeX math symbols <https://www.artofproblemsolving.com/wiki/index.php/LaTeX:Symbols>`_ - this is useful reference for
+      typesetting mathematics with Jupyter notebook.
+    * `Python 3 documentation <https://docs.python.org/3/>`_. This is the official documentation of Python 3.
+      See the Tutorial section for introduction to Python and Library Reference for a systematic description of standard
+      Python tools.
+    * `matplotlib documentation <http://matplotlib.org>`_. Matplotlib is a Python module for creating graphs and plots.
+      We will use it a lot. Matplotlib documentation is unfortunately incomplete and often quite confusing, but it includes many
+      code examples that can be helpful.
+    * `numpy documentation <http://docs.scipy.org/doc/numpy/>`_. Numpy is the main scientific computing module of Python.
+      We will use it extensively.
+
+|Discord.| The class discord server will be used as a message board for questions concerning this course.
+If you have such a question please post it on Piazza instead of e-mailing me. In this way other students who may have the same problem will benefit. If you know the answer to a question somebody else posted on Discord please answer it.
+Do not use Discord for personal matters (concerning your grade etc.), e-mail me directly with such issues.
+
+|UBLearns| will be used mainly for submitting project reports.
+
+.. |UBLearns| raw:: html
+
+   <strong><a href="https://ublearns.buffalo.edu">UBLearns</a> </strong>
+
+
+
+
+Grading
+-------
+
+There will be no exams in this course. Instead, grades will be assigned based on
+the following components:
+
+    * Project Reports 70%
+    * Quizzes 20%
+    * Class Participation 10%
+    
+**Grade cutoff**
+
++-----------+----------+------------+----------+-----------+---------+
+|  Cutoff   |  Grade   |   Cutoff   |  Grade   |  Cutoff   |  Grade  |
++===========+==========+============+==========+===========+=========+
+|           |          |  100-94%   |    A     |  94-90%   |    A-   |
++-----------+----------+------------+----------+-----------+---------+
+| 90-87%    |    B+    |  87-83%    |    B     |  83-80%   |    B-   |
++-----------+----------+------------+----------+-----------+---------+
+| 80-77%    |    C+    |  77-73%    |    C     |  73-70%   |    C-   |
++-----------+----------+------------+----------+-----------+---------+
+| 70-65%    |    D+    |  65-60%    |    D     |  < 60%    |    F    |
++-----------+----------+------------+----------+-----------+---------+
+
+**Project Reports.**
+One the main components of this course will be exploratory projects. You will be
+working on them largely independently, using mathematical and computing tools.
+The outcome of your work on each project will be a project report that you will
+submit for grading. Each report will be graded on the A-F scale. Extra credit may
+be assigned for an outstanding work. Reports will be submitted via UBLearns.
+The submission deadline will be 8:00 AM on Saturdays. Late reports will not be accepted.
+More information about project reports is posted :doc:`here <report_guide>`.
+
+**Quizzes.** Each Monday there will be a short quiz testing your knowledge of Python. The quizzes will be accessed via `Gradescope <http://gradescope.com>`_
+Sample quizzes will be posted ahead of time with the :doc:`weekly class schedule <weekly_schedule>`.
+The lowest quiz score will be dropped.
+
+**Class Participation.** This includes class attendance, asking and answering question in class
+and on Discord,... etc.
+
+While your attendance and participation are essential components of this course, it is critical that you follow public health guidelines. As such, any student exhibiting COVID-19 symptoms should not come to campus to participate in coursework.  If you need to miss class due to illness, isolation or quarantine must notify the instructor by email as soon as possible and no later than 24-hours after missing class.  At that time, you are also expected to make arrangements to complete missed work.
+
+Useful Information
+------------------
+
+**Important Dates:**
+	
+   * Feb. 1: first day of classes
+   * Feb. 8: last day to drop/add
+   * Apr. 16: last day to resign
+   * May 7: last day of classes
+
+**Academic Integrity.**
+Students must be familiar with and abide by the university’s policies and procedures on Academic Integrity, available at the following link: `Academic Integrity <https://catalog.buffalo.edu/policies/academic_integrity_2019-20.html>`_
+
+**Cheating and plagiarism** will not be taken lightly in this course. The class exploratory projects are assigned to evaluate your capability to explore and analyze a given topic with the help of computer programming. Working on the projects you can:
+
+	* Collaborate and discuss with your classmates
+	* Use external resources to have a better understanding of the project topic
+	* Use external resources to have a better understanding of the python tools required 
+
+You cannot however:
+		
+	* Talk about the project with students that have already taken the class
+	* Submit work that is not your onw
+	* Look online for a solution to some parts of the project and submit it in your report
+	* Copy somebody else work
+	
+**Zoom/Discord Etiquette:**
+	* Try to log online to our class meeting from a quiet, distraction-free environment. We have little time together; let’s try to maximize it!
+	* Keep your audio on mute until you want to speak. We must work together to limit background noise
+	* Enable video so that we can see you. This class is very interactive, and I believe that being able to see each other during class will help to a better collaboration. If you do not feel comfortable sharing your image on
+Video, please contact the instructor.
+	* Your personal video will not be recorded. As a student, you are not permitted to store or distribute recordings or images of the class sessions in any way without the explicit permission of your instructor
+	* Have a plan for taking notes. I will post recordings of our class sessions on UBLearns, but you should also try to capture your thoughts and questions in the moment. I will not post zoom recordings of office hours
+
+**Accessibility Resources.**
+If you have any disability which requires reasonable accommodations to enable you to participate in this course, please contact the Office of Accessibility Resources in 60 Capen Hall, 716-645-2608 and also the instructor of this course during the first week of class. The office will provide you with information and review appropriate arrangements for reasonable accommodations, which can be found on the web at: `Accessibility Resources <http://www.buffalo.edu/studentlife/who-we-are/departments/accessibility.html>`_.
+
+**Critical Campus Resources**
+
+**Sexual Violence.**
+UB is committed to providing a safe learning environment free of all forms of discrimination and sexual harassment, including sexual assault, domestic and dating violence and stalking. If you have experienced gender-based violence (intimate partner violence, attempted or completed sexual assault, harassment, coercion, stalking, etc.), UB has resources to help. This includes academic accommodations, health and counseling services, housing accommodations, helping with legal protective orders, and assistance with reporting the incident to police or other UB officials if you so choose. Please contact UB’s Title IX Coordinator at 716-645-2266 for more information. For confidential assistance, you may also contact a Crisis Services Campus Advocate at 716-796-4399.
+
+**Mental Health.**
+As a student you may experience a range of issues that can cause barriers to learning or reduce your ability to participate in daily activities. These might include strained relationships, anxiety, high levels of stress, alcohol/drug problems, feeling down, health concerns, or unwanted sexual experiences. Counseling, Health Services, and Health Promotion are here to help with these or other issues you may experience. You can learn more about these programs and services by contacting:
+
+Counseling Services:
+
+	* 120 Richmond Quad (North Campus), 716-645-2720
+	* 202 Michael Hall (South Campus), 716-829-5800    
+
+Health Services:
+
+	* Michael Hall (South Campus), 716-829-3316
+
+Health Promotion:
+
+	* 114 Student Union (North Campus), 716-645-2837
+
+

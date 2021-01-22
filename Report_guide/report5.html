@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Example: Code sequencing &#8212; MTH337_F20  documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Code comments" href="report9.html" />
+    <link rel="prev" title="Example: Code structure" href="report7.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="report9.html" title="Example: Code comments"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="report7.html" title="Example: Code structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../report_guide.html" accesskey="U">Project Report Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: Code sequencing</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="report7.html"
+                        title="previous chapter">Example: Code structure</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="report9.html"
+                        title="next chapter">Example: Code comments</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Report_guide/report5.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+                <li><a href="../report_guide.html">Project Report Guide</a></li>
+              
+              <li>Example: Code sequencing</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="example-code-sequencing">
+<h1>Example: Code sequencing<a class="headerlink" href="#example-code-sequencing" title="Permalink to this headline">¶</a></h1>
+<p><strong>Bad:</strong> In the code below the function <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> first appears before it is defined.
+This code is confusing to read since when one first sees <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> it is not clear what
+it is and where it is coming from.</p>
+<a href = "../_static/report_guide/report_sample5a.html">
+<img src="../_static/report_guide/report_sample5a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;" width="850">
+</a><p><strong>Also bad:</strong> The code below will work if one executes the bottom code cell before executing
+the top one, but anyone reading the report will do it in the opposite order,
+from top to bottom, and this will result in an execution error:</p>
+<a href = "../_static/report_guide/report_sample5aa.html">
+<img src="../_static/report_guide/report_sample5aa.png" style="padding:1px; border:2px solid #C4C4C4; display: block;" width="850">
+</a><p><strong>Good:</strong>  Code is entered sequentially and it is split into separate cells to better explain its purpose and structure.</p>
+<a href = "../_static/report_guide/report_sample5b.html">
+<img src="../_static/report_guide/report_sample5b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;" width="850">
+</a></div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="report7.html" title="previous chapter (use the left arrow)">Example: Code structure</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="report9.html" title="next chapter (use the right arrow)">Example: Code comments</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="report9.html" title="Example: Code comments"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="report7.html" title="Example: Code structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../report_guide.html" >Project Report Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: Code sequencing</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

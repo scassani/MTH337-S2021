@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Functions &#8212; MTH337_F20  documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Functions</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Functions</a><ul>
+<li><a class="reference internal" href="#functions-basics">Functions basics</a></li>
+<li><a class="reference internal" href="#positional-and-keyword-arguments">Positional and keyword arguments</a></li>
+<li><a class="reference internal" href="#default-values">Default values</a></li>
+<li><a class="reference internal" href="#why-use-functions">Why use functions</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/PT/PT-functions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+              <li>Functions</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions-basics">
+<h2>Functions basics<a class="headerlink" href="#functions-basics" title="Permalink to this headline">¶</a></h2>
+<p>Functions are a basic tool for organizing programs in Python (and in
+other programming languages). A function is essentially a block a code
+with a name. It we want to use a function then we can simply call it by
+its name. The syntax for defining functions is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">function</span> <span class="n">arguments</span><span class="o">&gt;</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Example.</strong> The following function multiplies two numbers and prints
+the result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">*</span><span class="si">{1}</span><span class="s1"> = </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiply</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>3*2 = 6</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">multiply</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>12*13 = 156</p>
+</div>
+<p>A function can return one or more values using the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement.
+This statement is optional since in general a function does not need to
+return anything. However, a function will stop executing as soon as the
+<code class="docutils literal notranslate"><span class="pre">return</span></code> statement is encountered.</p>
+<p><strong>Example.</strong> The following function takes as its argument a string, and returns
+the first vowel in the string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">first_vowel</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">letter</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_vowel</span><span class="p">(</span><span class="s1">&#39;scratches&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>‘a’</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_vowel</span><span class="p">(</span><span class="s1">&#39;hmm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>0</p>
+</div>
+</div>
+<div class="section" id="positional-and-keyword-arguments">
+<h2>Positional and keyword arguments<a class="headerlink" href="#positional-and-keyword-arguments" title="Permalink to this headline">¶</a></h2>
+<p>There are two ways to pass arguments to a function: by position and by
+keyword. For example, here is a function which computes the volume of a
+cylinder with a given height and radius:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cyl_vol</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926</span>
+    <span class="n">vol</span> <span class="o">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">height</span><span class="o">*</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">vol</span>
+</pre></div>
+</div>
+<p>If we call this function by <code class="docutils literal notranslate"><span class="pre">cyl_vol(3,5)</span></code> it will pass the arguments
+by position: 3 becomes the value of the first argument <code class="docutils literal notranslate"><span class="pre">height</span></code>, and 5
+the value of the second argument <code class="docutils literal notranslate"><span class="pre">radius</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cyl_vol</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>235.61944500000004</p>
+</div>
+<p>Alternatively, we can explicitly use the keywords to set values of the
+arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cyl_vol</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>235.61944500000004</p>
+</div>
+<p>While this takes more typing the advantage is that the code is more
+readable. In addition, arguments specified by keywords can be given in
+any order, so we don’t need to remember their positions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cyl_vol</span><span class="p">(</span><span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>235.61944500000004</p>
+</div>
+<p>It is also possible to specify some arguments of a function by position
+and some by keyword.</p>
+<p><strong>Example.</strong> The following function coverts temperatures between
+Celsius, Fahrenheit, and Kelvin scales. It takes three arguments: <code class="docutils literal notranslate"><span class="pre">t</span></code>
+is the temperature to be converted, <code class="docutils literal notranslate"><span class="pre">in_temp</span></code> specifies the scale from
+which we are converting, and <code class="docutils literal notranslate"><span class="pre">out_temp</span></code> sets the scale we are
+converting to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">temp_convert</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">in_temp</span><span class="p">,</span> <span class="n">out_temp</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">t</span> <span class="o">+</span> <span class="mf">273.15</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">5.0</span><span class="o">/</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">459.67</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">t</span> <span class="o">-</span> <span class="mf">273.15</span>
+    <span class="k">if</span> <span class="n">in_temp</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span> <span class="ow">and</span> <span class="n">out_temp</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mf">9.0</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="mf">459.67</span>
+</pre></div>
+</div>
+<p>It is convenient to specify the first argument of this function by
+position, and the remaining ones by keywords. In this way we don’t need
+to remember which position is the input and which is the output scale:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_convert</span><span class="p">(</span><span class="mi">47</span><span class="p">,</span> <span class="n">in_temp</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">out_temp</span> <span class="o">=</span> <span class="s1">&#39;K&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>320.15</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp_convert</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">out_temp</span> <span class="o">=</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">in_temp</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>53.6</p>
+</div>
+</div>
+<div class="section" id="default-values">
+<h2>Default values<a class="headerlink" href="#default-values" title="Permalink to this headline">¶</a></h2>
+<p>In the definition of a function we can give default values of some
+function arguments. These arguments can be then ommitted in function
+calls since in such case the default values will be used.</p>
+<p><strong>Example.</strong> Here we modify the function <code class="docutils literal notranslate"><span class="pre">first_vowel</span></code> defined above
+so that for a given integer n it returns the n-th vowel in a string :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nth_vowel</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]:</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">letter</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>In the definition of this function the argument <code class="docutils literal notranslate"><span class="pre">n</span></code> is given the
+default value 1, so this will be the value used if we don’t specify a
+value for <code class="docutils literal notranslate"><span class="pre">n</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nth_vowel</span><span class="p">(</span><span class="s1">&#39;profitable&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>‘o’</p>
+</div>
+<p>On the other hand, if we specify the value of <code class="docutils literal notranslate"><span class="pre">n</span></code> this value will be
+used instead:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nth_vowel</span><span class="p">(</span><span class="s1">&#39;profitable&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>‘a’</p>
+</div>
+<p><strong>Note.</strong> In the definition of a function arguments with default values
+must be listed after arguments without defaults.</p>
+</div>
+<div class="section" id="why-use-functions">
+<h2>Why use functions<a class="headerlink" href="#why-use-functions" title="Permalink to this headline">¶</a></h2>
+<p>Here are some reasons why functions are useful:</p>
+<ul class="simple">
+<li><p><strong>Reusability.</strong> If some code will be used more than once in a
+program it is better to write is as a function rather than copy and
+paste the code several times.</p></li>
+<li><p><strong>Code readibility.</strong> It is usually easier to understand what a
+program does if it is split into short functions.</p></li>
+<li><p><strong>Debugging.</strong> Since each function can be tested separately it is
+easier to fix problems in a program if it is organized into
+functions.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Functions</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

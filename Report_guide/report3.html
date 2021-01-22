@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Example: Output formatting &#8212; MTH337_F20  documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Graphs and plots" href="report2.html" />
+    <link rel="prev" title="Example: Output size" href="report1.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="report2.html" title="Example: Graphs and plots"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="report1.html" title="Example: Output size"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../report_guide.html" accesskey="U">Project Report Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: Output formatting</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="report1.html"
+                        title="previous chapter">Example: Output size</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="report2.html"
+                        title="next chapter">Example: Graphs and plots</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/Report_guide/report3.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+                <li><a href="../report_guide.html">Project Report Guide</a></li>
+              
+              <li>Example: Output formatting</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="example-output-formatting">
+<h1>Example: Output formatting<a class="headerlink" href="#example-output-formatting" title="Permalink to this headline">¶</a></h1>
+<p><strong>Bad:</strong> Code output is misaligned, there are too many decimal digits,
+and variable names are unnecessarily repeated in each row.</p>
+<a href = "../_static/report_guide/report_sample3a.html">
+<img src="../_static/report_guide/report_sample3a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;" width="850">
+</a><p><strong>Good:</strong> Code output is arranged into an easy to read table. Insignificant digits in the decimal expansion are truncated.</p>
+<a href = "../_static/report_guide/report_sample3b.html">
+<img src="../_static/report_guide/report_sample3b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;" width="850">
+</a><p><strong>Fancier options.</strong> Python and Jupyter notebook provide more
+sophisticated tools that can be used to format code output in various ways.
+The table below was produced in a Jupyter notebook using the same data as
+in the above examples, but with some extra formatting code. You don’t need to
+use such formatting, but this is an illustration of what is possible.</p>
+<style  type="text/css" >
+    table {
+       margin-left: 0%;
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 th:first-child {
+
+        display: none;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 th {
+
+        border-radius: 3px;
+
+        font-size: 90%;
+
+        background-color: DarkSeaGreen;
+
+        padding-right: 7pt;
+        padding-top: 2pt;
+        padding-bottom: 2pt;
+
+        border-left: white solid 1px;
+        border-right: white solid 1px;
+
+        color: black;
+
+        text-align: right;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 td {
+
+        font-size: 90%;
+
+        border-radius: 3px;
+
+        padding-bottom: 0pt;
+
+        font-family: Courier;
+
+        padding-right: 7pt;
+        padding-top: 2pt;
+        padding-bottom: 2pt;
+
+        border-left: white solid 1px;
+        border-right: white solid 1px;
+
+        text-align: right;
+
+        width: 50pt;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:nth-child(even) {
+
+        background-color: Beige;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:nth-child(odd) {
+
+        background-color: FloralWhite;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:hover {
+
+        color: red;
+
+        transition: color 0.5s;
+
+    }
+
+
+</style>
+
+<table id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" None>
+
+
+<thead>
+
+    <tr>
+
+        <th class="blank">
+
+        <th class="col_heading level0 col0">t
+
+        <th class="col_heading level0 col1">v
+
+        <th class="col_heading level0 col2">h
+
+    </tr>
+
+</thead>
+<tbody>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row0">
+            0
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col0" class="data row0 col0">
+             0.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col1" class="data row0 col1">
+            10.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col2" class="data row0 col2">
+             0.00
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row1">
+            1
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col0" class="data row1 col0">
+             0.20
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col1" class="data row1 col1">
+             8.04
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col2" class="data row1 col2">
+             1.80
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row2">
+            2
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col0" class="data row2 col0">
+             0.40
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col1" class="data row2 col1">
+             6.08
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col2" class="data row2 col2">
+             3.22
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row3">
+            3
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col0" class="data row3 col0">
+             0.60
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col1" class="data row3 col1">
+             4.11
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col2" class="data row3 col2">
+             4.23
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row4">
+            4
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col0" class="data row4 col0">
+             0.80
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col1" class="data row4 col1">
+             2.15
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col2" class="data row4 col2">
+             4.86
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row5">
+            5
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col0" class="data row5 col0">
+             1.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col1" class="data row5 col1">
+             0.19
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col2" class="data row5 col2">
+             5.09
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row6">
+            6
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col0" class="data row6 col0">
+             1.20
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col1" class="data row6 col1">
+            -1.77
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col2" class="data row6 col2">
+             4.94
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row7">
+            7
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col0" class="data row7 col0">
+             1.40
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col1" class="data row7 col1">
+            -3.73
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col2" class="data row7 col2">
+             4.39
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row8">
+            8
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col0" class="data row8 col0">
+             1.60
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col1" class="data row8 col1">
+            -5.70
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col2" class="data row8 col2">
+             3.44
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row9">
+            9
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col0" class="data row9 col0">
+             1.80
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col1" class="data row9 col1">
+            -7.66
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col2" class="data row9 col2">
+             2.11
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row10">
+            10
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col0" class="data row10 col0">
+             2.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col1" class="data row10 col1">
+            -9.62
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col2" class="data row10 col2">
+             0.38
+
+    </tr>
+
+</tbody>
+</table></div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="report1.html" title="previous chapter (use the left arrow)">Example: Output size</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="report2.html" title="next chapter (use the right arrow)">Example: Graphs and plots</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="report2.html" title="Example: Graphs and plots"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="report1.html" title="Example: Output size"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../report_guide.html" >Project Report Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Example: Output formatting</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

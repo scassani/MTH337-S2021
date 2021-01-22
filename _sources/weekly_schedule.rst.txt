@@ -1,0 +1,9 @@
+
+Weekly Schedule
+===============
+
+
+.. toctree::
+   :maxdepth: 4
+
+   The class notes and material will be posted in this page

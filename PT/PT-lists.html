@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Lists, ranges and “for” loops &#8212; MTH337_F20  documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lists, ranges and “for” loops</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Lists, ranges and “for” loops</a><ul>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#indexing">Indexing</a></li>
+<li><a class="reference internal" href="#list-slicing">List slicing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#strings-vs-lists">Strings vs Lists</a></li>
+<li><a class="reference internal" href="#for-loops">“for” loops</a></li>
+<li><a class="reference internal" href="#range">Range</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/PT/PT-lists.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+              <li>Lists, ranges and “for” loops</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="lists-ranges-and-for-loops">
+<h1>Lists, ranges and “for” loops<a class="headerlink" href="#lists-ranges-and-for-loops" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists are a type of a container - they contain a number of other
+objects: numbers, strings, even other lists. A list is an ordered
+sequence of such objects, identified by surrounding square brackets
+<code class="docutils literal notranslate"><span class="pre">[]</span></code>. List elements can be of any type, and can be of different types
+within the same list. Lists are <em>mutable</em>, i.e. once they are created,
+elements can be added to them, replaced or deleted.</p>
+<p>Here are some examples of operations on lists:</p>
+<p>Use square brackets to create a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[1, ‘hello’, 3.14]</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">len()</span></code> returns the number of elements in a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>3</p>
+</div>
+<p>Adding two lists makes a new list by concatenation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="n">list1</span> <span class="o">+</span> <span class="n">list2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[1, 2, 3, 4, 5, 6]</p>
+</div>
+<p>Multiplying a list by an integer repeats the list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">list1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘a’, ‘b’, ‘c’, ‘a’, ‘b’, ‘c’, ‘a’, ‘b’, ‘c’]</p>
+</div>
+<p>Use empty square brackets to create an empty list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[]</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">append()</span></code> adds an element to the end of a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘a’, ‘b’, ‘c’]</p>
+</div>
+<p>Testing if an element is in a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="mi">12</span> <span class="ow">in</span> <span class="n">primes</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>False</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span> <span class="ow">in</span> <span class="n">primes</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>True</p>
+</div>
+<div class="section" id="indexing">
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
+<p>Individual elements of a list can be accessed using their indexes
+enclosed in square brackets. Indexing of list elements starts with 0:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">elements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;H&#39;</span><span class="p">,</span><span class="s1">&#39;He&#39;</span><span class="p">,</span><span class="s1">&#39;Li&#39;</span><span class="p">,</span><span class="s1">&#39;Be&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>H
+He</p>
+</div>
+<p>Negative indexes can be used to access elements counting from the end of
+the list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>C
+B</p>
+</div>
+<p>List elements can be changed by assigning a new element at a given
+index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">elements</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘new’, ‘He’, ‘Li’, ‘Be’, ‘B’, ‘C’]</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">del()</span></code> deletes an element from a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">del</span><span class="p">(</span><span class="n">elements</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elements</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘new’, ‘Li’, ‘Be’, ‘B’, ‘C’]</p>
+</div>
+<p>Lists can be nested, that is a list can have other lists as its
+elements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[[1, 2, 3], [4, 5]]</p>
+</div>
+<p>Using iterated indexes we can access elements of nested lists:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">list_of_lists</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>4</p>
+</div>
+</div>
+<div class="section" id="list-slicing">
+<h3>List slicing<a class="headerlink" href="#list-slicing" title="Permalink to this headline">¶</a></h3>
+<p>List slicing produces a new list, consisting of some elements of the
+original list. Here are some examples.</p>
+<p>Start at position 2, end at position 4:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘c’, ‘d’, ‘e’]</p>
+</div>
+<p>Start at the beginning, end at position 3:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘a’, ‘b’, ‘c’, ‘d’]</p>
+</div>
+<p>Start at position 3, end at the end of the list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘d’, ‘e’, ‘f’, ‘g’, ‘h’]</p>
+</div>
+<p>Optionally slicing can be used with three arguments. The third argument
+specifies by what value the index should be increased.</p>
+<p>List slicing: start from position 1, end at position 5, increasing index
+by 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘b’, ‘d’, ‘f’]</p>
+</div>
+<p>Select every third element of the list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[::</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘a’, ‘d’, ‘g’]</p>
+</div>
+<p>One way to revert a list:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">letters</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[‘h’, ‘g’, ‘f’, ‘e’, ‘d’, ‘c’, ‘b’, ‘a’]</p>
+</div>
+</div>
+</div>
+<div class="section" id="strings-vs-lists">
+<h2>Strings vs Lists<a class="headerlink" href="#strings-vs-lists" title="Permalink to this headline">¶</a></h2>
+<p>Slicing and indexing operations can be also applied to strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;New York City&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>N</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>York</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>NwYr iy</p>
+</div>
+<p>A difference between strings and lists is that it is not possible to append
+a character to a string or change a character using its index:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-19-418888caed05&gt; in &lt;module&gt;()
+—-&gt; 1 s[0] = ‘A’
+TypeError: ‘str’ object does not support item assignment</p>
+</div>
+</div>
+<div class="section" id="for-loops">
+<h2>“for” loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>Python <code class="docutils literal notranslate"><span class="pre">for</span></code> loops provide a way to iterate (loop) over the items in a
+list, string, or any other iterable object, executing a block of code on
+each pass through the loop. The syntax is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">iteration</span> <span class="n">variable</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">code</span> <span class="n">to</span> <span class="n">execute</span> <span class="n">inside</span> <span class="n">loop</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong></p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> statement must be followed by a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p></li>
+<li><p>The block of code to execute each time through the loop starts on the
+next line, and must be indented.</p></li>
+<li><p>The block of code of the loop is finished by de-indenting back to the
+previous level.</p></li>
+</ul>
+<p>Below are some examples of <code class="docutils literal notranslate"><span class="pre">for</span></code> loops.</p>
+<p>Iteration over elements of a list. The iteration variable <code class="docutils literal notranslate"><span class="pre">i</span></code> gets
+bound to each item of the lists in turn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>20
+40
+60</p>
+</div>
+<p>Iteration over characters in a string. The iteration variable <code class="docutils literal notranslate"><span class="pre">letter</span></code>
+gets bound to each string character in turn:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">&#39;hello&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">letter</span> <span class="o">!=</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>h
+e
+o</p>
+</div>
+<p>Printing vowels in word:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">&#39;Buffalo&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>u
+a
+o</p>
+</div>
+<p>Computing the sum of squares of numbers from 0 to 4:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
+    <span class="n">total</span> <span class="o">+=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>30</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">break</span></code> can be used to terminate a loop early:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">&#39;Buffalo&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>B
+u
+f
+f</p>
+</div>
+</div>
+<div class="section" id="range">
+<h2>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h2>
+<p>As the examples above illustrate in many situations we may need
+to iterate a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop over a sequence of consecutive integers. It
+would be inconvenient having to manually type a list of integers to code
+such iteration. Instead we can use the <code class="docutils literal notranslate"><span class="pre">range</span></code> function that generates
+integers in a given range.</p>
+<p><code class="docutils literal notranslate"><span class="pre">range(n)</span></code> generates consecutive integers, starting at 0 and ending at
+n-1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>0
+1
+2
+3
+4</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range(m,n)</span></code> creates a list of consecutive integers, from m to n-1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>5
+6
+7
+8
+9</p>
+</div>
+<p>The third argument to <code class="docutils literal notranslate"><span class="pre">range()</span></code> specifies the increment from one
+integer to the next:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">odds</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">odds</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>1
+3
+5
+7
+9</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">range()</span></code> can also count backwards using a negative increment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">countdown</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">countdown</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>5
+4
+3
+2
+1</p>
+</div>
+<p><strong>Note.</strong> In Python 3 the <code class="docutils literal notranslate"><span class="pre">range</span></code> function does not produce a list of
+integers, but instead generates integers one by one as needed. This
+saves computer memory and can speed up programs. In cases when we want
+to get an actual list of integers we can do it by using the <code class="docutils literal notranslate"><span class="pre">list</span></code>
+function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">odds</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">odds_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">odds</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">odds_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output docutils container">
+<p>[1, 3, 5, 7, 9]</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Lists, ranges and “for” loops</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

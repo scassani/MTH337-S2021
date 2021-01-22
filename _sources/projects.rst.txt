@@ -1,0 +1,10 @@
+
+Projects
+========
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 2
+
+	This page will contain information relative to the course projects
