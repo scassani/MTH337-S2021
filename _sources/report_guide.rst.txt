@@ -1,8 +1,6 @@
 Project Report Guide
 ====================
 
-`Project rubric <./_static/rubric337.pdf>`_
-
 Collaboration
 --------------
 
@@ -56,43 +54,6 @@ the overall report grade to the next higher grade (from B to B+, from B+ to A- e
 The 'XX' bonus will increase the report grade by two grades (e.g from B to A-).
 A report grade with a bonus may be higher than A, and will be indicated by either
 A+ or A++.
-
-+----------------------+-----------+--------------------------------------------+
-| Element              | Weight    |  What will be graded                       |
-+======================++==========+============================================+
-| Introduction Section | 10%       | |Intro|                                    |
-+----------------------+-----------+--------------------------------------------+
-| Conclusions Section  | 10%       | |Conclusions|                              |
-+----------------------+-----------+--------------------------------------------+
-| Report Content       | 30%       | |Content|                                  |
-+----------------------+-----------+--------------------------------------------+
-| Python Code          | 30%       | |Code|                                     |
-+----------------------+-----------+--------------------------------------------+
-| Presentation         | 20%       | |Presentation|                             |
-+----------------------+-----------+--------------------------------------------+
-| Bonus                |           | |Bonus|                                    |
-+----------------------+-----------+--------------------------------------------+
-
-.. |Intro| replace:: Quality of the narrative.
-
-.. |Conclusions| replace:: Quality of the narrative.
-
-.. |Content| replace:: Work done on developing the project. Your analysis, insights,
-   observations, and interpretations. Quality of the narrative of the report.
-
-.. |Code| replace:: Quality of the Python code included in the report. Relevance
-   of the code to the project. Code organization. Documentation of code
-   by code comments.
-
-.. |Presentation| replace:: Organization of the report. Text formatting.
-   Use of LaTeX to typeset mathematics. Formatting of code output.
-   Quality of graphs and plots.
-
-.. |Bonus| replace:: Extra credit for excellent work that exceeds
-   expectations.
-
-
-
 
 
 
