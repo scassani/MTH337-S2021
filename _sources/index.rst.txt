@@ -34,7 +34,7 @@ We will use `Discord <http://www.discord.com>`_, and `Gradescope <http://gradesc
 
 | **MTH 337 Introduction to Scientific and Mathematical Computing**
 
-| **Class times:** MW 12:40 PM - 2:30 PM, online, Zoom meeting ID: TBA. 
+| **Class times:** MW 12:40 PM - 2:30 PM, online, Zoom meeting ID: 931 5819 9945, password: 337rocks! 
 | A video of the lectures will be posted on UBLearns.
 |
 
@@ -80,7 +80,7 @@ distribution since it includes Jupyter notebook and several Python modules we wi
     * `numpy documentation <http://docs.scipy.org/doc/numpy/>`_. Numpy is the main scientific computing module of Python.
       We will use it extensively.
 
-|Discord.| The class discord server will be used as a message board for questions concerning this course.
+`Discord <http://www.discord.com>`_ The class discord server will be used as a message board for questions concerning this course.
 If you have such a question please post it on Piazza instead of e-mailing me. In this way other students who may have the same problem will benefit. If you know the answer to a question somebody else posted on Discord please answer it.
 Do not use Discord for personal matters (concerning your grade etc.), e-mail me directly with such issues.
 
@@ -100,8 +100,8 @@ There will be no exams in this course. Instead, grades will be assigned based on
 the following components:
 
     * Project Reports 70%
-    * Quizzes 20%
-    * Class Participation 10%
+    * Quizzes 15%
+    * Class Participation 15%
     
 **Grade cutoff**
 
@@ -130,8 +130,19 @@ More information about project reports is posted :doc:`here <report_guide>`.
 Sample quizzes will be posted ahead of time with the :doc:`weekly class schedule <weekly_schedule>`.
 The lowest quiz score will be dropped.
 
-**Class Participation.** This includes class attendance, asking and answering question in class
-and on Discord,... etc.
+**Class Participation.** 
+
+Class participation will consist of two components
+
+*Class attendance*. You can earn up to 7.5% of the total course credit for being present and on time during class meetings. (Every unexused absence, after the second one, will reduce your credit by 1.5%, i.e from 7.5% to 6%, ect.)
+
+*Weekly summary*. Each Wednesday after class, you will find **here** the link to a google form. You have until Friday (of the same week) at midnight to submit your form. Submitting this form each week will contribute to 7.5% of the total course credit. (Every missed submission, after the second one, will reduce your credit by 1.5% in this cathegory, i.e from 7.5% to 6%, ect.)
+
+	* You will be asked to write a question (or questions) regarding the course. I will select a few questions each week and answer them on the following week.
+
+	* You will be asked a short paragraph regarding your learning this week. The paragraph could include what topics you have found interesting (or boring), what topics you have found difficult (or easy), how you feel about the course, or anything else you want to share.
+
+I may award extra credit to students who are especially active in the course. 
 
 While your attendance and participation are essential components of this course, it is critical that you follow public health guidelines. As such, any student exhibiting COVID-19 symptoms should not come to campus to participate in coursework.  If you need to miss class due to illness, isolation or quarantine must notify the instructor by email as soon as possible and no later than 24-hours after missing class.  At that time, you are also expected to make arrangements to complete missed work.
 
@@ -164,8 +175,7 @@ You cannot however:
 **Zoom/Discord Etiquette:**
 	* Try to log online to our class meeting from a quiet, distraction-free environment. We have little time together; let’s try to maximize it!
 	* Keep your audio on mute until you want to speak. We must work together to limit background noise
-	* Enable video so that we can see you. This class is very interactive, and I believe that being able to see each other during class will help to a better collaboration. If you do not feel comfortable sharing your image on
-Video, please contact the instructor.
+	* Enable video so that we can see you. This class is very interactive, and I believe that being able to see each other during class will help to a better collaboration. If you do not feel comfortable sharing your image on video, please contact the instructor.
 	* Your personal video will not be recorded. As a student, you are not permitted to store or distribute recordings or images of the class sessions in any way without the explicit permission of your instructor
 	* Have a plan for taking notes. I will post recordings of our class sessions on UBLearns, but you should also try to capture your thoughts and questions in the moment. I will not post zoom recordings of office hours
 

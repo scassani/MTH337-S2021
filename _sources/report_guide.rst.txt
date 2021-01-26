@@ -6,28 +6,26 @@ Collaboration
 
 You are free to discuss projects with your classmates. However, each project report
 must be solely your own work: it must be written by you in its entirety, including
-all computer code. **Plagiarism will result in the zero score on a report, and
-possibly in additional sanctions** (an F grade, an academic disciplinary action etc.).
+all computer code. **Plagiarism of any kind** (copying from other students, or permitting someone to copy your work, copying from the internet etc.) **will result at the minimum in the failing grade on a report, and possibly in additional sanctions** (an F grade for the course, an academic disciplinary action etc.).
 **Discussing projects with students that have already taken the class is not allowed, and is considered cheating.**
 
 
 Using external resources
 ------------------------
 
-There are two types of resources that may be relevant. First, there are plenty of
-books and websites devoted to Python programming. You should take advantage of this.
-If you have a programming question then in most cases a quick google search will
-get you an answer.
+There are plenty of books and websites devoted to Python programming. You should take advantage of this. If you have a programming question then in most cases a quick google search will
+get you an answer. You are not allowed to copy code you found online and use it in your reports.
 
-Second, most of the projects you will be working on are based on mathematical
-problems and ideas that are described somewhere. However, you should not start your
+Most of the projects you will be working on are based on mathematical
+problems and ideas that are described somewhere. However, you **should not** start your
 work on a project by doing a web or library search. The goal of each project is for
-you to explore a problem on your own. Description of your explorations and experimentation
-must be the main part of your project report. It is fine to include some background
-information on the project (properly referencing books and websites it comes from)
-but it is not necessary, and you can get a perfect score without it. Moreover,
-projects are open-ended so there is no "complete solution" you should be looking for.
-Have fun, explore, and put in the report what you came up with.
+you to **explore a problem on your own**. Have fun, explore, and put in the report what you came up with.
+
+
+In the narrative of a report you can insert a brief quote from some source if you find it useful, as long as you provide a proper attribution. Quotes used without an attribution are an instance of plagiarism. Long quotes - e.g. using a few paragraphs from Wikipedia for the report introduction - will decrease the value of your report, even if they are attributed.
+
+
+
 
 
 Additional Python features
@@ -39,22 +37,13 @@ your code. The only condition is that you must understand your own code and be a
 to explain it in detail if asked. You must not copy code snippets that you found
 somewhere and that somehow seem to be doing what you need.
 
+**I reserve the right to ask questions on submitted work to verify ownership of code.**
+
 
 Report grading rubrics
 ----------------------
 
-Project reports will be graded as follows. Each element listed in the
-table below will be graded on the A-F scale. These letter grades will be then
-converted into numerical scores (A = 4.0, A- = 3.67 etc.), multiplied by the
-corresponding weights, and added together. The resulting score will give the
-letter grade for the whole report.
-
-Bonus (if any) will be indicated by either 'X' or 'XX'. The 'X' bonus will increase
-the overall report grade to the next higher grade (from B to B+, from B+ to A- etc.).
-The 'XX' bonus will increase the report grade by two grades (e.g from B to A-).
-A report grade with a bonus may be higher than A, and will be indicated by either
-A+ or A++.
-
+The detailed rubric that will be used to grade the reports is avaialble `here <./_static/rubric337.pdf>`_
 
 
 Report Style Guide
@@ -66,10 +55,13 @@ Report introduction
 
 A report must begin with an introduction section. It should explain the project
 and the goals of the report in a way which is engaging and understandable to
-a student who has some math background, but does not take this course.
+a student who has some math background, but does not take this course.  
+
 Introduction should not be limited to a list of tasks you want to accomplish.
-While explaining the project use your own words, do not copy the project
-description.
+While explaining the project use your own words, **do not copy the project
+description** from the class website.
+
+
 
 
 .. toctree::
