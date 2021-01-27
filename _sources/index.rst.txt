@@ -29,7 +29,9 @@ Syllabus
 
 Distance Learning
 -----------------
-This class will be delivered live on Zoom with a distance learning technique. 
+This class will be delivered live on Zoom with a distance learning technique. Class attendance is mandatory.
+
+ 
 We will also be using `Discord <http://www.discord.com>`_, and `Gradescope <http://gradescope.com>`_ platforms. You will receive detailed information regarding these platforms via email, before the beginnig of the semester. 
 
 | **MTH 337 Introduction to Scientific and Mathematical Computing**
