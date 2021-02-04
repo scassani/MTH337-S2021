@@ -2,9 +2,9 @@
 Weekly Schedule
 ===============
 
-   The class notes and material will be posted in this page
 
 .. toctree::
    :maxdepth: 4
 
+   Week 1 <Schedule/week1>
 

@@ -1,0 +1,52 @@
+Week 1: Feb 1 - Feb 5
+=======================
+
+Logistics
+~~~~~~~~~
+
+* Syllabus and class organization
+
+Jupyter Notebook
+~~~~~~~~~~~~~~~~
+
+* Working with files and folders
+* Copying/deleting/moving cells
+* Code cells and markdown cells
+* Markdown basics
+* LaTeX
+
+
+Python
+~~~~~~
+
+* Basic mathematical operations
+* Numbers in Python: integers and floats
+* Variable assignment
+* The ``print()`` function
+* Strings and string formatting
+* :doc:`Importing modules </PT/PT-importing_modules>`
+* Boolean expressions
+* The ``if`` statement
+* :doc:`Lists </PT/PT-lists>`
+
+
+Mathematics
+~~~~~~~~~~~
+* Divisors
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday Feb. 5 at midnight, and is available `here <https://forms.gle/wrJ2r4PvTCZ9KPRP6>`_
+
+
+Week 1 notebook
+~~~~~~~~~~~~~~~
+- `View online <../_static/week01_in_class.html>`_
+- `Download  <../_static/week01_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+
+Sample quiz 2
+~~~~~~~~~~~~~
+
+- :download:`Sample Quiz 2 <../Quizzes/quiz2/quiz2_sample.pdf>`
+
