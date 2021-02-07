@@ -1,0 +1,114 @@
+Answers to Weekly Summary questions
+===================================
+
+
+Week 1
+~~~~~~
+
+
+* Q: will we be using anything else other than Jupyter Notebook and if so what will it be? 
+
+No, we will just use the notebook as it will allow us to combine code and text
+
+* Will we be sent emails of when the projects are posted? What will the weekly schedule show? We will be able to see deadlines/due dates? 
+
+The projects are introduced in class, and the website will be updated accordingly with deadlines and weekly schedule.
+
+* How many projects will there be throughout the semester?
+
+from 7 to up tp 10 depending on how the semester evolves
+
+
+* For the if, then print part of coding that we covered, if you want to compute a list of n/d do you need to input n and d every time or is there a shortcut where python can do that? Like say a table of values that python can then take the numbers from?
+
+Good question! python offers a few ways to loop through a set of values. We will see more of this in week 2
+
+* If we watch and participate in all lectures, should the projects be relatively easy?
+
+We will work in class to some parts of te projects, so participating to the lecture will help for sure.
+
+
+* Do you have any suggested methods for studying for quizzes or succeeding with projects?
+
+For the quizzes, the practice quiz and asking questions should help. 
+
+For the projects I'll answer with more details in class. 
+
+* Are there any websites you might recommend that would give good advice on coding similar to the class, other than the notes from Prof. Cunningham?
+
+Google is usually a good palce to start. The `python documentation page <https://docs.python.org/3/>`_ might also be a good place (maybe a littel overwhelming at first)
+
+* When the course starts to pick up a little, what is the highest level of code we will be doing?  I have only taken CSE 115 so I am not the best coder in the world, is that going to be alright?
+
+The level of coding will grow as the semester proceeds. However, no prior programming experience is assumed for this class. So we will build up all of the necessary tools together.
+
+* I am wondering how you are able to have line numbers show up on Jupyter Notebook, because for me it doesn't, even though I installed the latest version. I also remember you talking about the difference between the green and blue on the left side of the code/markdown, but I do not remember exactly why that was important. 
+
+The line numbers are a jupyter notebook extension (we will talk about it on week 2). Blue cells are not active, green cells are active.
+
+* How in depth does the class go regarding the mathematics aspect? Are we going to be doing any calculus within Python, for example? Will we be designing our own functions (i.e. defined functions) or are we only going to be using what Python and other libraries have already developed?
+
+We will cover some mathematics in the course, but if i need a specific topic, I will cover it not giving it for granted. We will design functions and used several libraries
+
+* Are you allowed to have variables in between the $$'s? ex  $$var$$  where var is 5
+
+Can you be more specifc about this question via email?
+
+* What are some of the limitations to python?
+
+Not super efficient compared to other coding languages
+
+* For the projects, do we find a problem to solve, or are we given a problem?
+
+I will give you the problem
+
+* Is this class considered object oriented programming?
+
+no
+
+* I am new with La Tex, I cannot follow sometimes during classes like after the code be executed then I cannot see the original code. (Then I will lose lol)  2. Is there a way I can see the code that you wrote during classes? 
+
+Just ask me during the lecture and I can show the code again. You can also reach out via email after class, or come to office hours.
+
+* How do you determine which students to give extra credit to? Is it relative to other students' work or based on a personal standard? 
+
+Based on your participation in the class, and based on the quality of your work
+
+* what is the different between using math import and math import * and what is the easier way to use it? I am confused with the import statement. Sometimes I saw you type from (something) import (something), and sometimes you just type import (something). Do these two bring the same result? 
+
+I will answer in class.
+
+* What is the difficulty level of projects?  
+
+You'll see :).
+
+* From past experience, what aspect of this class do you believe is that students struggle with the most? 
+
+The narrative/organization component of the projects
+
+* I saw the sample quiz2 and I was wondering how we are going to submit the codes to the Graderscop? 
+
+Type it in text boxes.
+
+* Will the notes as well as the lecture video be uploaded after each class?
+
+They are. Notes are on the :doc:`Weekly Schedule  <weekly_schedule>` tab, videos are on UBLearns -> Tools -> Panopto Content
+
+* In class, you show some of your code as examples or notes and such. Will your coding files be posted somewhere as .ipynb on ublearns, or the course website, or will the code only be accessible through the recordings?
+
+see above
+
+* What is the topic for the first project report?
+
+:doc:`here <Projects/part_sequence/part_sequence>`
+
+* matplotlib does not import for me through juputyer notebook. is there a step that i missed in importing or configuring juputyer notebook?
+
+What do you mean? I might be able to help you more specifically at office hours.
+
+* How much coding will there be in this course? Is Python the only coding language that we will be learning in a math setting?
+
+A significant amoutn. Python will be the major focus. 
+
+
+

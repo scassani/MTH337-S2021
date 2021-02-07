@@ -2,11 +2,9 @@
 Projects
 ========
 
-This page will contain information relative to the course projects
-
 .. toctree::
    :titlesonly:
    :maxdepth: 2
 
-	
+	A particular sequence <Projects/part_sequence/part_sequence>	
 	

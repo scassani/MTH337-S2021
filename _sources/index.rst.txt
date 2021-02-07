@@ -21,6 +21,7 @@ Contents:
    Phyton Tools <python_tools>
    Projects <projects>
    Weekly Schedule  <weekly_schedule>
+   Weekly summary Answers <weekly_summary>
 
 
 =================
