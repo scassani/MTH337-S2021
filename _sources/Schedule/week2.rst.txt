@@ -1,0 +1,42 @@
+Week 2: Feb 8-12
+===================
+
+
+Python
+~~~~~~
+
+* :doc:`Lists and "for" loops </PT/PT-lists>`
+* ``range()``
+* Fine-tuning loops: ``break`` and ``continue``
+* :doc:`Functions </PT/PT-functions>`
+* Logical operators: ``not``, ``and``, ``or``
+* The ``while`` loop
+
+
+Mathematics
+~~~~~~~~~~~
+
+* Divisors
+* Sequences
+
+Project 1
+~~~~~~~~~
+
+Due: Saturday, February 20, 8:00 AM.
+
+* :doc:`A particular sequence </Projects/part_sequence/part_sequence>`.
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday Feb. 12 at midnight, and is available `here <https://forms.gle/KA1Uk2nMBaXrdPCN7>`_
+
+Week 2 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week02_in_class.html>`_
+- `Download  <../_static/week02_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 3
+~~~~~~~~~~~~~
+
+- :download:`Sample Quiz 3 <../Quizzes/quiz3/quiz3_sample.pdf>`
