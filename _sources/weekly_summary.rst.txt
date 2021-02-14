@@ -1,12 +1,112 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 2
+~~~~~~
+
+* For the gradescope quizzes, will you post a document with the answers? (So that we will be able to see what we were missing or did incorrectly)
+
+I will not post the answers to the quiz, but I'll be happy to discuss the quiz at office hours if something about the grading/answer is not clear. Also you can always paste your code in the jupyter-notebook to run it and check if it produces the desired output.
+
+* Will run time be an issue for future project/functions? Things are easier with loops but they also increase runtime by a significant amount. Maybe you can go over ways to optimize looping or something like that
+
+We will see a few ways to avoid too many loops. I will not grade your code for efficency (or execution speed). All of the projects we will work on should have a reasonable run time (of the order of minutes/seconds)
+
+* I think I may have missed it in class, but how much is the analysis portion of the project going to typically be worth? Also, how in depth do we need to go with the analysis?
+
+The analysis/narrative portion of the project is officially worth 40% of your grade (more details are `here <./_static/rubric337.pdf>`_). However as marked in the rubric a project with no analysis could get a lower grade than the actual average grade. How deep the analysis? There isn't a binary answer to that, but I expect that all of the results that you presented are analyzed, and you do a reasonable amount of work.
+
+* If I execute an infinite while loop, is there anyway to stop my computer from over heating without quickly saving my progress and then exiting out of anaconda navigator and python all together? 
+
+You can select the cell that is runnig, and push the stop button from the menu in the jupyter notebook. (I'll show you on Monday what I mean)
+
+* Will we have time in class to go over every project or just for the first one?
+
+We will have some time for all of the projects, but you are expected to also work outside of class time.
+
+* Does this course get exponentially more difficult, or is it consistent difficulty throughout, or somewhere in between or totally different?
+
+Somewhere in between. We will learn more things as we the semester proceeds, so there will be more tool to be used. The complexity of the project will be different from project to project, depending on th etools necessary. Also I have learned that the project difficulty is extremely subjective to the students.
+
+* Do you mind telling us when we will be doing groupwork because I normally study in the silent part of the library so I have to find a new spot when we do.  Thank you!
+
+The plan is to have group work at every class.
+
+* how do you determine whether a `while` loop or `for...in` loop is more useful? If there is a scenario where both for and while loops are acceptable, how do we choose the more optimal one?
+
+I will talk a little about this in class. In general I use ``for`` loops prevalently when I know exactly how long I have to loop for, whereas ``while`` loops are useful if you have to loop 'as long as' some condition is True. (This is not a complete answer)
+
+* what is the different between string and print? In what situation I need use string/print?
+
+a ``string`` is a variable type containing characters. ``Print`` is a python function that will print to screen. 
+
+* How do we indent in the gradescope quiz when writing code? Tab doesn't work for me.
+
+Just put a few spaces
+
+* In what situation should we use return, break and continue? Can you explain more on the while function like how do we use it for? I'm so confused about break and continue. could you go over them again? where should i place the "return" when I def a function? 
+
+``return`` is used in functions to return the function output. ``break`` is used to stop loops, and ``continue`` is used to skip a single iteration. (Will  talk more in class)
+
+* For the project, will there be specific names for the functions you expect us to use or are we allowed to name them and then just have a comment to define what it is?   For the project are we supposed to have a comment alongside each line of code or only when necessary along with the description cell prior?
+
+You can use the names that you prefer. Your code should have comments where they are necessary. Image that you are giving your repost to somebody who knows a little bit of python, but is not in the class. Your code comments should guide the reader through your code, explaining the steps in your code.
+
+* what is your first step when you receive the problem? I alway do not know how to start when i doing the problem.  
+
+I ususally try to think of the steps that I need to take to solve it, and I try to write them down in pseudo-code.
+
+* Even though I can understand "list" "range" "for loop" and other content how they work, it is hard for me to apply these to solve problems by myself. do you have any suggestion? 
+
+Office hours are a good place to ask these kind of questions. Also Wehn working in groups you can discuss with your groupmates to formulate the solution together.
+
+* Is that possible extending the quiz time? because i have no time to double check the answer. Can you make the quiz shorter or giving more time to us? I had took a look and do practice on the sample quiz but I still felt like I don't have enough time to think of the question.
+
+Yes, I can  extend the time or I will make the quiz slightly shorter.
+
+* Will we ever use some of the more complex logical operators such as XOR or shifting?
+
+Probably not
+
+* How do I make conditions for even or odd integers?
+
+What number divides even numbers evenly? We will talk about this a little bit more in class.
+
+* Are indentations kind of like sectioning off the code? 
+
+yes. It organizes the code
+
+* Is it possible to nest a while loop into a for loop?
+
+yes
+
+
+* How do you decide the background image?
+
+All of the pictures are from places I have been to. All of the pictures have been taken by either myself or my wife. I change the picture from the zoom menu
+
+* Can we have some help links to follow also. I feel like i need to catch up because theres definently more experinced people in the class
+
+There are some links on the class website and in the weekly schedule tab. I'll be happy to help at office hours as well.
+
+* Will you go over numpy and matplotlib?  When will we need to use them?
+
+Yes. We will use matplotlib in almost all the projects (including project 1). numpy will be introduced in a few weeks
+
+* Will there be a project where we must work in groups?
+
+There will not be group projects, but you are allowed to work together to some parts of the projects, as long as you submit your own material.
+
+* Will all of the projects be written using python?
+
+yes, this is a python course
+
 
 Week 1
 ~~~~~~
 
 
-* Q: will we be using anything else other than Jupyter Notebook and if so what will it be? 
+* Will we be using anything else other than Jupyter Notebook and if so what will it be? 
 
 No, we will just use the notebook as it will allow us to combine code and text
 

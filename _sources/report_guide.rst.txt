@@ -43,7 +43,7 @@ somewhere and that somehow seem to be doing what you need.
 Report grading rubrics
 ----------------------
 
-The detailed rubric that will be used to grade the reports is avaialble `here <./_static/rubric337.pdf>`_
+The detailed rubric that will be used to grade the reports is available `here <./_static/rubric337.pdf>`_
 
 
 Report Style Guide
