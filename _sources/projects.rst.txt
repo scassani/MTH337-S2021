@@ -7,4 +7,5 @@ Projects
    :maxdepth: 2
 
 	A particular sequence <Projects/part_sequence/part_sequence>	
+	Number Snail <Projects/number_spiral/number_spiral>	
 	
