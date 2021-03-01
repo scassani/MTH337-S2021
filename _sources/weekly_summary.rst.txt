@@ -1,6 +1,114 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 4
+~~~~~~
+
+* Will we get to the point of object oriented programming in this, class?  I am looking to learn it and I was hoping we get that far.
+
+no.
+
+* I am confused as to how to calculate the decomposition of a number, and how to plot numbers with a spiral pattern. 
+
+will talk more about project 2 on Monday
+
+* Regarding to the last topic of subplots, will these be used in the project this upcoming week or is it just a topic that we will learn for later use in the class?
+
+they could be useful in several projects if you want two or more graphs next to each other
+
+* Will graphing be used in most projects?
+
+yes
+
+* How come my attendance percentage is 99.8% and not 100%? 
+
+A very similar question was asked in week 3, look for the answer below.
+ 
+* What is a good way to guarantee that you do well on projects?
+
+Review the rubric to check that everytihng required is there. Look at the feedback that i gave you on the past projects.
+
+* is the time we get to do the project related to the level of difficulty? 
+
+not clear what you are asking
+
+* Is there a way to plot pie graphs and histograms in python? 
+
+yes. ``bar`` and ``pie`` from ``matplotlib``
+
+* How do we graph numbers instead of points on a graph for the second project?
+
+You do not need to graph numbers. the graph on the project page is there to show you the pattern. However you can use ``plt.text``
+
+* Can you explain more on plotting and writing in detail each of the type or every element means? Can you explain more about the project? Because I am still not sure what we need to do
+Can you go over more examples that are related towards project 2? How should I start thinking about the snail graph? Is there a correlation between that and prime numbers? 
+
+We will talk more about project 2 in week 5
+
+* "Will you go over the project after it due?
+
+I plan to show you some good and bad examples from your submissions of project 1
+
+* Will you extend the quiz time because it is kind of hard to double check the answer."
+
+I believe the quiz time is already enough. You should use the practice quiz as practice. Time to double check your answers is not included.
+
+* Why are points taken off for syntax errors on the weekly quiz? I do not understand the idea behind this, as I think focusing on the material/concepts is more important.  
+
+For the same reason for which you lose points in math exams for computational mistakes, even if the topic of the class is not algebra. If you do not know the syntaz properly, your code will be full of errors, and you coding will not be efficient. Think what would happen if every time you do some computations you did a mistake. The idea is similar
+
+* For class next week are we going over the three different functions for project two?
+
+yes
+
+* when can we get project 1 feedback ? because I am not sure if I have met all project requirements. If not, I can do some changes on project 2.
+
+Just sent to you via email (Sunday evening)
+
+* I am just a little confused as to how the sublot correlates to plt.plot.
+
+subplot creates the space (table) for plotting more than one graph on the same image.
+
+* What is the difference between jupyter lab and notebook? They seem very similar?
+
+They are pretty similar. Jupyter notebook is suggested as the tool to start from.
+
+* How would you do 3d graphs in matplotlib?
+
+`here <https://matplotlib.org/mpl_toolkits/mplot3d/tutorial.html>`_ and `here <https://jakevdp.github.io/PythonDataScienceHandbook/04.12-three-dimensional-plotting.html>`_ with the help of google
+
+* "How much outside stuff can we use? And are lectures posted rather than just the code?
+
+The lectures are posted on UBLearns as said on the class website (the same question was asked in week 1 - see below). **Code from outside -> None**. You can use external sources for citations but you need to properly reference them. 
+
+* How would we use break/continue in loops within list comprehension? Just add it towards the end appropriately like we do with multiple line codes?
+
+We do not. There are some complex way of getting to a similar result. In that case though, I would not use list comprehension.
+
+* In class you used "from math import sin, cos, etc. Can you just import math as *blank* like we do with plotting?
+
+We saw that in class ``import math as m``
+
+* Is there a more efficient way to find if a number is prime?
+
+Maybe. I am open to ideas
+
+* For the project do we need to create the functions that you suggested in order to create the properly working function or can we go another route?
+
+You need to show that you can create those functions. Then if you wan to tgo a different way you can, but be sure to explain it well
+
+* what are some ways to be creative with coding. i find myself not being able to come up with responses as quickly as my classmates and im wondering if i am behind the pace of the course
+
+reading books about coding is useful. 'Automate the boring stuff with python' is an interesting one. Practice is important to get better. I would not worry too much about being the first to answer questions, what is important is that you can stay up to speed with the class material
+
+* How does the zig zag plot work? Would you use figsize to also resize the comparison plots (the four we did side by side)?
+
+we can talk about this in class.
+
+* When using figsize, what do the two numbers mean? I thought it was the dimensions of the graph but, looking at some graphs, that doesn't appear to be true.
+
+width and height of the figure
+
 Week 3
 ~~~~~~
 
