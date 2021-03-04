@@ -1,0 +1,33 @@
+Week 5: Mar 1-5
+===================
+
+Project 2
+~~~~~~~~~
+
+* :doc:`Number Snail </Projects/number_spiral/number_spiral>`.
+
+Python
+~~~~~~
+
+* :doc:`Plotting with Matplotlib </PT/PT-matplotlib_plots/PT-matplotlib_plots>`
+
+Mathematics
+~~~~~~~~~~~
+
+* Prime numbers
+* Making the snail
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday March 5 at midnight, and is available `here <https://forms.gle/reCHNxWnwW74Nw3e9>`_
+
+Week 5 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week05_in_class.html>`_
+- `Download  <../_static/week05_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+No quiz this week
