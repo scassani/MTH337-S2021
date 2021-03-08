@@ -8,4 +8,5 @@ Projects
 
 	A particular sequence <Projects/part_sequence/part_sequence>	
 	Number Snail <Projects/number_spiral/number_spiral>	
+	Root Finding <Projects/root_finding/root_finding>
 	

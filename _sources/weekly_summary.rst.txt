@@ -1,6 +1,98 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 5
+~~~~~~
+
+* How do you graph something in a different color for the length primedec snail graph? would I need to generate a list of all different sizes before plotting it?
+
+If you want to do it with one single plot command, yes.
+
+* Is the class generally curved at the end, or are the cutoffs in the syllabus set in stone?
+
+It depends. The cutoff might be a litte flexible.
+
+* will the coming projects be as challenging to code as the snail pattern was? do the projects just become progressively more difficult where the ideas build on each other or are we covering varying math properties for each? Do the project generally get harder throughout the semester, or are they just relating to the different things we learn?
+
+Some might be. The projects will touch different areas of math and their difficulty will vary.
+
+* Can you specify exactly what you want in the quizzes.  For example in the most recent one, it says import matplotlib which made me think that it was assumed however a point was taken off because it was not in my code block?  Thank you
+
+In that quiz I explicitly asked to import matplotlib. The sentence was not all in a code block (gray background), so that was not a python code instruction. In other questions I wrote "assume this code has been run". 
+
+* In regards to subplots, I have been having trouble plotting them. Would you be able to go over changing the arguments in the plt.subplot() function and what they represent? Can we do more about subplot? Will you go over and providing more details about the subplot?
+
+We'll see more on Monday
+
+* within a plot, how do you add text for the marker except for dots? (the example used for the snail grid in project two)
+
+plt.text()
+
+* For matplotlib.pyplot will we explore more into using for loops and more that could be implemented into some of our projects?
+
+We will see more functionalities of matpltlib as we proceed with the course.
+
+* I was wondering if you'd go over the real problems the projects are based on once we complete them? It'd be very interesting to know about.
+
+I can do that. Just remind me in class.
+
+* Was an A on the first assignment an actual A or was it a generous A (like you said some projects were F’s but to be generous you gave D’s, does the same apply for the A’s given out)
+
+An A was an actual A.
+
+* Is it good practice to include an import in a function? For example, including import math as mat in a function. 
+
+Unless in very specific cases, it usually is good practice to have all of the import commands at the beginning of your file. 
+
+* Will we cover the primed(n) function in class next week because  struggled when creating the function?
+
+You should stop by office hours to discuss this.
+
+* what is the difference between scatter and plot? I can do the same graph with this two different plot
+
+You can get the same graph with both commands. scatter is in general to plot point with no line connecting them
+
+* I am doing practice on something similar to the number spiral introduce in project 2. I am creating a matrix for the number, I had written out the direction of how the number goes but I don't know how to make it as a matrix form. Could you give me some idea?
+
+I'll be happy to talk more about this at office hours. So you can explain me the problem directly.
+
+* Is the grade for this class going to be curved? or is it based on class performance?
+
+The grade is based on calss performance.
+
+* If plotting to look for patterns like we did in projects, what would you suggest is a good range of numbers? Like 1000, higher or lower?
+
+It depends from the project. You should try different ranges and see if one or more give you some patterns
+
+* is there a way to better the grade i received on project 1?
+
+As I said in class, there will be 7 or 8 projects in total. The grade of a single project is not that important compared to all of the others. Focus on the new projects, and try your best.
+
+* how would we shorthand the three elif statements? I'm assuming that since there is a way to do list comprehension that there must be a way to define the function with one statement instead of repeating some of the factors involved for every elif statement.
+
+Is this relative to the snail? You can use some algebra to find a pattern. I'll talk a little about it in class.
+
+* What would happen to our participation if we accidentally disconnect in the middle of lecture but reconnect?
+
+nothing. Issue with connection can happen. As long as you re-connect within a few minutes your grade will not be influenced.
+
+* Is this class curved because how can I keep up. And can I resubmit project one?
+
+The class is not curved. There are no make-up projects or re-do. As I said in class, there will be 7 or 8 projects in total. The grade of a single project is not that important compared to all of the others. Focus on the new projects, and try your best.
+
+* How do you more easily access a previously written function in your plots with matplotlib.pyplot?
+
+Not clear what the question is.
+
+* How many projects will be weighed for the midterm grade?
+
+Probably the first 2
+
+* Is there a way to make a list of numbers to a certain decimal place without dividing?
+
+numpy. We'll see it on Monday
+
+
 Week 4
 ~~~~~~
 
