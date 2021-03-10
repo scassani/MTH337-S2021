@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Week 5 &#8212; MTH337_F20  documentation</title>
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Week 5</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Week 5</a><ul>
+<li><a class="reference internal" href="#Notes-on-project-1">Notes on project 1</a></li>
+<li><a class="reference internal" href="#quick-note-on-sample-quiz-5">quick note on sample quiz 5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Note-on-subplots">Note on subplots</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/MTH337-S2021/_static/week05_in_class.ipynb.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../index.html">Docs</a></li>
+              
+              <li>Week 5</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="section" id="Week-5">
+<h1>Week 5<a class="headerlink" href="#Week-5" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Notes-on-project-1">
+<h2>Notes on project 1<a class="headerlink" href="#Notes-on-project-1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>result comment: ‘this plot shows a very interesting behavior. Let’s move to the next result’ <strong>this comment is not complete</strong></p></li>
+<li><p>Equation for the sequence was missing.</p></li>
+<li><p>comments and text descriptions are two different things, and both are necessary to a project</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code>,… should not be used as variable names</p></li>
+<li><p>careful to terminology/typos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> does not need parenthesis -&gt; <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">a</span></code></p></li>
+<li><p>If your grade is below C, you should send me an email</p></li>
+<li><p><strong>Who is the report for?</strong> formal text/terminology, level of information should be enough for your ‘roommate’ to understand the project.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0, 1, 2, 3, 4]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="quick-note-on-sample-quiz-5">
+<h2>quick note on sample quiz 5<a class="headerlink" href="#quick-note-on-sample-quiz-5" title="Permalink to this headline">¶</a></h2>
+<p>Write the code to generate the list of the halves of the first 100 integers. Use list comprehension</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mylist</span><span class="o">=</span><span class="p">[</span><span class="n">k</span><span class="o">/</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0.0, 0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0, 10.5, 11.0, 11.5, 12.0, 12.5, 13.0, 13.5, 14.0, 14.5, 15.0, 15.5, 16.0, 16.5, 17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5, 21.0, 21.5, 22.0, 22.5, 23.0, 23.5, 24.0, 24.5, 25.0, 25.5, 26.0, 26.5, 27.0, 27.5, 28.0, 28.5, 29.0, 29.5, 30.0, 30.5, 31.0, 31.5, 32.0, 32.5, 33.0, 33.5, 34.0, 34.5, 35.0, 35.5, 36.0, 36.5, 37.0, 37.5, 38.0, 38.5, 39.0, 39.5, 40.0, 40.5, 41.0, 41.5, 42.0, 42.5, 43.0, 43.5, 44.0, 44.5, 45.0, 45.5, 46.0, 46.5, 47.0, 47.5, 48.0, 48.5, 49.0, 49.5, 50.0]
+</pre></div></div>
+</div>
+<p>Suppose the list <code class="docutils literal notranslate"><span class="pre">plist</span></code> contains the first 500 prime numbers. Using list comprehension produce the list <code class="docutils literal notranslate"><span class="pre">loglist</span></code> of the logarithm of the numbers in <code class="docutils literal notranslate"><span class="pre">plist</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="n">plist</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">mylist2</span><span class="o">=</span><span class="p">[</span><span class="n">log</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">plist</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[0.0, 0.6931471805599453, 1.0986122886681098, 1.3862943611198906, 1.6094379124341003]
+</pre></div></div>
+</div>
+<p>Suppose the list <code class="docutils literal notranslate"><span class="pre">plist</span></code> contains the first 500 prime numbers. Using list comprehension produce the list <code class="docutils literal notranslate"><span class="pre">mylist</span></code> of the numbers in <code class="docutils literal notranslate"><span class="pre">plist</span></code> smaller than 300 that are odd</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plist</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="n">mylist</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">plist</span> <span class="k">if</span> <span class="p">((</span><span class="n">k</span><span class="o">&lt;</span><span class="mi">300</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">k</span><span class="o">%</span><span class="k">2</span>==1))]
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1, 3, 5]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">k</span><span class="o">/</span><span class="mi">99</span> <span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[1.0, 1.0101010101010102, 1.02020202020202, 1.0303030303030303, 1.0404040404040404, 1.0505050505050506, 1.0606060606060606, 1.0707070707070707, 1.0808080808080809, 1.0909090909090908, 1.101010101010101, 1.1111111111111112, 1.121212121212121, 1.1313131313131313, 1.1414141414141414, 1.1515151515151516, 1.1616161616161615, 1.1717171717171717, 1.1818181818181819, 1.1919191919191918, 1.202020202020202, 1.2121212121212122, 1.2222222222222223, 1.2323232323232323, 1.2424242424242424, 1.2525252525252526, 1.2626262626262625, 1.2727272727272727, 1.2828282828282829, 1.2929292929292928, 1.303030303030303, 1.3131313131313131, 1.3232323232323233, 1.3333333333333333, 1.3434343434343434, 1.3535353535353536, 1.3636363636363638, 1.3737373737373737, 1.3838383838383839, 1.393939393939394, 1.404040404040404, 1.4141414141414141, 1.4242424242424243, 1.4343434343434343, 1.4444444444444444, 1.4545454545454546, 1.4646464646464645, 1.4747474747474747, 1.4848484848484849, 1.494949494949495, 1.5050505050505052, 1.5151515151515151, 1.5252525252525253, 1.5353535353535355, 1.5454545454545454, 1.5555555555555556, 1.5656565656565657, 1.5757575757575757, 1.5858585858585859, 1.595959595959596, 1.606060606060606, 1.6161616161616161, 1.6262626262626263, 1.6363636363636362, 1.6464646464646466, 1.6565656565656566, 1.6666666666666665, 1.676767676767677, 1.6868686868686869, 1.696969696969697, 1.7070707070707072, 1.7171717171717171, 1.7272727272727273, 1.7373737373737375, 1.7474747474747474, 1.7575757575757576, 1.7676767676767677, 1.7777777777777777, 1.7878787878787878, 1.797979797979798, 1.808080808080808, 1.8181818181818183, 1.8282828282828283, 1.8383838383838382, 1.8484848484848486, 1.8585858585858586, 1.8686868686868687, 1.878787878787879, 1.8888888888888888, 1.898989898989899, 1.9090909090909092, 1.9191919191919191, 1.9292929292929293, 1.9393939393939394, 1.9494949494949494, 1.9595959595959596, 1.9696969696969697, 1.9797979797979797, 1.98989898989899, 2.0]
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">myprimes(n)</span></code>: idea loop on all numbers <span class="math notranslate nohighlight">\(\leq n\)</span> if <code class="docutils literal notranslate"><span class="pre">isprime()</span></code> we append it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">primedec(n)</span></code>:</p>
+<ul class="simple">
+<li><p>we start with <code class="docutils literal notranslate"><span class="pre">n</span></code> and want all prime divisors (with repetition)</p></li>
+<li><p>we get all primes <span class="math notranslate nohighlight">\(\leq n\)</span></p></li>
+<li><p>for each prime k:</p>
+<ul>
+<li><p>as long as k divides n, we append k, and update n to n/k</p>
+<ul>
+<li><p>if not: move to next prime (do nothing) we do this as long as <code class="docutils literal notranslate"><span class="pre">n!=1</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">snail</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># the function returns the x and y coordinates</span>
+    <span class="c1"># necessary to build the snail pattern</span>
+    <span class="n">mov</span> <span class="o">=</span> <span class="s1">&#39;right&#39;</span> <span class="c1"># movement direction</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># how many times we should move in the current direction</span>
+    <span class="n">times_m</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># how many times have we moved in a specific direction</span>
+
+
+    <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span>
+    <span class="n">xlist</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
+    <span class="n">ylist</span><span class="o">=</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">times_m</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">times_m</span> <span class="o">==</span> <span class="n">counter</span><span class="p">:</span>
+                <span class="n">mov</span><span class="o">=</span><span class="s1">&#39;up&#39;</span>
+                <span class="n">times_m</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;up&#39;</span><span class="p">:</span>
+            <span class="n">y</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">times_m</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">times_m</span> <span class="o">==</span> <span class="n">counter</span><span class="p">:</span>
+                <span class="n">mov</span><span class="o">=</span><span class="s1">&#39;left&#39;</span> <span class="c1"># update direction</span>
+                <span class="n">times_m</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># update of times moved in new/current direction</span>
+                <span class="n">counter</span><span class="o">+=</span><span class="mi">1</span> <span class="c1"># update of max movement</span>
+        <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="n">times_m</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">times_m</span> <span class="o">==</span> <span class="n">counter</span><span class="p">:</span>
+                <span class="n">mov</span><span class="o">=</span><span class="s1">&#39;down&#39;</span>
+                <span class="n">times_m</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">elif</span> <span class="n">mov</span> <span class="o">==</span> <span class="s1">&#39;down&#39;</span><span class="p">:</span>
+            <span class="n">y</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="n">times_m</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="k">if</span> <span class="n">times_m</span> <span class="o">==</span> <span class="n">counter</span><span class="p">:</span>
+                <span class="n">mov</span><span class="o">=</span><span class="s1">&#39;right&#39;</span> <span class="c1"># update direction</span>
+                <span class="n">times_m</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># update of times moved in new/current direction</span>
+                <span class="n">counter</span><span class="o">+=</span><span class="mi">1</span> <span class="c1"># update of max movement</span>
+        <span class="n">xlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">ylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">xlist</span><span class="p">,</span><span class="n">ylist</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">snail</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x:  [0, 1, 1, 0, -1]
+y:  [0, 0, 1, 1, 1]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/MTH337-S2021__static_week05_in_class_16_0.png" src="../../_images/MTH337-S2021__static_week05_in_class_16_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">snail</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x: &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y: &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x:  [0, 1, 1, 0, -1, -1, -1, 0, 1, 2, 2, 2, 2, 1]
+y:  [0, 0, 1, 1, 1, 0, -1, -1, -1, -1, 0, 1, 2, 2]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/MTH337-S2021__static_week05_in_class_17_1.png" src="../../_images/MTH337-S2021__static_week05_in_class_17_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="Note-on-subplots">
+<h1>Note on subplots<a class="headerlink" href="#Note-on-subplots" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">hspace</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span><span class="s1">&#39;r--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span><span class="s1">&#39;b:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span><span class="s1">&#39;ms&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&lt;matplotlib.lines.Line2D at 0x2c4ba562be0&gt;]
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/MTH337-S2021__static_week05_in_class_19_1.png" src="../../_images/MTH337-S2021__static_week05_in_class_19_1.png" />
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+            
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MTH337_F20  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Week 5</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2020, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
