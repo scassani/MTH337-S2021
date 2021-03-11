@@ -1,0 +1,41 @@
+Week 6: March 8-12
+===================
+
+Project 3
+~~~~~~~~~
+
+* :doc:`Root finding  </Projects/root_finding/root_finding>`.
+
+Python
+~~~~~~
+
+* :doc:`numpy arrays </PT/PT-numpy_arrays/PT-numpy_arrays>`
+* methods of creating a numpy array
+* indexing and slicing of numpy arrays
+* vectorization
+* numpy arrays and matplotlib
+* :doc:`Multidimensional numpy arrays </PT/PT-multidimensional_numpy_arrays/PT-multidimensional_numpy_arrays>`
+* :doc:`Matplotlib subplots </PT/PT-matplotlib_subplots/PT-matplotlib_subplots>`
+
+
+Mathematics
+~~~~~~~~~~~
+
+* Newton's Method
+* Complex numbers
+* Root of polynomials
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday March 12 at midnight, and is available `here <https://forms.gle/26rYyzhUUMKHZCYh8>`_
+
+Week 6 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week06_in_class.html>`_
+- `Download  <../_static/week06_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 6
+~~~~~~~~~~~~~
+
+- :download:`Sample Quiz 6 <../Quizzes/quiz6/quiz6_sample.pdf>`
