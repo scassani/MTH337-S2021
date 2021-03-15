@@ -1,6 +1,117 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 6
+~~~~~~
+
+* Will we ever learn how to turn our projects in executables? 
+
+Not in the class, but I'll be happy to talk about this at office hours
+
+* What does "which root different points in a rectangular portion of the complex plane converge to for the equation" from project 3 mean? Should the graph be 3D with real complex and approximate root?
+
+Will talk more about this on Monday
+
+* Is there a particular reason we haven't discussed dictionaries yet? Will we discuss them later?
+
+We will talk about dictionaries later in the semester
+
+* Would you recommend always using numpy when working with series from this point on or would it still be beneficial at times to do what we've been doing when it applies, if so, when should we use our old ways?
+
+It depends on the application. If you are doing the same opearation on several points, numpy will be faster.
+
+* Should we be using subplots in most projects, or should we use them only when we feel they will be most helpful?
+
+It is up to you. If it can be useful I would use a subplot instead of two separate plots.
+
+* Are there other popular math libraries than matplotlib and numpy? Those are normally the only 2 I see.
+
+There are simpy and scipy that I know of, but I am pretty sure there are several more.
+
+* Can you explain more on use of numpy array and also the use of the linspace
+
+We can talk a little about it in class.
+
+* Would you be able to go more in depth regarding the project, as well as arrays? I know you can add things to lists (.append) but you said you can't add elements to an array. Would you be able to describe when we should use lists and when we should use arrays?
+
+We'll talk more about the project on Monday. arrays are very convenient when you are performing the same operation on multiple points. 
+
+* Will you be covering more of how the graph will be constructed for project 3?
+
+yes
+
+* Do you recommend that we import the specific functions of numpy that we need or all of it?
+
+Import all of numpy with the nickname np
+
+* Will there be any requirements for code running speed in the future? since we learned the more efficient way to calculate.
+
+No. But I expect that you learn how to code in a relative efficient way (for example using arrays instead of lists when appropriate)
+
+* Will we be using arrays instead of lists for the rest of the semester or are there some other things that lists are better at?
+
+We will be using both. 
+
+* How do I determine the tolerance for project 3? Is there a formula or just a random number?
+
+We'll talk about it on Monday
+
+* I'm still a little confused about how we're plotting complex roots on a graph and how to generalize the function in part 2. Could you explain this again? 
+
+Yes, will do on Monday
+
+* This project seems a lot harder than the first two, will the projects continue to be increasingly challenging?
+
+Not necessarily. Each project will explore a new aspect of python.
+
+* Why are we using numpy? I know that it is widely used, but does it have specific attributes or codes, persay, that are quicker than matplotlib? Obviously, np.linspace made the iterations extremely easy to plot, but are there other things that we've done previously that numpy can compute quicker or with less lines of code?
+
+We are using numpy mostrly for efficiency and becuase the code would be more neat and easier to read/write in some cases. There might be more examples.
+
+* For quiz 6 question 3, I use x=np.array(range(-2,2,101)) , with start to end and number of step, it did not come out as what i expect , then I use x=np.linspace(), the output is what I expect. So I am wondering is np.array(range()) can not use to find start to end with certain number of step, or am I typing the wrong thing inside the bracket?
+
+``np.linspace(start,end,p)`` will create the array from ``start`` to ``end`` with ``p`` points. ``np.arange(s,e,ss)`` will create and array from ``s`` to ``e`` (not included) with a step size of ``ss``
+
+* For the project part 2 , you said different initial points should mark colors after 100 iterations. But I do not know how to using different color and plot on the graph, could you explain more about this?
+
+``plt.imshow()`` will take care of that. We will talk more about it on Monday
+
+* Is it possible to have a legend for the snail project? When I tried it listed prime twice, (once for 2 and 3) and then once for composite and one. 
+
+You might have to be careful the way you are selecting it.
+
+* How do we plot multiple horizontal/vertical lines across specific points using matplotlib?
+
+You need the line equation, and then you can use arrays.
+
+* How often will we use complex numbers?
+
+Just for project 3
+
+* Is their an easier way to produce more complex subplots?
+
+Easier than what? The question is not clear.
+
+* What are the differences between the numpy array and a matrix? is one more beneficial than the other?
+
+The "matrix" is a multidimensional version of the array.
+
+* Is it still possible to secure a B or higher in this class if the first two project were less than steller.
+
+We would have to look at the math (come to office hours)
+
+* is there a way to do vector addition with arrays ?
+
++
+
+* Can you explain more on display the convergence in the next lecture?
+
+Yes
+
+* For the In box 73 on the week 6 python, I'm confused on whats going on. I understand reshaping and that stuff but I just don't get what happened.
+
+We create `y` as a 5x2 array. Then we set a 5x2 slice of ``a`` equal to ``y``
+
 Week 5
 ~~~~~~
 
