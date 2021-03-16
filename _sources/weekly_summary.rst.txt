@@ -102,7 +102,7 @@ We would have to look at the math (come to office hours)
 
 * is there a way to do vector addition with arrays ?
 
-+
+``+``
 
 * Can you explain more on display the convergence in the next lecture?
 
