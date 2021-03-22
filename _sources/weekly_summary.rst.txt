@@ -1,6 +1,105 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 7
+~~~~~~
+
+* Where can I find the recorded lecture videos?
+
+this question was asked in week 1. See the answer below (Hint: search for the word Panopto
+
+* How does the bonus work increase our project grade, i.e. how do you quantify it?
+
+A Bonus moves you up one letter grade : from C to C+ for example
+
+* Will we have more bonus questions in future projects? 
+
+maybe
+
+* Can you explain more about boolean, array? Can we have more example in the class material?
+
+yes
+
+* Since we have 2 weeks to work on every project, and there will be a lot of people going to office hours on the second week. It is possible to move office hours for the first week to the second week?  so students don't need to wait hours for your help.
+
+The project is a two weeks longs effort, and you should start working on it from day one. Some of the students in the class use the office hours every week so I do not think it will be useful to have office hours every other week. I understand it can be frustrating waiting for your turn on discord, but my suggestion would be to start early working as early as possible so that you could ask questions over two weeks rather than all of the questions on the week when the project is due.
+
+* Should we use arrays in graphing from now on, or are there certain times to use lists?
+
+Very likely we will use arrays more than lists.
+
+* Is there a way to do overlapping graphs on matplotlib? 
+
+Just use ``plt.plot()`` twice
+
+* How do you relabel the x, y axis without affecting the points plotted?
+
+``plt.xticks`` and ``plt.yticks``
+
+* how many step we usually use for plot a graph by using x=np.linspace(-1,1,step)? 
+
+It depends from the application. I would say 101 is a good number to start with, then you can increase/decrease based on the accuracy you are looking for
+
+* Can we do both of these projects? (not at once) 
+
+Unfortunately we will have time for only one of them
+
+* How is the extra credit weighted?
+
+Do you mean for project 3? It will count as a bonus for project 4
+
+* In what instances are lists better than arrays?
+
+If you have something that does not have a fixed dimension or if you need a container for variables of different type.
+
+* What is the numerical equivalent for an A+, A, A-, B+, B, etc. on a project? 
+
+A: 97, A-:92, B+:88.5, B:85,
+
+* Now that we are half way through the semester, are the grades where you expected them to be?
+
+Every year is different. But i can say that the grades of project 2 are closer to what I expected
+
+* Can we possibly talk about defining variables a bit.  In other languages the variable type has to be specified, I was wondering if you could do this in python so it would be more clear when inputting parameters to your functions.
+
+There is a way to declare variable type, but pythoon idea is to avoid that to give more flexibility.
+
+* Will you explain more information about the matrix? I am still a little bit confused. Thank you
+
+sure. We will use multidimensional arrays for project 4 as well.
+
+* What should we do if our python crashes if we try to graph more points? The code works for less points.
+
+It might very likely be because your code is not vectorized. One solution would be to try to make the code more efficient.
+
+* What is the best way to organize the project reports, I want to get as much points in documentation as I can
+
+You should read the project report section on the class website.
+
+* I'm still not completely familiar with arrays, can you talk a bit more about them? I know all we did really was work on the project this week, so I don't have any major questions.
+
+We will talk about arrays more this week. You should also stop by office hours if you are struggling with arrays.
+
+* Expain the idea of reshaping
+
+we are changing the array dimension. 
+
+* Are we going to do 3D animation using python?
+
+No. But we will use 2d animations in project 4
+
+* I still have had trouble graphing arrays with linspace under specific parameters and am concerned about how should I handle them? 
+
+You should stop by office hours.
+
+* are using booleans better than the true, false, condition statements?
+
+It is faster with boolean indeces.
+
+* For the colorbar graphs, are they used in "real world" math? I feel like they can get too clustered if there are too many numbers in them or are they used to just see patterns?
+
+Yes they are. They could be useful to see pattern and analyze data in the 2d format.
+
 Week 6
 ~~~~~~
 
