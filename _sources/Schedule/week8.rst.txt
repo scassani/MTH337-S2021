@@ -1,0 +1,35 @@
+Week 8: March 22-26
+===================
+
+Project 4
+~~~~~~~~~
+
+* :doc:`Epidemic  </Projects/epidemic/epidemic>`.
+
+Python
+~~~~~~
+
+* :doc:`Multidimensional numpy arrays </PT/PT-multidimensional_numpy_arrays/PT-multidimensional_numpy_arrays>`
+* :doc:`Image processing </PT/PT-image_processing//PT-image_processing>`
+* Broadcasting for numpy arrays.
+
+
+Mathematics
+~~~~~~~~~~~
+
+* Epidemic model
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday March 26 at midnight, and is available `here <https://forms.gle/ucZGWMh2dWfYbqw19>`_
+
+Week 8 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week08_in_class.html>`_
+- `Download  <../_static/week08_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+No quiz this week
