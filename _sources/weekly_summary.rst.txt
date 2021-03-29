@@ -1,6 +1,91 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 8
+~~~~~~
+
+* Is there a shorter way to find the number of 'trues' for a boolean index, instead of making a list and adding all the values that are true and then finding the length of the list?
+
+If you have an array of ``True``. You could just use ``sum()`` and it should give you the number of ``True``
+
+* I noticed that if an array is too large, python will cut the array short and only show the beginning and end of the array with continuation symbols in between (like we do with sequences). However, what if I wanted to see the entire array? Is there a way to show the full array in these scenarios?
+
+After a google search it looks like this should work
+
+``import sys``
+
+``numpy.set_printoptions(threshold=sys.maxsize)``
+
+My suggestion however would be to avoid that. Printing out a full big array is a bad idea.
+
+* What are general things that you can do to make your code more efficient?
+
+Avoid loops and vectorize when possible. Also nested loops and/or if statements are usually expensive
+
+* simple html tags works in notebook's markdown, are we allowed to use it for spacing and such?
+
+yes
+
+* for the reshape(20,-1) command, what is the meaning of the (-1) in this command?
+
+Adjust the second dimension automatically. Say you have 100 elements, the second dimension would be 5, computed automatically from python.
+
+* Can you talk more about how we can use the code from part2 into part1 on Monday?
+
+sure
+
+* Will color maps be used in the next assignment?
+
+Only one colormap, that I have given you. I will talk about it on week 9.
+
+* How many projects do we have left?
+
+4 more (8 total)
+
+* In the python notes, what does the function "img[:, :, 2] # blue component" do?
+
+grabs the third component of a multidimensional array
+
+* In the animation piece of code, what does the 'global' keyword before x do? Is it to access x outside of the function?
+
+yes.
+
+* For the epidemics project, how do we define a function that takes a 200x200 grid as an input?
+
+You create a 200x200 multidimensional array, and you give it to the function as a variable.
+
+* Can you explain more about the project? and Can you explain more about the use if animation and the broadcasting? 
+
+yes
+
+* You talked about we can add a frame at the boundary of the 200x200 grid. Therefore, when we write the array, we directly write the 201x201 grid OR set the 200x200 grid first, then add the frame next to it ?
+
+you directly write it as a 202x202 array.
+
+* Is it normal to not be getting movement on the code given to us on the project page or should I be concerned that my plot doesn't seem to be animating?
+
+Is not normal. Usually settig the parameter ``interval=1000`` shoudl make it work.
+
+* Can we review slicing?
+
+we will be using slicing in this project, so we will look t some more examples in class. My suggestion would also be to stop by office hours to discuss this.
+
+* is the function animate strictly for plotted figures or can we create charts and have them be filled in
+
+You could create anymations for other graphs, but you might need a slightly different approach.
+
+* can we possibly have more group time to collaborate on this project during class? I find it very helpful as it helps me develop a clear understanding of the project requirements
+
+We will have some time this week.
+
+* how many more projects do we need to complete based on the weeks left?
+
+there will be 4 more projects.
+
+* What is the class average right now?
+
+80%
+
 Week 7
 ~~~~~~
 
