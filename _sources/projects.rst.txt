@@ -10,3 +10,4 @@ Projects
 	Number Snail <Projects/number_spiral/number_spiral>	
 	Root Finding <Projects/root_finding/root_finding>
 	Epidemic <Projects/epidemic/epidemic>
+	Decryption <Projects/message_decrypt/message_decrypt>

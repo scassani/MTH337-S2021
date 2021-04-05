@@ -1,0 +1,98 @@
+
+Message decryption
+==================
+
+.. rubric:: (due: Friday, April 9, 11:59 PM)
+
+
+Message encryption is necessary to ensure safe transmission of data.
+
+Messages can be encrypted by a subsitution of characters in the message.
+
+Consider the example: "Luke, I am your father"
+
+The encryption is done following these steps:
+
+-  A numerical value is assigned to each character. For these project we will only consider the following characters
+
+``ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmonpqrstuvwxyz 0123456789.,:;<>?!()\n``
+
+.. figure:: table1.png
+   :align: center
+
+
+-  A word is chosen as the encryption **key**, say *Pizza* is our key. Following the table above 
+
+.. figure:: table2.png
+   :align: center
+
+
+-  The message is also changed to numbers following the table
+
+.. figure:: table3.png
+   :align: center
+
+-  The message and the key are aligned and added.
+
+.. figure:: table4.png
+   :align: center
+
+
+- Any number outside the [0,73] interval is brought back into the interval, using the mod division, and then a letter is associated to each number to obtain the encrypted message.
+
+.. figure:: table5.png
+   :align: center
+
+**Encrypted message**: "aGOHQ<qdD,<KQX?<:DW6tD"
+
+Project
+-------
+
+Each file listed below contains text (a fragment of a book in English)
+encrypted using the method described above choosing the **key** at random among the words in the file :download:`keys.txt<keys.txt>`. 
+
+Write a function **decrypt('txtfile')** that decrypts the file assigned to you and print the decrypted message. The function should take as a variable the name of your .txt file.
+
+A dictionary of English words is available here :download:`dictionary<dictionary.txt>`
+
+
+**Note.**  This is a programming project. Your project report does not need
+include narrative, beyond comments explaining how your code works. The project will
+be graded according to the following rubrics:
+
+* Code correctness and completeness: 80%
+* Report organization and code documentation: 20%
+
+------------
+
+-  :download:`Abbot.txt<Abbot.txt>`
+-  :download:`Brennan.txt<Brennan.txt>`
+-  :download:`Coia.txt<Coia.txt>`
+-  :download:`Cyrus.txt<Cyrus.txt>`
+-  :download:`Dearborn.txt<Dearborn.txt>`
+-  :download:`Flores.txt<Flores.txt>`
+-  :download:`Guity.txt<Guity.txt>`
+-  :download:`Hattala.txt<Hattala.txt>`
+-  :download:`Henderson.txt<Henderson.txt>`
+-  :download:`Herdlein.txt<Herdlein.txt>`
+-  :download:`Huang.txt<Huang.txt>`
+-  :download:`Kozlowski.txt<Kozlowski.txt>`
+-  :download:`Lambert.txt<Lambert.txt>`
+-  :download:`Lemke.txt<Lemke.txt>`
+-  :download:`LiYanyan.txt<LiYanyan.txt>`
+-  :download:`LiYingwei.txt<LiYingwei.txt>`
+-  :download:`Malecki.txt<Malecki.txt>`
+-  :download:`Mittal.txt<Mittal.txt>`
+-  :download:`Mohan.txt<Mohan.txt>`
+-  :download:`Ngo.txt<Ngo.txt>`
+-  :download:`Rinaldo.txt<Rinaldo.txt>`
+-  :download:`Stippell.txt<Stippell.txt>`
+-  :download:`Vandeloo.txt<Vandeloo.txt>`
+-  :download:`Wagner.txt<Wagner.txt>`
+-  :download:`Wang.txt<Wang.txt>`
+-  :download:`Watson.txt<Watson.txt>`
+-  :download:`Wistner.txt<Wistner.txt>`
+-  :download:`WuHe.txt<WuHe.txt>`
+-  :download:`Yi.txt<Yi.txt>`
+-  :download:`Zhang.txt<Zhang.txt>`
+

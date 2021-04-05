@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Message decryption &#8212; MTH337_S21  documentation</title>
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Weekly Schedule" href="../../weekly_schedule.html" />
+    <link rel="prev" title="Epidemic" href="../epidemic/epidemic.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../weekly_schedule.html" title="Weekly Schedule"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../epidemic/epidemic.html" title="Epidemic"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MTH337_S21  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../projects.html" accesskey="U">Projects</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Message decryption</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Message decryption</a><ul>
+<li><a class="reference internal" href="#project">Project</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../epidemic/epidemic.html"
+                        title="previous chapter">Epidemic</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../../weekly_schedule.html"
+                        title="next chapter">Weekly Schedule</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/Projects/message_decrypt/message_decrypt.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../../index.html">Docs</a></li>
+              
+                <li><a href="../../projects.html">Projects</a></li>
+              
+              <li>Message decryption</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="message-decryption">
+<h1>Message decryption<a class="headerlink" href="#message-decryption" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">(due: Friday, April 9, 11:59 PM)</p>
+<p>Message encryption is necessary to ensure safe transmission of data.</p>
+<p>Messages can be encrypted by a subsitution of characters in the message.</p>
+<p>Consider the example: “Luke, I am your father”</p>
+<p>The encryption is done following these steps:</p>
+<ul class="simple">
+<li><p>A numerical value is assigned to each character. For these project we will only consider the following characters</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmonpqrstuvwxyz</span> <span class="pre">0123456789.,:;&lt;&gt;?!()\n</span></code></p>
+<div class="figure align-center">
+<img alt="../../_images/table1.png" src="../../_images/table1.png" />
+</div>
+<ul class="simple">
+<li><p>A word is chosen as the encryption <strong>key</strong>, say <em>Pizza</em> is our key. Following the table above</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../_images/table2.png" src="../../_images/table2.png" />
+</div>
+<ul class="simple">
+<li><p>The message is also changed to numbers following the table</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../_images/table3.png" src="../../_images/table3.png" />
+</div>
+<ul class="simple">
+<li><p>The message and the key are aligned and added.</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../_images/table4.png" src="../../_images/table4.png" />
+</div>
+<ul class="simple">
+<li><p>Any number outside the [0,73] interval is brought back into the interval, using the mod division, and then a letter is associated to each number to obtain the encrypted message.</p></li>
+</ul>
+<div class="figure align-center">
+<img alt="../../_images/table5.png" src="../../_images/table5.png" />
+</div>
+<p><strong>Encrypted message</strong>: “aGOHQ&lt;qdD,&lt;KQX?&lt;:DW6tD”</p>
+<div class="section" id="project">
+<h2>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h2>
+<p>Each file listed below contains text (a fragment of a book in English)
+encrypted using the method described above choosing the <strong>key</strong> at random among the words in the file <a class="reference download internal" download="" href="../../_downloads/9c57f849917d95717dd0b4f4bd406a48/keys.txt"><code class="xref download docutils literal notranslate"><span class="pre">keys.txt</span></code></a>.</p>
+<p>Write a function <strong>decrypt(‘txtfile’)</strong> that decrypts the file assigned to you and print the decrypted message. The function should take as a variable the name of your .txt file.</p>
+<p>A dictionary of English words is available here <a class="reference download internal" download="" href="../../_downloads/be94d6770b745b8c9b127576ef365b4c/dictionary.txt"><code class="xref download docutils literal notranslate"><span class="pre">dictionary</span></code></a></p>
+<p><strong>Note.</strong>  This is a programming project. Your project report does not need
+include narrative, beyond comments explaining how your code works. The project will
+be graded according to the following rubrics:</p>
+<ul class="simple">
+<li><p>Code correctness and completeness: 80%</p></li>
+<li><p>Report organization and code documentation: 20%</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../../_downloads/dc599b33b8af529b2dda571cae6a8477/Abbot.txt"><code class="xref download docutils literal notranslate"><span class="pre">Abbot.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/1f26eb688563d911d8ed5c534326e019/Brennan.txt"><code class="xref download docutils literal notranslate"><span class="pre">Brennan.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/79acb2ba37618b53b25a00bcb14ebe26/Coia.txt"><code class="xref download docutils literal notranslate"><span class="pre">Coia.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/74b42347c78b8baa9fd81b1ad47aa4ab/Cyrus.txt"><code class="xref download docutils literal notranslate"><span class="pre">Cyrus.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/3fa16b34c1862df119a026f518d30a66/Dearborn.txt"><code class="xref download docutils literal notranslate"><span class="pre">Dearborn.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/816e0e76ad3f0c5ed2304ad0147e3f47/Flores.txt"><code class="xref download docutils literal notranslate"><span class="pre">Flores.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/bb8c1c027af9b4508562253494867246/Guity.txt"><code class="xref download docutils literal notranslate"><span class="pre">Guity.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/3eb37d9531299987c9563df99f02d358/Hattala.txt"><code class="xref download docutils literal notranslate"><span class="pre">Hattala.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/6a7a331d3d3b6a5717537d0aa5b82fbf/Henderson.txt"><code class="xref download docutils literal notranslate"><span class="pre">Henderson.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/c76a0834aeb08c540f52a05d69925847/Herdlein.txt"><code class="xref download docutils literal notranslate"><span class="pre">Herdlein.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/1d73230f5b083deb854f1bf87db9d4ad/Huang.txt"><code class="xref download docutils literal notranslate"><span class="pre">Huang.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/81064ca5d9bf66dd257fea3bff23db1b/Kozlowski.txt"><code class="xref download docutils literal notranslate"><span class="pre">Kozlowski.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/4a59a58fe48d2fca0795d2b9403e2715/Lambert.txt"><code class="xref download docutils literal notranslate"><span class="pre">Lambert.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/769cf19dc1c7aba1441ab52135399066/Lemke.txt"><code class="xref download docutils literal notranslate"><span class="pre">Lemke.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/646066d1d799e377bd53c4050be90375/LiYanyan.txt"><code class="xref download docutils literal notranslate"><span class="pre">LiYanyan.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/47c36895fba7a2a681e1d86ff4efa6fa/LiYingwei.txt"><code class="xref download docutils literal notranslate"><span class="pre">LiYingwei.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/2a6c743a7c1d789667f36f4e0ac6dbda/Malecki.txt"><code class="xref download docutils literal notranslate"><span class="pre">Malecki.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/c6ceede56739a16c3eb156a73790c337/Mittal.txt"><code class="xref download docutils literal notranslate"><span class="pre">Mittal.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/9df4e090cdf9572f21d43e615a5fe313/Mohan.txt"><code class="xref download docutils literal notranslate"><span class="pre">Mohan.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/988e4d63d10998c00e4e94ab08220f97/Ngo.txt"><code class="xref download docutils literal notranslate"><span class="pre">Ngo.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/b95730dbbafee1d84c1ad42138b13bc2/Rinaldo.txt"><code class="xref download docutils literal notranslate"><span class="pre">Rinaldo.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/8729789a64bd8f03cb94e4e4bc4255a2/Stippell.txt"><code class="xref download docutils literal notranslate"><span class="pre">Stippell.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/040c8e0fed07a67ff4a7a239ec848c6c/Vandeloo.txt"><code class="xref download docutils literal notranslate"><span class="pre">Vandeloo.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/2cd88fb8cf5f278b69c61efed6bda3e8/Wagner.txt"><code class="xref download docutils literal notranslate"><span class="pre">Wagner.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/3db69126f4a37028cc491f01944d4265/Wang.txt"><code class="xref download docutils literal notranslate"><span class="pre">Wang.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/bd29a2a12083d0e6de7723c7f79422a8/Watson.txt"><code class="xref download docutils literal notranslate"><span class="pre">Watson.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/9ad217ea0a21e4454d9a29950e465c23/Wistner.txt"><code class="xref download docutils literal notranslate"><span class="pre">Wistner.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/ad170fcce5b714ca2fe29f70a85ce095/WuHe.txt"><code class="xref download docutils literal notranslate"><span class="pre">WuHe.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/e58b0c04a0a884400f15d5302ff61b94/Yi.txt"><code class="xref download docutils literal notranslate"><span class="pre">Yi.txt</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/947a1d61c8d99737084e0654d9f81730/Zhang.txt"><code class="xref download docutils literal notranslate"><span class="pre">Zhang.txt</span></code></a></p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../epidemic/epidemic.html" title="previous chapter (use the left arrow)">Epidemic</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../../weekly_schedule.html" title="next chapter (use the right arrow)">Weekly Schedule</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../weekly_schedule.html" title="Weekly Schedule"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../epidemic/epidemic.html" title="Epidemic"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MTH337_S21  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../projects.html" >Projects</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Message decryption</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2021, Simone Cassani. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
