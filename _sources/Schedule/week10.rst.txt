@@ -1,0 +1,30 @@
+Week 9: April 5 - 9
+=========================
+
+Project 5
+~~~~~~~~~
+
+* :doc:`Decryption  </Projects/message_decrypt/message_decrypt>`.
+
+Python
+~~~~~~
+
+* String processing.
+* File operations.
+* Dictionaries
+
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday April 9 at midnight, and is available TBD
+
+Week 10 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week10_in_class.html>`_
+- `Download  <../_static/week10_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+- TBD
