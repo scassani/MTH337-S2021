@@ -1,6 +1,106 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 9
+~~~~~~
+
+* Are we going to have a shorter project due next week ?
+
+yes. `Project 5 <Projects/message_decrypt/message_decrypt.html>`_
+
+* "What is the benefit of %matplotlib inline?
+
+It makes the plot interactive, and it is necessary for the animation to run.
+
+* Also, what does %%capture do?"
+
+According to the online documentation, "run the cell, capturing stdout, stderr, and IPython’s rich display() calls."
+
+* Can you load video files into python and edit frame by frame as if you would a picture?
+
+It looks like you can do it. However I am not fluent with that python modules.
+
+* What other classes do you teach? 
+
+A little bit of everything. Next semseter I will be teaching MTH309, this semester I am teaching MTH306.
+
+* Can we use the same way as file operation to modify a picture?
+
+We could, but it would be much more complicated than using numpy arrays, as pictures are saved in bytes format.
+
+* Can we explore more variables for project 4 such cured people getting sick again and vaccinated people are not 100% immune? I think this would be a cool representation of covid.
+
+Sure
+
+* Can you do more about the image pixels and how to fix those pixels?
+
+I'll be happy to look at more examples at office hours. This week we will introduce some different topics (That we will use in project 5 and 6)
+
+* I was really confused on how to transfer the animal image over to the background image, could you refresh on combining images like that? Also, can you briefly discuss writing boolean indices with arrays? For some reason I've been really struggling grasping the topic. Lastly, I have a lot of issues understanding what exactly the projects are asking me to do. Would it be possible in the future to include more guided steps in the project descriptiions?
+
+The images are combined by adding them, after you have blacked out the correct pixels. For boolean indexes, as I mentioned in last week answers (to one of your classmates) you should stop by office hours and we can look at some more practice examples.
+
+* Would it be possible to send us an email with our scores for these assignments, I am not positive if I forgot to do mine last week. Also will we be using dataframes  and the Pandas package in this course?  Thanks
+
+I will sum up the weekly summary participation at the end of the semester. If I manage to do it sooner I will send you an email with the partial scores. We might use pandas depending from the last projects that we will work with. I am still deciding what to do for project 8.
+
+* How many more projects are you expecting for us to do for the rest of the semester?
+
+I have answered this question already. Please look in the previous week answers
+
+* Is there any more bonus point in the future project?
+
+You cna get bonus points in each project with very good work.
+
+* Are we going to use RGB in later projects?
+
+Probably not.
+
+* can you add an array into a text file?
+
+You need to convert it to a string first.
+
+* Would you consider dropping the project with the lowest grade or give us an opportunity to do an extra project to replace the project with the lowest grade or even giving us the opportunity to do an extra project to possibly bring the grade of our project average up?
+
+For extra credit the answer is no. Regarding dropping the lowest project grade, We will discuss this opportunity later in the course.
+
+* for example if we have a matrix x, and we want to count how many 0 inside this matrix, why np.count_nonzero(x==0) will work? isn't the code count non zero value?
+
+Because you are counting the number of non-zero elements in the boolean array ``x==0``. So you are counting how many ``True`` values you have.
+
+* Is this week similar to photoshop or is there package that's similar?
+
+Python has many modules for image manipulations. There are better modules for image manipulation depending on what you want to do
+
+* How can we adjust the size of grid lines in a plot?
+
+From the documentation "grid(color='r', linestyle='-', linewidth=2)"
+
+* You can save a plot as a png, would it be possible to save an animation plot as a gif?
+
+From a quick goolge search it looks like the is a module called ``pillow`` that should be able to do that.
+
+* Is there a way to subplot the animations in project 4?
+
+The easiest way to do it, would be a for loop that plots every given number of iterations.
+
+* Is there a way to get the list of the lines of a file without all of the extra slashes and 'n' s? Can we also keep the project deadlines to Saturday morning?
+
+Yes. We will see today how to remove the newline symbol. Yes
+
+* You briefly mentioned that there was a way to fix a copyright issue when using a photo in python, could you explain it again? I couldn't quite understand what you had said in lecture and it was very brief. 
+
+Make a copy of the variable containing the image.
+
+* Will we use animations again in any of the 4 remaining projects? If we do, will we explore other kinds of animations (for example stocks)?
+Can our next project incorporate something in the business world
+
+We will not use animations for the next projects. I'll see what I can do regarding the business related project. (If you are interested in a python for data analysis class, you should look into MTH 448/548)
+
+* When using the pictures with the greenscreen, is there any way to combat if the item in from of the greenscreen has green on them? Like instead of a lion it was someone with green on their shirt and you wanted to put them on a background in a city, would you still be able to do that without messing up the persons shirt? Also, Is there a way to blow up an image using python? In class the second background ended up being too small to use so if something like that happened is there a way to combat it?
+
+For green screen, usually you should avoid green. It might be possible to get something with a more accurate threshold for what green is green screen and what green is the shirt. Resising images is possible, but requires a lot of attention to details, some interpolation techniques and linear algebra.
+
 Week 8
 ~~~~~~
 
