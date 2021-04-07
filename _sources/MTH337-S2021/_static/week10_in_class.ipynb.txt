@@ -1,0 +1,1457 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<matplotlib.image.AxesImage at 0x1c9858ff240>"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    },
+    {
+     "data": {
+      "image/png": "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7n3znyueedNrmxXPlKS5B15bJXfizxdVyfVp3VVyR/5p+atRHr1dna+zH4//YfHMpSv6vjIrR5gAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJDCYAJDGYAJDEYAJAEoMJAEkMJgAkMZgAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJDCYAJDGYAJDkiCgeusvufxh33H9h8dwRuz9XPPMvZh9aPFOS/umTm1bJPSxGVsld9psTquQe/squxTP/4OKxxTMlacoO36ySu/mxF1fJnX9e+SuzStKRPScVz/z6tDqft+/+ybDimecvmqol//2U1/cYR5gAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJqcG0vaXtWbaftL3Q9h61iwFA2wxOPu87km6NiCNsD5VU/qdFAaDl+h1M2yMk7SPpryQpItZIWlO3FgC0T+Yl+XaSlku6yvYjtq+wPXzdJ9meanue7XmvvrKyeFEAaFpmMAdL2k3SpRGxq6TVks5c90kRMT0iuiKia+uPjChcEwCalxnMbkndETG3c3uWegcUAP5f6XcwI+JFSUttb9+5az9JT1RtBQAtlP0u+cmSZnS+Q/6spC/UqwQA7ZQazIiYL6mrchcAaDXO9AGAJAYTAJIYTABIYjABIInBBICkKleNHDxu6xhx9qTiuT1XLy6eefdXVxXPlKSxj21TJXebp4+pkvsvcx+oknvzuZ8pnvnmCUcWz5SkW8b8bZXcn439eZXcW5+cXSX3469dUjzz9vuHFs+UpBOffrJ45rRpt2jRM69y1UgA+L9gMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhhMAEhiMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIG1wid0P2GrjrjF8VzV155bvHMty+4r3imJC0462tVcv9yXJX/Zdrjre4quXt+94zimbddPqx4piSdt+raKrlThpa/IKAkfXrm8VVyu//s88UzJ4w9v3imJG21cE7xzCHxaJ+PcYQJAEkMJgAkMZgAkMRgAkASgwkASQwmACQxmACQlBpM21+y/bjtBbZn2t6kdjEAaJt+B9P2KElflNQVETtLGiTpqNrFAKBtsi/JB0va1PZgScMkvVCvEgC0U7+DGRHPS/qWpCWSlklaERG3r/s821Ntz7M97/V4p3xTAGhY5iX5SEmTJY2X9FFJw20fu+7zImJ6RHRFRNeWHlS+KQA0LPOSfH9JiyNieUS8LekGSXvWrQUA7ZMZzCWSJtoeZtuS9pO0sG4tAGifzHuYcyXNkvSwpMc6/870yr0AoHVSv1wxIs6VVP6XUQLAAMKZPgCQxGACQBKDCQBJDCYAJDGYAJBU5RKEK7Yfr1t+ck3x3K/+8yXFM8857cLimZJ06ud/WSV3Xs9JVXL3/va2VXIXT7+jeOZTU+pcOfOCBb+ukvuf2y6okvuLY5dUyb3l4CeLZx4wa2bxTEna/ewdimf26M0+H+MIEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhhMAEhiMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhwR5UPt5ZJ+lXjqRyS9UrxAPQOp70DqKg2svgOpqzSw+rah69iI2GZ9D1QZzCzb8yKiq7EC79NA6juQukoDq+9A6ioNrL5t78pLcgBIYjABIKnpwZze8H///RpIfQdSV2lg9R1IXaWB1bfVXRt9DxMABpKmjzABYMBgMAEgqbHBtD3J9lO2F9k+s6ke/bE9xvbdthfaftz2KU13yrA9yPYjtm9uusuG2N7S9izbT3b+jvdoutOG2P5S5/Ngge2ZtjdputPabP/A9su2F6x131a259h+pvPPkU12/K0+ul7Q+Vx41Pa/2t6yyY7ramQwbQ+S9H1Jn5W0k6Sjbe/URJeEHklfjogdJU2U9Hct7rq2UyQtbLpEwnck3RoRO0j6pFrc2fYoSV+U1BURO0saJOmoZlu9x9WSJq1z35mS7oyICZLu7Nxug6v13q5zJO0cEZ+Q9LSksz7oUhvS1BHmpyQtiohnI2KNpOskTW6oywZFxLKIeLjz8Sr1fkGParbVhtkeLekgSVc03WVDbI+QtI+kKyUpItZExOvNturXYEmb2h4saZikFxru8zsi4l5Jv17n7smSrul8fI2kwz7QUn1YX9eIuD0iejo3H5A0+gMvtgFNDeYoSUvXut2tlo+QJNkeJ2lXSXObbdKviyWdLundpov0YztJyyVd1Xn74Arbw5su1ZeIeF7StyQtkbRM0oqIuL3ZVinbRsQyqfcAQNLvNdwn63hJtzRdYm1NDabXc1+rf77J9maSfirp1IhY2XSfvtg+WNLLEfFQ010SBkvaTdKlEbGrpNVqz8vF9+i89zdZ0nhJH5U03Paxzbb6cLJ9tnrfDpvRdJe1NTWY3ZLGrHV7tFr20mZttoeodyxnRMQNTffpx16SDrX9nHrf6tjX9o+ardSnbkndEfHbI/ZZ6h3Qttpf0uKIWB4Rb0u6QdKeDXfKeMn270tS558vN9xng2xPkXSwpGOiZT8o3tRgPihpgu3xtoeq943zGxvqskG2rd732BZGxEVN9+lPRJwVEaMjYpx6/17viohWHgVFxIuSltrevnPXfpKeaLBSf5ZImmh7WOfzYj+1+JtUa7lR0pTOx1Mk/VuDXTbI9iRJZ0g6NCLeaLrPuhoZzM6buidJuk29n3A/iYjHm+iSsJek49R7pDa/8+fApkt9iJwsaYbtRyXtIunrDffpU+dIeJakhyU9pt6vn1adymd7pqT7JW1vu9v2CZK+IekA289IOqBzu3F9dP2epM0lzel8rV3WaMl1cGokACRxpg8AJDGYAJDEYAJAEoMJAEkMJgAkMZgAkMRgAkDS/wCK43Yg5t9rTwAAAABJRU5ErkJggg==\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "imga = np.random.random((10,14,3))\n",
+    "plt.imshow(imga)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "negative image"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "neg=1-imga\n",
+    "plt.imshow(neg);"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Set the red component of all the pixels where the blue component is above 0.7 to 0.5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<matplotlib.image.AxesImage at 0x1c985befe80>"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    },
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 720x360 with 2 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "img_copy=imga.copy()\n",
+    "b = imga[:,:,2] > 0.7 # boolean array\n",
+    "img_copy[b,0] =0.5\n",
+    "plt.figure(figsize=(10,5))\n",
+    "plt.subplot(1,2,1)\n",
+    "plt.imshow(imga)\n",
+    "plt.subplot(1,2,2)\n",
+    "plt.imshow(img_copy)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(10, 14)"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "b.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Make a copy `imgb` of `imga`. Zero-out (make in color = black) all pixels that are full red (red\n",
+    "component is 1 and green and blue are 0)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<matplotlib.image.AxesImage at 0x1c985c6dc88>"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    },
+    {
+     "data": {
+      "image/png": "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7n3znyueedNrmxXPlKS5B15bJXfizxdVyfVp3VVyR/5p+atRHr1dna+zH4//YfHMpSv6vjIrR5gAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJDCYAJDGYAJDEYAJAEoMJAEkMJgAkMZgAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJDCYAJDGYAJDkiCgeusvufxh33H9h8dwRuz9XPPMvZh9aPFOS/umTm1bJPSxGVsld9psTquQe/squxTP/4OKxxTMlacoO36ySu/mxF1fJnX9e+SuzStKRPScVz/z6tDqft+/+ybDimecvmqol//2U1/cYR5gAkMRgAkASgwkASQwmACQxmACQxGACQBKDCQBJqcG0vaXtWbaftL3Q9h61iwFA2wxOPu87km6NiCNsD5VU/qdFAaDl+h1M2yMk7SPpryQpItZIWlO3FgC0T+Yl+XaSlku6yvYjtq+wPXzdJ9meanue7XmvvrKyeFEAaFpmMAdL2k3SpRGxq6TVks5c90kRMT0iuiKia+uPjChcEwCalxnMbkndETG3c3uWegcUAP5f6XcwI+JFSUttb9+5az9JT1RtBQAtlP0u+cmSZnS+Q/6spC/UqwQA7ZQazIiYL6mrchcAaDXO9AGAJAYTAJIYTABIYjABIInBBICkKleNHDxu6xhx9qTiuT1XLy6eefdXVxXPlKSxj21TJXebp4+pkvsvcx+oknvzuZ8pnvnmCUcWz5SkW8b8bZXcn439eZXcW5+cXSX3469dUjzz9vuHFs+UpBOffrJ45rRpt2jRM69y1UgA+L9gMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhhMAEhiMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIG1wid0P2GrjrjF8VzV155bvHMty+4r3imJC0462tVcv9yXJX/Zdrjre4quXt+94zimbddPqx4piSdt+raKrlThpa/IKAkfXrm8VVyu//s88UzJ4w9v3imJG21cE7xzCHxaJ+PcYQJAEkMJgAkMZgAkMRgAkASgwkASQwmACQxmACQlBpM21+y/bjtBbZn2t6kdjEAaJt+B9P2KElflNQVETtLGiTpqNrFAKBtsi/JB0va1PZgScMkvVCvEgC0U7+DGRHPS/qWpCWSlklaERG3r/s821Ntz7M97/V4p3xTAGhY5iX5SEmTJY2X9FFJw20fu+7zImJ6RHRFRNeWHlS+KQA0LPOSfH9JiyNieUS8LekGSXvWrQUA7ZMZzCWSJtoeZtuS9pO0sG4tAGifzHuYcyXNkvSwpMc6/870yr0AoHVSv1wxIs6VVP6XUQLAAMKZPgCQxGACQBKDCQBJDCYAJDGYAJBU5RKEK7Yfr1t+ck3x3K/+8yXFM8857cLimZJ06ud/WSV3Xs9JVXL3/va2VXIXT7+jeOZTU+pcOfOCBb+ukvuf2y6okvuLY5dUyb3l4CeLZx4wa2bxTEna/ewdimf26M0+H+MIEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhhMAEhiMAEgicEEgCQGEwCSGEwASGIwASCJwQSAJAYTAJIYTABIYjABIInBBIAkBhMAkhwR5UPt5ZJ+lXjqRyS9UrxAPQOp70DqKg2svgOpqzSw+rah69iI2GZ9D1QZzCzb8yKiq7EC79NA6juQukoDq+9A6ioNrL5t78pLcgBIYjABIKnpwZze8H///RpIfQdSV2lg9R1IXaWB1bfVXRt9DxMABpKmjzABYMBgMAEgqbHBtD3J9lO2F9k+s6ke/bE9xvbdthfaftz2KU13yrA9yPYjtm9uusuG2N7S9izbT3b+jvdoutOG2P5S5/Ngge2ZtjdputPabP/A9su2F6x131a259h+pvPPkU12/K0+ul7Q+Vx41Pa/2t6yyY7ramQwbQ+S9H1Jn5W0k6Sjbe/URJeEHklfjogdJU2U9Hct7rq2UyQtbLpEwnck3RoRO0j6pFrc2fYoSV+U1BURO0saJOmoZlu9x9WSJq1z35mS7oyICZLu7Nxug6v13q5zJO0cEZ+Q9LSksz7oUhvS1BHmpyQtiohnI2KNpOskTW6oywZFxLKIeLjz8Sr1fkGParbVhtkeLekgSVc03WVDbI+QtI+kKyUpItZExOvNturXYEmb2h4saZikFxru8zsi4l5Jv17n7smSrul8fI2kwz7QUn1YX9eIuD0iejo3H5A0+gMvtgFNDeYoSUvXut2tlo+QJNkeJ2lXSXObbdKviyWdLundpov0YztJyyVd1Xn74Arbw5su1ZeIeF7StyQtkbRM0oqIuL3ZVinbRsQyqfcAQNLvNdwn63hJtzRdYm1NDabXc1+rf77J9maSfirp1IhY2XSfvtg+WNLLEfFQ010SBkvaTdKlEbGrpNVqz8vF9+i89zdZ0nhJH5U03Paxzbb6cLJ9tnrfDpvRdJe1NTWY3ZLGrHV7tFr20mZttoeodyxnRMQNTffpx16SDrX9nHrf6tjX9o+ardSnbkndEfHbI/ZZ6h3Qttpf0uKIWB4Rb0u6QdKeDXfKeMn270tS558vN9xng2xPkXSwpGOiZT8o3tRgPihpgu3xtoeq943zGxvqskG2rd732BZGxEVN9+lPRJwVEaMjYpx6/17viohWHgVFxIuSltrevnPXfpKeaLBSf5ZImmh7WOfzYj+1+JtUa7lR0pTOx1Mk/VuDXTbI9iRJZ0g6NCLeaLrPuhoZzM6buidJuk29n3A/iYjHm+iSsJek49R7pDa/8+fApkt9iJwsaYbtRyXtIunrDffpU+dIeJakhyU9pt6vn1adymd7pqT7JW1vu9v2CZK+IekA289IOqBzu3F9dP2epM0lzel8rV3WaMl1cGokACRxpg8AJDGYAJDEYAJAEoMJAEkMJgAkMZgAkMRgAkDS/wCK43Yg5t9rTwAAAABJRU5ErkJggg==\n",
+      "text/plain": [
+       "<Figure size 432x288 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "imgb=imga.copy()\n",
+    "b = (imga[:,:,0]==1) & (imga[:,:,1]==0) & (imga[:,:,2]==0)\n",
+    "imgb[b] = 0\n",
+    "plt.imshow(imgb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Open the file and read all lines of the file. The result should be a list `cibo` where each element is a line of the file"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 17,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "f=open('yummy.txt',\"w\")\n",
+    "f.write(\"nutella\\n\")\n",
+    "f.write(\"pizza\\n\")\n",
+    "f.write(\"chips\\n\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "f.close()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['nutella\\n', 'pizza\\n', 'chips\\n']"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "f=open(\"yummy.txt\",\"r\")\n",
+    "cibo=f.readlines()\n",
+    "f.close()\n",
+    "\n",
+    "cibo"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['nutella\\n', 'pizza\\n', 'chips\\n']"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "f=open(\"yummy.txt\",\"r\")\n",
+    "cibo=[]\n",
+    "for line in f:\n",
+    "    cibo.append(line)\n",
+    "f.close()\n",
+    "\n",
+    "cibo"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['nutella\\n', 'pizza\\n', 'chips\\n']"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "f=open(\"yummy.txt\",\"r\")\n",
+    "cibo=[]\n",
+    "for k in range(3):\n",
+    "    cibo.append(f.readline())\n",
+    "f.close()\n",
+    "\n",
+    "cibo"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'nutella\\npizza\\nchips\\n'"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "f=open(\"yummy.txt\",\"r\")\n",
+    "food=f.read()\n",
+    "f.close()\n",
+    "\n",
+    "food"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['nutella', 'pizza', 'chips', '']"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "food.split(\"\\n\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Hello'"
+      ]
+     },
+     "execution_count": 24,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pippo = 'Hello\\n'\n",
+    "pippo[:-1]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Hello'"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pippo = pippo.replace(\"\\n\",\"\")\n",
+    "pippo"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "72"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "9*8"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'99999999'"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"9\"*8"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Project 5"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* Assign all characters to their numerical value (`dictionary`)\n",
+    "* Open and read `keys` and the `message` files (replace `\\n` in the keys only)\n",
+    "* for each possible key decrypt the message\n",
+    "* check if the message makes sense (teach python how to recognize English)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## String functions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "`replace`, `split`, `join`, `find`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### replace"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Your head is filling up\n",
+      "can't concentrate on much\n"
+     ]
+    }
+   ],
+   "source": [
+    "song=\"Your head is filling up\\ncan't concentrate on much\"\n",
+    "print(song)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your Head is filling up\\ncan't concentrate on mucH\""
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "songH = song.replace(\"h\",\"H\")\n",
+    "songH"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up\\ncan't concentrate on much\""
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Your head is filling up\\ncant concentrate on much'"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.replace(\"'\",\"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up%%newline here%%can't concentrate on much\""
+      ]
+     },
+     "execution_count": 34,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.replace(\"\\n\",\"%%newline here%%\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up can't concentrate on much\""
+      ]
+     },
+     "execution_count": 35,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.replace(\"\\n\",\" \")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### split"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Your', 'head', 'is', 'filling', 'up', \"can't\", 'concentrate', 'on', 'much']"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.split() # split on space and \\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up\\ncan't concentrate on much\""
+      ]
+     },
+     "execution_count": 37,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Your h', \"ad is filling up\\ncan't conc\", 'ntrat', ' on much']"
+      ]
+     },
+     "execution_count": 39,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "mylist=song.split(\"e\")\n",
+    "mylist"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### join"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up\\ncan't concentrate on much\""
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"e\".join(mylist)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your h&&&ad is filling up\\ncan't conc&&&ntrat&&& on much\""
+      ]
+     },
+     "execution_count": 41,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"&&&\".join(mylist)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your h ad is filling up\\ncan't conc ntrat  on much\""
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\" \".join(mylist)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your h_ad is filling up\\ncan't conc_ntrat_ on much\""
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"_\".join(mylist)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['I', 'love', 'pizza', 'and', 'boardgames']"
+      ]
+     },
+     "execution_count": 44,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "m = [\"I\",\"love\",\"pizza\",\"and\",\"boardgames\"]\n",
+    "m"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'I love pizza and boardgames'"
+      ]
+     },
+     "execution_count": 45,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\" \".join(m)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### find"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"Your head is filling up\\ncan't concentrate on much\""
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 48,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "'much' in song"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "45"
+      ]
+     },
+     "execution_count": 49,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.find(\"much\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "k=song.find(\"concentrate\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'concentrate on much'"
+      ]
+     },
+     "execution_count": 52,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song[k:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "-1"
+      ]
+     },
+     "execution_count": 54,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.find('pizza') # returns -1 if not found"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 56,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'much'"
+      ]
+     },
+     "execution_count": 56,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song[45:]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### `upper` and `lower`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"YOUR HEAD IS FILLING UP\\nCAN'T CONCENTRATE ON MUCH\""
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.upper()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "\"your head is filling up\\ncan't concentrate on much\""
+      ]
+     },
+     "execution_count": 58,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "song.lower()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## dictionaries\n",
+    "\n",
+    "indexed by `keys` and not by index"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ratings={\"IT\":7,\"Alien\":8.5,\"Jaws\":9,\"Lights out\":7}\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'IT': 7, 'Alien': 8.5, 'Jaws': 9, 'Lights out': 7}"
+      ]
+     },
+     "execution_count": 60,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyError",
+     "evalue": "0",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-61-8533bc85979c>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mratings\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;31mKeyError\u001b[0m: 0"
+     ]
+    }
+   ],
+   "source": [
+    "ratings[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 66,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "7"
+      ]
+     },
+     "execution_count": 66,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings[\"IT\"] # access elements by key"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict_keys(['IT', 'Alien', 'Jaws', 'Lights out'])"
+      ]
+     },
+     "execution_count": 63,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings.keys()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 64,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict_values([7, 8.5, 9, 7])"
+      ]
+     },
+     "execution_count": 64,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings.values()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 65,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict_items([('IT', 7), ('Alien', 8.5), ('Jaws', 9), ('Lights out', 7)])"
+      ]
+     },
+     "execution_count": 65,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings.items()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 67,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "ratings[\"Terminator II\"]=10"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 68,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'IT': 7, 'Alien': 8.5, 'Jaws': 9, 'Lights out': 7, 'Terminator II': 10}"
+      ]
+     },
+     "execution_count": 68,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "ratings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 69,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 69,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"IT\" in ratings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 70,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 70,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "\"A star is born\" in ratings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Frozen': 6.5, 'Shrek': 9.5, 'Moana': 10}"
+      ]
+     },
+     "execution_count": 71,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "mylist=[ [\"Frozen\",6.5], [\"Shrek\",9.5], [\"Moana\",10] ]\n",
+    "\n",
+    "r = dict(mylist)\n",
+    "r"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Frozen\n",
+      "Shrek\n",
+      "Moana\n"
+     ]
+    }
+   ],
+   "source": [
+    "for k in r.keys():\n",
+    "    print(k)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6.5\n",
+      "9.5\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "for k in r.keys():\n",
+    "    print(r[k])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "6.5\n",
+      "9.5\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "for v in r.values():\n",
+    "    print(v)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 75,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Frozen 6.5\n",
+      "Shrek 9.5\n",
+      "Moana 10\n"
+     ]
+    }
+   ],
+   "source": [
+    "for k,v in r.items():\n",
+    "    print(k,v)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmonpqrstuvwxyz 0123456789.,:;<>?!()\\n'"
+      ]
+     },
+     "execution_count": 76,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "chars = \"ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmonpqrstuvwxyz 0123456789.,:;<>?!()\\n\"\n",
+    "chars"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 79,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'o', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', ':', ';', '<', '>', '?', '!', '(', ')', '\\n']\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(list(chars))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "74"
+      ]
+     },
+     "execution_count": 77,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(chars)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9, 'K': 10, 'L': 11, 'M': 12, 'O': 13, 'N': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18, 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25, 'a': 26, 'b': 27, 'c': 28, 'd': 29, 'e': 30, 'f': 31, 'g': 32, 'h': 33, 'i': 34, 'j': 35, 'k': 36, 'l': 37, 'm': 38, 'o': 39, 'n': 40, 'p': 41, 'q': 42, 'r': 43, 's': 44, 't': 45, 'u': 46, 'v': 47, 'w': 48, 'x': 49, 'y': 50, 'z': 51, ' ': 52, '0': 53, '1': 54, '2': 55, '3': 56, '4': 57, '5': 58, '6': 59, '7': 60, '8': 61, '9': 62, '.': 63, ',': 64, ':': 65, ';': 66, '<': 67, '>': 68, '?': 69, '!': 70, '(': 71, ')': 72, '\\n': 73}\n"
+     ]
+    }
+   ],
+   "source": [
+    "d = dict( zip( list(chars), range(len(chars)) ) ) \n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "62"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "d[\"9\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "52"
+      ]
+     },
+     "execution_count": 85,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "d[\" \"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'O', 14: 'N', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z', 26: 'a', 27: 'b', 28: 'c', 29: 'd', 30: 'e', 31: 'f', 32: 'g', 33: 'h', 34: 'i', 35: 'j', 36: 'k', 37: 'l', 38: 'm', 39: 'o', 40: 'n', 41: 'p', 42: 'q', 43: 'r', 44: 's', 45: 't', 46: 'u', 47: 'v', 48: 'w', 49: 'x', 50: 'y', 51: 'z', 52: ' ', 53: '0', 54: '1', 55: '2', 56: '3', 57: '4', 58: '5', 59: '6', 60: '7', 61: '8', 62: '9', 63: '.', 64: ',', 65: ':', 66: ';', 67: '<', 68: '>', 69: '?', 70: '!', 71: '(', 72: ')', 73: '\\n'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "dinv = {v:k for k,v in d.items() }\n",
+    "print(dinv)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'A'"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dinv[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

@@ -11,3 +11,4 @@ Projects
 	Root Finding <Projects/root_finding/root_finding>
 	Epidemic <Projects/epidemic/epidemic>
 	Decryption <Projects/message_decrypt/message_decrypt>
+	Computing with text <Projects/computing_with_text/computing_with_text>
