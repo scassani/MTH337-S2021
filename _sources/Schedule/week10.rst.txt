@@ -27,4 +27,4 @@ Week 10 notebook
 Sample quiz 
 ~~~~~~~~~~~~~
 
-- TBD
+- - :download:`Sample Quiz 8 <../Quizzes/quiz9/quiz9_sample.pdf>`
