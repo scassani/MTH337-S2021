@@ -27,7 +27,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 9: March 29- April 2" href="Schedule/week9.html" />
+    <link rel="prev" title="Week 11: April 12 - 16" href="Schedule/week11.html" />
   
    
 
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Schedule/week9.html" title="Week 9: March 29- April 2"
+          <a href="Schedule/week11.html" title="Week 11: April 12 - 16"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MTH337_S21  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Answers to Weekly Summary questions</a></li> 
@@ -58,6 +58,7 @@
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">Answers to Weekly Summary questions</a><ul>
+<li><a class="reference internal" href="#week-10">Week 10</a></li>
 <li><a class="reference internal" href="#week-9">Week 9</a></li>
 <li><a class="reference internal" href="#week-8">Week 8</a></li>
 <li><a class="reference internal" href="#week-7">Week 7</a></li>
@@ -75,8 +76,8 @@
   </div>
 </div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="Schedule/week9.html"
-                        title="previous chapter">Week 9: March 29- April 2</a></p>
+  <p class="topless"><a href="Schedule/week11.html"
+                        title="previous chapter">Week 11: April 12 - 16</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -114,6 +115,98 @@
             
   <div class="section" id="answers-to-weekly-summary-questions">
 <h1>Answers to Weekly Summary questions<a class="headerlink" href="#answers-to-weekly-summary-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="week-10">
+<h2>Week 10<a class="headerlink" href="#week-10" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Is it possible to write an algorithm in Python that will decode an actually encrypted message, without knowledge of possible keys? As in do gov’t agencies do this.</p></li>
+</ul>
+<p>It is possible but it might take a very long time to work (Not like in movies). Also if the cypher used is unknown it makes it even harder.</p>
+<ul class="simple">
+<li><p>Will our last project be on material we have learned all semester or will it be like all of the other projects?</p></li>
+</ul>
+<p>All of the projects use some new and old material.</p>
+<ul class="simple">
+<li><p>How do I check which version of python I am using?</p></li>
+</ul>
+<p>In a notebook:
+from platform import python_version
+print(python_version())</p>
+<p>In a terminal
+python –version</p>
+<ul class="simple">
+<li><p>During the last few weeks of the semester, since we are covering more material and have a couple overlapping projects, would you be able to post the lecture notes after each class in case someone misses a note about a function or an important idea?</p></li>
+</ul>
+<p>I can try.</p>
+<ul class="simple">
+<li><p>Instead of going through all the words in the dictionary to check whether or not a certain word is valid, is there a way to shorten it to check less word but still remain valid?</p></li>
+</ul>
+<p>You could just search for very common words like “and”, “the”.</p>
+<ul class="simple">
+<li><p>Can you explain or talk more about what we need to do for the next project? Also Can you give more example of find, join, upper, lower?</p></li>
+</ul>
+<p>Would it be faster to use the ‘in’ keyword for lookup in a list, or to convert the list to a dictionary, since dictionaries have immediate lookup time?</p>
+<p>It depends from the size of the list I would say. You could also change the list in a set() to have a faster search.</p>
+<ul class="simple">
+<li><p>I am sort of confused as how to take a whole word from a dictionary instead of just a letter?  for example d[“L”] will give you 11 to show what spot it is, but you can’t do d[“Lie”]. So I’m just wondering if there is simple way I’m not seeing or if its more complex than just a syntax mistake.</p></li>
+</ul>
+<p>You have to do it letter by letter.</p>
+<ul class="simple">
+<li><p>You had mentioned that is better for us to avoid too many for loop in one function does it mean to avoid many for loop in a for loop or we shouldn’t use too many for loop even we start a new line in the function. Also, for the project 5, at the last step when we get our result, why does using return will show n directly but using print will automatically create a new line for the position of n</p></li>
+</ul>
+<p>Avoiding nested for loops when possible is a good rule of thumb to have efficient code. Return will retunr the string as it is, print will “display it for human consumption”.</p>
+<ul class="simple">
+<li><p>what is the difference between r and n</p></li>
+</ul>
+<p><a href="#id1"><span class="problematic" id="id2">`</span></a>r is the carriage return character, n is the newline character.</p>
+<ul class="simple">
+<li><p>When making python learn English how many different words would make sense to match to the dictionary.</p></li>
+</ul>
+<p>The highest number of words from the message</p>
+<ul class="simple">
+<li><p>In dictionary, each key have a value, what if a key have more than one values and other keys have one . Are dictionary allow have this format or they will only print out the first value.</p></li>
+</ul>
+<p>There cannot be repeated keys. One value will overwrite the other. The only way to have to values, would be to have a list containing both values as the value for that key.</p>
+<ul class="simple">
+<li><p>For the first time, I feel like  I don’t have any questions. The one thing is that I was confused with the progression of how the file parsing worked to get just the bulk of the book for the sixth project.</p></li>
+</ul>
+<p>We looked at the file to find where the actual book was starting and ending, and then used <code class="docutils literal notranslate"><span class="pre">find</span></code> to get the indexes for those points in the file/string.</p>
+<ul class="simple">
+<li><p>Will we have to go onto the website to get the correct url for the project #6?</p></li>
+</ul>
+<p>Yes if you want ot use requests.</p>
+<ul class="simple">
+<li><p>Is project 6 counted as a short project or a long project since we have a week to do it?</p></li>
+</ul>
+<p>Long project, since we introduced it last week.</p>
+<ul class="simple">
+<li><p>Are the grades of the smaller projects weighted less than the normal ones?</p></li>
+</ul>
+<p>No</p>
+<ul class="simple">
+<li><p>How long will we have for projects 7 and 8? Also, are there other ways to make your code more efficient besides vectorization?</p></li>
+</ul>
+<p>project 7 will be short, project 8 will be a regular project.</p>
+<ul class="simple">
+<li><p>Why only a single day for project 5</p></li>
+</ul>
+<p>Because is a short project.</p>
+<ul class="simple">
+<li><p>can request be used for all websites or are some not accepting of the use of python?</p></li>
+</ul>
+<p>It should work with all websites. Some of them might try to block you, but there are ways around it.</p>
+<ul class="simple">
+<li><p>Does plot frequencies of all words in project 6 mean that we need to plot them in graphs for each txt file?</p></li>
+</ul>
+<p>Yes. You need a graph for each book.</p>
+<ul class="simple">
+<li><p>What patterns are you looking for in project 6?</p></li>
+</ul>
+<p>We chatted about it in class on Monday.</p>
+<ul class="simple">
+<li><p>My question is based on grades. So on ublearns, there is a calculated overall grade. I was wondering if that grade take into account participation?</p></li>
+</ul>
+<p>no</p>
+</div>
 <div class="section" id="week-9">
 <h2>Week 9<a class="headerlink" href="#week-9" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -1021,7 +1114,7 @@ plt.legend([&#39;green&#39;,&#39;black&#39;,&#39;magenta&#39;,&#39;red&#39;,&#39
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="Schedule/week9.html" title="previous chapter (use the left arrow)">Week 9: March 29- April 2</a>
+        <a class="btn btn-default" href="Schedule/week11.html" title="previous chapter (use the left arrow)">Week 11: April 12 - 16</a>
       </div>
     
     </div>
@@ -1037,7 +1130,7 @@ plt.legend([&#39;green&#39;,&#39;black&#39;,&#39;magenta&#39;,&#39;red&#39;,&#39
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Schedule/week9.html" title="Week 9: March 29- April 2"
+          <a href="Schedule/week11.html" title="Week 11: April 12 - 16"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MTH337_S21  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Answers to Weekly Summary questions</a></li> 

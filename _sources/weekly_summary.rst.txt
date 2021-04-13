@@ -1,6 +1,100 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 10
+~~~~~~~
+
+* Is it possible to write an algorithm in Python that will decode an actually encrypted message, without knowledge of possible keys? As in do gov't agencies do this. 
+
+It is possible but it might take a very long time to work (Not like in movies). Also if the cypher used is unknown it makes it even harder.
+
+* Will our last project be on material we have learned all semester or will it be like all of the other projects?
+
+All of the projects use some new and old material.
+
+* How do I check which version of python I am using?
+
+In a notebook:
+from platform import python_version
+print(python_version())
+
+In a terminal
+python --version
+
+
+* During the last few weeks of the semester, since we are covering more material and have a couple overlapping projects, would you be able to post the lecture notes after each class in case someone misses a note about a function or an important idea?
+
+I can try.
+
+* Instead of going through all the words in the dictionary to check whether or not a certain word is valid, is there a way to shorten it to check less word but still remain valid?
+
+You could just search for very common words like "and", "the".
+
+* Can you explain or talk more about what we need to do for the next project? Also Can you give more example of find, join, upper, lower?
+Would it be faster to use the 'in' keyword for lookup in a list, or to convert the list to a dictionary, since dictionaries have immediate lookup time?
+
+It depends from the size of the list I would say. You could also change the list in a set() to have a faster search.
+
+* I am sort of confused as how to take a whole word from a dictionary instead of just a letter?  for example d["L"] will give you 11 to show what spot it is, but you can't do d["Lie"]. So I'm just wondering if there is simple way I'm not seeing or if its more complex than just a syntax mistake.
+
+You have to do it letter by letter.
+
+* You had mentioned that is better for us to avoid too many for loop in one function does it mean to avoid many for loop in a for loop or we shouldn't use too many for loop even we start a new line in the function. Also, for the project 5, at the last step when we get our result, why does using return will show \n directly but using print will automatically create a new line for the position of \n
+
+Avoiding nested for loops when possible is a good rule of thumb to have efficient code. Return will retunr the string as it is, print will "display it for human consumption".
+
+* what is the difference between \r and \n
+
+`r is the carriage return character, \n is the newline character.
+
+* When making python learn English how many different words would make sense to match to the dictionary.
+
+The highest number of words from the message
+
+* In dictionary, each key have a value, what if a key have more than one values and other keys have one . Are dictionary allow have this format or they will only print out the first value.
+
+There cannot be repeated keys. One value will overwrite the other. The only way to have to values, would be to have a list containing both values as the value for that key. 
+
+* For the first time, I feel like  I don't have any questions. The one thing is that I was confused with the progression of how the file parsing worked to get just the bulk of the book for the sixth project.
+
+We looked at the file to find where the actual book was starting and ending, and then used ``find`` to get the indexes for those points in the file/string.
+
+* Will we have to go onto the website to get the correct url for the project #6?
+
+Yes if you want ot use requests.
+
+* Is project 6 counted as a short project or a long project since we have a week to do it?
+
+Long project, since we introduced it last week.
+
+* Are the grades of the smaller projects weighted less than the normal ones?
+
+No
+
+* How long will we have for projects 7 and 8? Also, are there other ways to make your code more efficient besides vectorization?
+
+project 7 will be short, project 8 will be a regular project.
+
+* Why only a single day for project 5
+
+Because is a short project.
+
+* can request be used for all websites or are some not accepting of the use of python?
+
+It should work with all websites. Some of them might try to block you, but there are ways around it.
+
+* Does plot frequencies of all words in project 6 mean that we need to plot them in graphs for each txt file?
+
+Yes. You need a graph for each book.
+
+* What patterns are you looking for in project 6?
+
+We chatted about it in class on Monday.
+
+* My question is based on grades. So on ublearns, there is a calculated overall grade. I was wondering if that grade take into account participation?
+
+no
+
 Week 9
 ~~~~~~
 

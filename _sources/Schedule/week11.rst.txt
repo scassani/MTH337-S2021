@@ -1,0 +1,31 @@
+Week 11: April 12 - 16
+=========================
+
+Project 6
+~~~~~~~~~
+
+* :doc:`Computing wth text  </Projects/computing_with_text/computing_with_text>`.
+
+Python
+~~~~~~
+
+* String processing.
+* File operations.
+* Dictionaries
+* requests
+
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday April 16 at midnight, and is available TBD
+
+Week 11 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week11_in_class.html>`_
+- `Download  <../_static/week11_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+TBD
