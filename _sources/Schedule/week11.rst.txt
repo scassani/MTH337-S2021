@@ -17,7 +17,7 @@ Python
 
 Reminder: Weekly Summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
-The weekly summary google form is due on Friday April 16 at midnight, and is available TBD
+The weekly summary google form is due on Friday April 16 at midnight, and is available `here <https://forms.gle/P66KrNWNvQScvEAS6>`_
 
 Week 11 notebook
 ~~~~~~~~~~~~~~~
@@ -28,4 +28,4 @@ Week 11 notebook
 Sample quiz 
 ~~~~~~~~~~~~~
 
-TBD
+- - :download:`Sample Quiz 10 <../Quizzes/quiz10/quiz10_sample.pdf>
