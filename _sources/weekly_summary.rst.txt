@@ -1,6 +1,106 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 11
+~~~~~~~
+
+* Is there a way to highlight a variable throughout the entire code? Say I have the variable, x. Is there a way for me to highlight all instances where I use x in my code?
+
+It looks like there is an extension ``nbextension highlights`` that should take care of it
+
+* Can you do more example of plotting?
+
+What type of plots do you have in mind?
+
+* Is there an easier way to give give numeric values to lists of strings that consist of multiple inputs such as words or multiple symbols that are together?
+
+Not that come to mind. You could use list comprehension to make it look like a single instruction
+
+* Are the last two projects going to have more math involved than the last two?
+
+Not necessarily.
+
+* How do you rotate the % in a pie chart?
+
+What do you mean exactly? I'll be happy to go over the documentation together to try to find an answer to that.
+
+* Will we be using any different graphing structures in the upcoming projects?
+
+Probably not.
+
+* Is there any benefit or drawbacks to using `plt.plot()` syntax as opposed to `ax=plt.axes()` -> `ax.plt()` syntax to plot data?
+
+I do not think so. The second option defines an axis object allowing for more customization.
+
+* When using the log plot command that we made in class, is our y input the ranks from our list or a function?
+
+``y`` should be the word count
+
+* Will we work with recursion and polymorphism.  Most job exams use them and I was wondering if we would get to it.
+
+We might get to recursion depending on the projects. We will not cover ``classes`` so we won't get to polymorphism
+
+* What happens if I don't close an opened file ?
+
+You might have that the write won't work, or you might end up using too many resources on your laptop if you have a lot of files open.
+
+* For this week's project regarding the plots we did late Wednesday will we need to modify those at any point to give different results?
+
+That is one way to go.
+
+* Are projects 5 and 6 counting as much to our grades as a normal 2 week project?
+
+Yes. Also project 6, as I said multiple times in class, is a regular project.
+
+* Would you be able to go over the exponential graphs? I don't really understand their importance.
+
+Do you mean the 4 log graph? Yes I can do that.
+
+* What is your favorite tv show? (relating to the quiz)
+
+Hard question. If I had to pick 3: Monk, Rick and Morty, Supernatural
+
+* Are we going to have project 8 due in the final week or due in the last week of the class?
+
+Last week of classes
+
+* for quiz 10, question 6 what is it mean by returns the text at the address?
+
+The website url.
+
+* If you have a groupp of arrays, for example grades from class, and you want to sort by the highest quiz grade, would you use sorted(grades, key = np.max) to do so?
+
+That should work.
+
+* I’m not sure if you have answered this question at some point but, when is the last project going to be due?
+
+Saturday of week 14.
+
+* When we are doing projects, should we have many functions so code doesn't repeat, or fewer functions but repeated code?
+
+More functions, and less repetition
+
+* Is it fine to only plot frequencies of 20 or more words due to the capacity limit of the notebook in project 6? 
+
+Not clear. You should be able to work with all the words in part 2
+
+* Can you give us a few more insights into how to make our code more efficient based on previous projects you've seen?`
+
+Sure. 
+
+* Is it possible to create contour plots within python? 
+
+`plt.contour`
+
+* When will we get project updates?
+
+Project 4 has been graded. I plan to return you project 5 by Wednesday.
+
+* is it possible to evaluate the different text within the same function and compare and contrast that way.
+
+Yes. You should be a little more specific.
+
+
 Week 10
 ~~~~~~~
 
