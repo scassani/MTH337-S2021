@@ -1,6 +1,107 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 12
+~~~~~~~
+
+* When it comes to our final grade, do you take it as is or boost the grade a bit. (Ex. giving someone with a 93.4% an A because they're close to 94%)
+
+The grade bounds might shift a little bit (for example the A grade will probably be around 92%). When someone is close between 2 grades, I usually look at their semester to decide what to do.
+
+* Is a container different than a list or dictionary? I don't remember talking about it, could you just give a brief summary?
+
+Container is a generic word. It could be a dictionary or a list depending on what you want to use.
+
+* How many more python libraries will we be learning about in the next couple of weeks?
+
+maybe one more.
+
+* some characters used in Regular Expressions are still confusing, can we go over more examples in classes? Im confuse on if I should use the + or * character or the difference between greedy and not greedy.
+
+We can do some more examples today.
+ 
+* Is re only used for what we've talked about in class? Are there any other interesting uses of regular expressions besides what we have done in class? 
+
+It can be applied to other contexts, anytime you want to analyze a string based on regularity. I also believe you can substitute expressions using regex
+
+* Can you explain more about the project 7, which url specifically we need to use?
+
+Will talk more about it in class today.
+
+* In class you talked about web scraping and I was wondering if there are any higher level libraries that we will learn in the next few works or if we are refining the syntax that we have been learning this past week?
+
+We will not use new libraries (but there are more, beatiful soup being one of them)
+
+* When we use sorted, can we possible sort objects by  their variables such as x.age > y.age?
+
+I believe so.
+
+* Is knowing HTML very difficult or is it something that is quickly picked up?
+
+Not very difficult
+
+* when we use re.findall command to find something we want how to avoid our result print inside the [ ] bracket.
+
+You can use ``()`` to only get partial parts pf your match.
+
+* Will we see more of working with sets in python?
+
+yes
+
+* When looking at the website to get the information for each individual, how do you get to the information without using several for loops that could slow down the website?
+
+You want to do the least amount of request possible.
+
+* Is there a way to use loops to more efficiently remove certain character or to comb through the text to find and print out what you want?
+
+You want to do the least amount of request possible. Then you can grab all of the info once, and comb through it with regex.
+
+* In the pj7, we have to recognize faculty who does not have complete contact information. And in the Wed lec, for people who does not have office room, they take over the room number for next person. How do we avoid that when we do the PJ7? 
+
+One way would be to treat each persone separately, to avoid grabbing the wrong info
+
+* How should I approach doing the animating code block for project 4? I feel like retyping the same code is redundant, but I don't know how to create a function that accomplishes this.
+
+The animation code I have given you is already in a function. You can cratea  function that initialize the data, and then use global variables for ``pi`` and ``pr``
+
+* are there places we could do more similar projects after this class ends? 
+
+at UB or in the real world?
+at UB you can take MTH448/548, which is a upper level python course. In the real world you can get python books, which might have suggestions on projects/exercises. ("Automate the boring stuff with python" is a good one)
+
+*  What will the topic of project #8 entail? 
+
+We will work on page rank of webpages. I will introduce it on Wednesday
+
+* Will there be a curve?
+
+no
+
+* How many more weekly summaries do we have left?
+
+At least one more for week 13
+
+* Can we also use pythons regular expressions to extract data?
+
+yes, that is what we are using it for.
+
+* What does the comma mean with w,? Would you recommend having a separate list for names, addresses, phone numbers, etc, or to do it all with a tuple? Also, is there a way to guarantee that all variable names are cleared from the memory (Restart & Clear Output didn't work for me apparently). 
+
+Restarting the kernel should take care of it. Otherwise you can close jupyter-notebook and open it again.
+``\w`` stands for character. The comma stands for ``,``
+
+* are we able to use regular expressions to change the suffix and conjugate the words in different ways using the root word and checking them in a dictionary
+
+no
+
+* Is there an extension that can change all same variable names at one time?
+
+Try `this <https://stackoverflow.com/questions/50177616/renaming-a-variable-everywhere-in-jupyter-notebook#:~:text=1%20%2D%20shift%2Bclick%20in%20first,Rename%20the%20expression%20you%20need.>`_
+
+* Is there a way to change the output font size on python?
+
+I know we can do it adding some html commands
+
 Week 11
 ~~~~~~~
 

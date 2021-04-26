@@ -5809,6 +5809,688 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Regex and the web"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import re\n",
+    "import requests"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "url = \"http://www.buffalo.edu/cas/math/people/grad-directory.html\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'<!DOCTYPE HTML><html lang=\"en\" class=\"ubcms-65\"><!-- cmspub05 0421-124551 --><head><link rel=\"preconnect\" href=\"https://www.googletagmanager.com/\" crossorigin/><link rel=\"dns-prefetch\" href=\"https://w'"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "grad = requests.get(url).text\n",
+    "grad[:200]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "we would like to get all of the phone numbers of the students"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['645-8823',\n",
+       " '645-8816',\n",
+       " '645-8823',\n",
+       " '645-8820',\n",
+       " '645-8779',\n",
+       " '645-8821',\n",
+       " '645-8815',\n",
+       " '645-8825',\n",
+       " '645-8824',\n",
+       " '645-8825',\n",
+       " '645-8815',\n",
+       " '645-8816',\n",
+       " '645-8804',\n",
+       " '645-8817',\n",
+       " '645-8825']"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "phone=re.findall(r\"\\b\\d{3}-\\d{4}\\b\",grad)\n",
+    "phone[:15]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "40877"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "k=grad.find('Herron, Amy')\n",
+    "k"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'rl@buffalo.edu\">jmhaverl@buffalo.edu</a></p><p><b>Herron, Amy</b><br/> Office: 135 &nbsp;Phone:<br/> Email:&nbsp;<a href=\"mailto:ajherron@buffalo.edu\">ajherron@buffalo.edu</a></p><p><b>Hopfensperger, John<br/> </b> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:johnhopf@buffalo.edu\">johnhopf@buffalo.edu</a></p><p><b>Hong, Tao</b><br/> Email: <a href=\"mailto:thong5@buffalo.edu\">thong5@buffalo.edu</a></p><p><b>Hovland, Seth</b><br/> Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:sethhovl@buffalo.edu\">sethhovl@buffalo.edu</a></p><p><b>Hung, Tsz Fun</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:tszfunhu@buffalo.edu\">tszfunhu@buffalo.edu</a></p><p><b>Hutchings, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email:&nbsp;<a href=\"mailto:rhhutchi@buffalo.edu\">rhhutchi@buffalo.edu</a></p><p><b>Huynh, Bao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:baohuynh@buffalo.edu\">baohuynh@buffalo.edu</a></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_j\">J</h2></div><div class=\"text parbase section\"><p><b>Jeong, Myeongjin<br/> </b> Office: 244<br/> Email:<a href=\"mailto:mjeong31@buffalo.edu\">mjeong31@buffalo.edu</a></p><p><b>Jin, Xifeng<br/> </b> Office: 244<br/> Email:<a href=\"mailto:xifengji@buffalo.edu\">xifengji@buffalo.edu</a><br/> <a href=\"https://sites.google.com/view/xifengjin\" target=\"_blank\">Personal website</a></p><p><b>Johnson, Megan</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:meganjoh@buffalo.edu\">meganjoh@buffalo.edu</a></p><p><b>Jones, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:rpjones2@buffalo.edu\">rpjones2@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_k\">K</h2></div><div class=\"text parbase section\"><p><b>Kilic, Bengier Ulgen<br/> </b> Office: 106 Phone: 645-8763<br/> Email: <a href=\"mailto:bengieru@buffalo.edu\">bengieru@buffalo.edu</a></p><p><b>Kim, Jiseong<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:jiseongk@buffalo.edu\">jiseongk@buffalo.edu</a></p><p><b>Kireyev, Dmitri</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:dmitriki@buffalo.edu\">dmitriki@buffalo.edu</a><br/></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_l\">L</h2></div><div class=\"text parbase section\"><p><b>Le, Minh Quang</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:minhquan@buffalo.edu\">minhquan@buffalo.edu</a></p><p><b>Leonard, Dakota</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:dl42@buffalo.edu\">dl42@buffalo.edu</a></p><p><b>Liao, Chang-Chih</b><br/> Office: 138&nbsp; Phone: 645-8823<br/> Email: <a href=\"mailto:cliao9@buffalo.edu\">cliao9@buffalo.edu</a></p><p><b>Liao, Yanzhan</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:yanzhanl@buffalo.edu\">yanzhanl@buffalo.edu</a><br/></p><p><b>Lin, Wei</b><br/> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:wlin27@buffalo.edu\">wlin27@buffalo.edu</a><br/></p><p><b>Liu, Ruodan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:rliu8@buffalo.edu\">rliu8@buffalo.edu</a></p><p><b>Liu,Tianmou<br/> </b> Office: 136 Phone: 645-8821<br/> Email: <a href=\"mailto:tianmoul@buffalo.edu\">tianmoul@buffalo.edu</a></p><p><b>Liu, Yuan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:yuanliu@buffalo.edu\">yuanliu@buffalo.edu</a></p><p><b>Lottes, Jonathan</b><br/> Office: 129 Phone: 645-8817<br/> Email: <a href=\"mailto:jllottes@buffalo.edu\">jllottes@buffalo.edu</a></p><p><b>Lyon, Caleb</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:cjlyon@buffalo.edu\">cjlyon@buffalo.edu</a></p><p>&nbsp;</p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_m\">M</h2></div><div class=\"text parbase section\"><p><b>Ma, Ning<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:nma22@buffalo.edu\">nma22@buffalo.edu</a><br/></p><p><b>Ma, Renda<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:rendama@buffalo.edu\">rendama@buffalo.edu</a></p><p><b>Ma, Yuqing</b><br/> Office: 138&nbsp; Phone: 645-8823&nbsp;<br/> Email: <a href=\"mailto:yuqingma@buffalo.edu\">yuqingma@buffalo.edu</a></p><p><b>Meng, Lingqi<br/> </b> Office: 130 Phone: 645-8818<br/> Email: <a href=\"mailto:lingqime@buffalo.edu\">lingqime@buffalo.edu</a></p><p><b>Meyer, Drew</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:drewmeye@buffalo.edu\">drewmeye@buffalo.edu</a></p><p><b>Montoro, Michael<br/> </b> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:mnmontor@buffalo.edu\">mnmontor@buffalo.edu</a></p><p><b>Moore, Robert</b><br/> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:rcmoore@buffalo.edu\">rcmoore@buffalo.edu</a><br/></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_n\">N</h2></div><div class=\"text parbase section\"><p><b>Nguyen, Khanh Truong</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:kn55@buffalo.edu\">kn55@buffalo.edu</a></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_o\">O</h2></div><div class=\"text parbase section\"><p><b>Oregero, Jeffrey</b><br/> Office: 129&nbsp; Phone: 645-8817&nbsp;<br/> Email: <a href=\"mailto:jaoreger@buffalo.edu\">jaoreger@buffalo.edu</a><br/> <a href=\"https://www.acsu.buffalo.edu/~jaoreger/\" target=\"_blank\">Personal website</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_p\">P</h2></div><div class=\"text parbase section\"><p><b>Peng, Jun</b><br/> Office: 139 Phone: 645-8824<b><br/> </b> Email: <a href=\"mailto:jpeng3@buffalo.edu\">jpeng3@buffalo.edu</a></p><p><b>Poste, Alex</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:apposte@buffalo.edu\">apposte@buffalo.edu</a></p><p>&nbsp;</p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_r\">R</h2></div><div class=\"text parbase section\"><p><b>Rantanen, Matthew<br/> </b>Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:mattrant@buffalo.edu\">mattrant@buffalo.edu</a></p><p><b>Rele, Adhish</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:adhishpr@buffalo.edu\">adhishpr@buffalo.edu</a></p><p><b>Roseman, Marleah</b><br/> Office: 137 Phone: 645-8822<br/> Email:&nbsp;<a href=\"mailto:mroseman@buffalo.edu\">mroseman@buffalo.edu</a> &nbsp;</p><p><b>Russell, Madison</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:merussel@buffalo.edu\">merussel@buffalo.edu</a></p><p><b>Rozwood, Bud<br/> </b> Office: 125 Phone: 645-8815<b><br/> </b> Email: <a href=\"mailto:budrozwo@buffalo.edu\">budrozwo@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_s\">S</h2></div><div class=\"text parbase section\"><p><b>Samer, Andrew<br/> </b> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:agsamer@buffalo.edu\">agsamer@buffalo.edu</a></p><p><b>Sarkar, Sayantan</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:sayantan@buffalo.edu\">sayantan@buffalo.edu</a></p><p><b>Schilder, Marc</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:mbschild@buffalo.edu\">mbschild@buffalo.edu</a></p><p><b>Schwartz, Hunter</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:haroldsc@buffalo.edu\">haroldsc@buffalo.edu</a></p><p><b>Solanki, Deepisha</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:deepisha@buffalo.edu\">deepisha@buffalo.edu</a></p><p><b>Som, Bratati</b><br/> Office: 132 Phone: 645-8820<br/> Email: <a href=\"mailto:bratatis@buffalo.edu\">bratatis@buffalo.edu</a></p><p><b>Song, Zhao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:zhaosong@buffalo.edu\">zhaosong@buffalo.edu</a></p><p><b>Sullivan, Mark</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:marksull@buffalo.edu\">marksull@buffalo.edu</a></p><p><b>Sun, Yuxun</b><br/> Office: 137 Phone: 645-8822<br/> Email: <a href=\"mailto:yuxunsun@buffalo.edu\">yuxunsun@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_t\">T</h2></div><div class=\"text parbase section\"><p><b>Thongprayoon, Chanon</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email:&nbsp;<a href=\"mailto:chanonth@buffalo.edu\">chanonth@buffalo.edu</a><br/> <br/> <br/></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_u\">U</h2></div><div class=\"text parbase section\"><p><b>Upadhyay, Aparna</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">aparnaup@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_v\">V</h2></div><div class=\"text parbase section\"><p><b>Vinal, Gregory</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">gregoryv@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_w\">W</h2></div><div class=\"text parbase section\"><p><b>Wang, Biao<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">bwang32@buffalo.edu</a><br/> <a href=\"http://www.buffalo.edu/~bwang32\" target=\"_blank\">Biao Wang\\'s personal webpage</a></p><p><b>Wang, Daxun<br/> </b> Office: 141 Phone: 645-8825<br/> Email: <a href=\"mailto:daxunwan@buffalo.edu\">daxunwan@buffalo.edu</a></p><p><b>Wang, Shiruo<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">shiruowa@buffalo.edu</a></p><p><b>Wang, Weiqi<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:weiqiwan@buffalo.edu\">weiqiwan@buffalo.edu</a></p><p><b>Winton, Daniel</b><br/> Email: <a href=\"mailto:dmwinton@buffalo.edu\">dmwinton@buffalo.edu</a><br/></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_y\">Y</h2></div><div class=\"text parbase section\"><p><b>Yuan, Cheng</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:chengyua@buffalo.edu\">chengyua@buffalo.edu</a></p></div><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"letter_z\">Z</h2></div><div class=\"text parbase section\"><p><b>Zhang, Baoming</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:baomingz@buffalo.edu\">baomingz@buffalo.edu</a></p><p><b>Zhao, Bojun</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:bojunzha@buffalo.edu\">bojunzha@buffalo.edu</a></p><p><b>Ziegler, Cameron</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:cz22@buffalo.edu\">cz22@buffalo.edu</a></p></div><div class=\"calltoaction section\"><span class=\"teaser teaser-inline calltoaction-style-small\"> <a href=\"#top\"> <span class=\"teaser-inner\"> <span class=\"teaser-title\">back to top</span> </span> </a> </span></div></div><div class=\"mobile-content-bottom\" data-set=\"content-bottom\"></div><div class=\"mobile-center-or-right-bottom\" data-set=\"center-or-right-bottom\"></div><div class=\"mobile-center-bottom-or-right-top\" data-set=\"mobile-center-bottom-or-right-top\"></div></div></div></div></div></div></div></div></div></div></div></div><footer><div class=\"footer inheritedreference reference parbase\"><div class=\"footerconfigpage contentpage page basicpage\"><div class=\"par parsys \"><div class=\"htmlsnippet section\"><div><style type=\"text/css\">\\n\\n    @only screen and (max-width: 720px){\\n    \\n        .simplefooter .simplefootercontents > .copyright {\\n            clear: both;\\n            position: relative;\\n            top: 7px;\\n        }\\n    }\\n</style></div></div><div class=\"fatfooter section\"><div class=\"footer-mode-simple clearfix\"><a class=\"ub-logo-link\" href=\"//www.buffalo.edu/\"> <img class=\"ub-logo\" src=\"/v-e541efb31faa2518c910054a542e1234/etc.clientlibs/wci/components/block/fatfooter/clientlibs/resources/ub-logo-175-years.png\" alt=\"University at Buffalo The State University of New York - 175 Years: 1846-2021\" width=\"400\"/> </a><div class=\"footer-columns footer-columns-1\"><div class=\"footer-column footer-column-1\"><div class=\"col1 parsys\"><div class=\"title section\"><h2 onpaste=\"onPasteFilterPlainText(event)\" id=\"title-1\"><a href=\"/cas/math.html\">Department of Mathematics</a></h2></div><div class=\"text parbase section\"><p>244 Mathematics Building<br/> Buffalo, NY 14260-2900<br/> Phone: (716) 645-6284<br/> Fax: (716) 645-5039</p></div><div class=\"reference parbase section\"><div class=\"unstructuredpage page basicpage\"><div class=\"par parsys\"><div class=\"hr hrline\" style=\"clear:left\"></div><div class=\"captiontext text parbase section\"><p><b>About Our Photos and Videos:</b>&nbsp;Some photos or videos that appear on this site may have been taken prior to the COVID-19 pandemic and therefore may not accurately reflect current operations or adherence to <a href=\"https://www.buffalo.edu/coronavirus/health-and-safety.html\" target=\"_blank\">UB&rsquo;s Health and Safety Guidelines</a>.<br/></p></div></div></div></div></div></div></div><div class=\"copyright\"><span class=\"copy\"></span><script>jQuery(\".copyright .copy\").html(\"&copy; \" + (new Date()).getFullYear());</script>&nbsp;<a href=\"//www.buffalo.edu/\">University at Buffalo</a>. All rights reserved.&nbsp;&nbsp;|&nbsp;&nbsp;<a href=\"//www.buffalo.edu/administrative-services/policy1/ub-policy-lib/privacy.html\">Privacy</a>&nbsp;&nbsp;|&nbsp; <a href=\"//www.buffalo.edu/access/about-us/contact-us.html\">Accessibility</a></div></div></div><div class=\"htmlsnippet section\"><div><!-- Global site tag (gtag.js) - Google Analytics --><script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-127757988-27\"></script><script>\\n  window.dataLayer = window.dataLayer || [];\\n  function gtag(){dataLayer.push(arguments);}\\n  gtag(\\'js\\', new Date());\\n\\n  gtag(\\'config\\', \\'UA-127757988-27\\');\\n</script></div></div></div></div></div></footer></body></html>'"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "grad[k-50:]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Let's try to get name\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['Abeya Ranasinghe Mudiyanselage, Asela V.',\n",
+       " 'Ahn, Min Woong',\n",
+       " 'Alegria, Linda',\n",
+       " 'Betz, Katherine',\n",
+       " 'Cain Charles',\n",
+       " 'Casper, Michael',\n",
+       " 'Chang, Hong',\n",
+       " 'Chen, Yen',\n",
+       " 'Cheuk, Ka Yue',\n",
+       " 'Cosgrove, Gage (Makenzie)',\n",
+       " 'Deutsch, Dustin',\n",
+       " 'Dey, Subhankar',\n",
+       " 'Doga, Hakan',\n",
+       " 'Engelhardt, Carolyn',\n",
+       " 'Fonseca dos Reis, Elohim',\n",
+       " 'Gkogkou, Aikaterini',\n",
+       " 'Haverlick. Justin',\n",
+       " 'Herron, Amy',\n",
+       " 'Hopfensperger, John',\n",
+       " 'Hong, Tao',\n",
+       " 'Hovland, Seth',\n",
+       " 'Hung, Tsz Fun',\n",
+       " 'Hutchings, Raymond',\n",
+       " 'Huynh, Bao',\n",
+       " 'Jeong, Myeongjin',\n",
+       " 'Jin, Xifeng',\n",
+       " 'Johnson, Megan',\n",
+       " 'Jones, Raymond',\n",
+       " 'Kilic, Bengier Ulgen',\n",
+       " 'Kim, Jiseong',\n",
+       " 'Kireyev, Dmitri',\n",
+       " 'Le, Minh Quang',\n",
+       " 'Leonard, Dakota',\n",
+       " 'Liao, Chang',\n",
+       " 'Liao, Yanzhan',\n",
+       " 'Lin, Wei',\n",
+       " 'Liu, Ruodan',\n",
+       " 'Liu,Tianmou',\n",
+       " 'Liu, Yuan',\n",
+       " 'Lottes, Jonathan',\n",
+       " 'Lyon, Caleb',\n",
+       " 'Ma, Ning',\n",
+       " 'Ma, Renda',\n",
+       " 'Ma, Yuqing',\n",
+       " 'Meng, Lingqi',\n",
+       " 'Meyer, Drew',\n",
+       " 'Montoro, Michael',\n",
+       " 'Moore, Robert',\n",
+       " 'Nguyen, Khanh Truong',\n",
+       " 'Oregero, Jeffrey',\n",
+       " 'Peng, Jun',\n",
+       " 'Poste, Alex',\n",
+       " 'Rantanen, Matthew',\n",
+       " 'Rele, Adhish',\n",
+       " 'Roseman, Marleah',\n",
+       " 'Russell, Madison',\n",
+       " 'Rozwood, Bud',\n",
+       " 'Samer, Andrew',\n",
+       " 'Sarkar, Sayantan',\n",
+       " 'Schilder, Marc',\n",
+       " 'Schwartz, Hunter',\n",
+       " 'Solanki, Deepisha',\n",
+       " 'Som, Bratati',\n",
+       " 'Song, Zhao',\n",
+       " 'Sullivan, Mark',\n",
+       " 'Sun, Yuxun',\n",
+       " 'Thongprayoon, Chanon',\n",
+       " 'Upadhyay, Aparna',\n",
+       " 'Vinal, Gregory',\n",
+       " 'Wang, Biao',\n",
+       " 'Wang, Daxun',\n",
+       " 'Wang, Shiruo',\n",
+       " 'Wang, Weiqi',\n",
+       " 'Winton, Daniel',\n",
+       " 'Yuan, Cheng',\n",
+       " 'Zhang, Baoming',\n",
+       " 'Zhao, Bojun',\n",
+       " 'Ziegler, Cameron']"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "name=re.findall(r\"<b>([\\w,. ()]+)\",grad)[1:-1]\n",
+    "name"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "want to get name and office\n",
+    "\n",
+    "`<p><b>Herron, Amy</b><br/> Office: 135 &nbsp;Phone:<br/> Email:&nbsp;<a ref=\"mailto:ajherron@buffalo.edu\">ajherron@buffalo.edu</a></p>`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('Abeya Ranasinghe Mudiyanselage, Asela V.', '138'),\n",
+       " ('Ahn, Min Woong', '126'),\n",
+       " ('Alegria, Linda', '138'),\n",
+       " ('Betz, Katherine', '132'),\n",
+       " ('Cain Charles', '222'),\n",
+       " ('Chang, Hong', '136'),\n",
+       " ('Cheuk, Ka Yue', '140'),\n",
+       " ('Cosgrove, Gage (Makenzie)', '139'),\n",
+       " ('Deutsch, Dustin', '140'),\n",
+       " ('Dey, Subhankar', '125'),\n",
+       " ('Doga, Hakan', '126'),\n",
+       " ('Engelhardt, Carolyn', '313'),\n",
+       " ('Gkogkou, Aikaterini', '129'),\n",
+       " ('Haverlick. Justin', '140'),\n",
+       " ('Herron, Amy', '135'),\n",
+       " ('Hopfensperger, John', '139'),\n",
+       " ('Hong, Tao', '130'),\n",
+       " ('Hung, Tsz Fun', '137'),\n",
+       " ('Hutchings, Raymond', '140'),\n",
+       " ('Huynh, Bao', '131'),\n",
+       " ('Jeong, Myeongjin', '244'),\n",
+       " ('Jin, Xifeng', '244'),\n",
+       " ('Johnson, Megan', '132'),\n",
+       " ('Jones, Raymond', '140'),\n",
+       " ('Kilic, Bengier Ulgen', '106'),\n",
+       " ('Kim, Jiseong', '125'),\n",
+       " ('Kireyev, Dmitri', '129'),\n",
+       " ('Le, Minh Quang', '131'),\n",
+       " ('Leonard, Dakota', '131'),\n",
+       " ('Liao, Yanzhan', '140'),\n",
+       " ('Lin, Wei', '135'),\n",
+       " ('Liu, Ruodan', '135'),\n",
+       " ('Liu,Tianmou', '136'),\n",
+       " ('Liu, Yuan', '135'),\n",
+       " ('Lottes, Jonathan', '129'),\n",
+       " ('Lyon, Caleb', '132'),\n",
+       " ('Ma, Ning', '125'),\n",
+       " ('Ma, Renda', '125'),\n",
+       " ('Ma, Yuqing', '138'),\n",
+       " ('Meng, Lingqi', '130'),\n",
+       " ('Meyer, Drew', '137'),\n",
+       " ('Montoro, Michael', '126'),\n",
+       " ('Moore, Robert', '139'),\n",
+       " ('Nguyen, Khanh Truong', '140'),\n",
+       " ('Oregero, Jeffrey', '129'),\n",
+       " ('Peng, Jun', '139'),\n",
+       " ('Poste, Alex', '140'),\n",
+       " ('Rantanen, Matthew', '130'),\n",
+       " ('Rele, Adhish', '140'),\n",
+       " ('Roseman, Marleah', '137'),\n",
+       " ('Russell, Madison', '129'),\n",
+       " ('Rozwood, Bud', '125'),\n",
+       " ('Samer, Andrew', '135'),\n",
+       " ('Sarkar, Sayantan', '125'),\n",
+       " ('Schilder, Marc', '135'),\n",
+       " ('Schwartz, Hunter', '140'),\n",
+       " ('Solanki, Deepisha', '140'),\n",
+       " ('Som, Bratati', '132'),\n",
+       " ('Song, Zhao', '131'),\n",
+       " ('Sullivan, Mark', '136'),\n",
+       " ('Sun, Yuxun', '137'),\n",
+       " ('Thongprayoon, Chanon', '125'),\n",
+       " ('Upadhyay, Aparna', '136'),\n",
+       " ('Vinal, Gregory', '126'),\n",
+       " ('Wang, Biao', '125'),\n",
+       " ('Wang, Daxun', '141'),\n",
+       " ('Wang, Shiruo', '125'),\n",
+       " ('Wang, Weiqi', '125'),\n",
+       " ('Winton, Daniel', '137'),\n",
+       " ('Zhang, Baoming', '140'),\n",
+       " ('Zhao, Bojun', '140'),\n",
+       " ('Ziegler, Cameron', '140')]"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "name=re.findall(r\"<b>([\\w,. ()]+)<.+?Office: (\\d{3}).*?p>\",grad)\n",
+    "name"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Ex.** get a list of tuples containing the (name,email) of each grad student"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('Abeya Ranasinghe Mudiyanselage, Asela V.', 'aselavir@buffalo.edu'),\n",
+       " ('Ahn, Min Woong', 'minwoong@buffalo.edu'),\n",
+       " ('Alegria, Linda', 'lindaale@buffalo.edu'),\n",
+       " ('Betz, Katherine', 'kbetz2@buffalo.edu'),\n",
+       " ('Cain Charles', 'ccain2@buffalo.edu'),\n",
+       " ('Casper, Michael', 'mjcasper@buffalo.edu'),\n",
+       " ('Chang, Hong', 'hchang24@buffalo.edu'),\n",
+       " ('Cheuk, Ka Yue', 'kayueche@buffalo.edu'),\n",
+       " ('Cosgrove, Gage (Makenzie)', 'gagecosg@buffalo.edu'),\n",
+       " ('Deutsch, Dustin', 'dustinde@buffalo.edu'),\n",
+       " ('Dey, Subhankar', 'subhanka@buffalo.edu'),\n",
+       " ('Doga, Hakan', 'hakandog@buffalo.edu'),\n",
+       " ('Engelhardt, Carolyn', 'cengelha@buffalo.edu'),\n",
+       " ('Fonseca dos Reis, Elohim', 'elohimfo@buffalo.edu'),\n",
+       " ('Gkogkou, Aikaterini', 'agkogkou@buffalo.edu'),\n",
+       " ('Haverlick. Justin', 'jmhaverl@buffalo.edu'),\n",
+       " ('Herron, Amy', 'ajherron@buffalo.edu'),\n",
+       " ('Hopfensperger, John', 'johnhopf@buffalo.edu'),\n",
+       " ('Hong, Tao', 'thong5@buffalo.edu'),\n",
+       " ('Hovland, Seth', 'sethhovl@buffalo.edu'),\n",
+       " ('Hung, Tsz Fun', 'tszfunhu@buffalo.edu'),\n",
+       " ('Hutchings, Raymond', 'rhhutchi@buffalo.edu'),\n",
+       " ('Huynh, Bao', 'baohuynh@buffalo.edu'),\n",
+       " ('Jeong, Myeongjin', 'mjeong31@buffalo.edu'),\n",
+       " ('Jin, Xifeng', 'xifengji@buffalo.edu'),\n",
+       " ('Johnson, Megan', 'meganjoh@buffalo.edu'),\n",
+       " ('Jones, Raymond', 'rpjones2@buffalo.edu'),\n",
+       " ('Kilic, Bengier Ulgen', 'bengieru@buffalo.edu'),\n",
+       " ('Kim, Jiseong', 'jiseongk@buffalo.edu'),\n",
+       " ('Kireyev, Dmitri', 'dmitriki@buffalo.edu'),\n",
+       " ('Le, Minh Quang', 'minhquan@buffalo.edu'),\n",
+       " ('Leonard, Dakota', 'dl42@buffalo.edu'),\n",
+       " ('Liao, Yanzhan', 'yanzhanl@buffalo.edu'),\n",
+       " ('Lin, Wei', 'wlin27@buffalo.edu'),\n",
+       " ('Liu, Ruodan', 'rliu8@buffalo.edu'),\n",
+       " ('Liu,Tianmou', 'tianmoul@buffalo.edu'),\n",
+       " ('Liu, Yuan', 'yuanliu@buffalo.edu'),\n",
+       " ('Lottes, Jonathan', 'jllottes@buffalo.edu'),\n",
+       " ('Lyon, Caleb', 'cjlyon@buffalo.edu'),\n",
+       " ('Ma, Ning', 'nma22@buffalo.edu'),\n",
+       " ('Ma, Renda', 'rendama@buffalo.edu'),\n",
+       " ('Ma, Yuqing', 'yuqingma@buffalo.edu'),\n",
+       " ('Meng, Lingqi', 'lingqime@buffalo.edu'),\n",
+       " ('Meyer, Drew', 'drewmeye@buffalo.edu'),\n",
+       " ('Montoro, Michael', 'mnmontor@buffalo.edu'),\n",
+       " ('Moore, Robert', 'rcmoore@buffalo.edu'),\n",
+       " ('Nguyen, Khanh Truong', 'kn55@buffalo.edu'),\n",
+       " ('Oregero, Jeffrey', 'jaoreger@buffalo.edu'),\n",
+       " ('Peng, Jun', 'jpeng3@buffalo.edu'),\n",
+       " ('Poste, Alex', 'apposte@buffalo.edu'),\n",
+       " ('Rantanen, Matthew', 'mattrant@buffalo.edu'),\n",
+       " ('Rele, Adhish', 'adhishpr@buffalo.edu'),\n",
+       " ('Roseman, Marleah', 'mroseman@buffalo.edu'),\n",
+       " ('Russell, Madison', 'merussel@buffalo.edu'),\n",
+       " ('Rozwood, Bud', 'budrozwo@buffalo.edu'),\n",
+       " ('Samer, Andrew', 'agsamer@buffalo.edu'),\n",
+       " ('Sarkar, Sayantan', 'sayantan@buffalo.edu'),\n",
+       " ('Schilder, Marc', 'mbschild@buffalo.edu'),\n",
+       " ('Schwartz, Hunter', 'haroldsc@buffalo.edu'),\n",
+       " ('Solanki, Deepisha', 'deepisha@buffalo.edu'),\n",
+       " ('Som, Bratati', 'bratatis@buffalo.edu'),\n",
+       " ('Song, Zhao', 'zhaosong@buffalo.edu'),\n",
+       " ('Sullivan, Mark', 'marksull@buffalo.edu'),\n",
+       " ('Sun, Yuxun', 'yuxunsun@buffalo.edu'),\n",
+       " ('Thongprayoon, Chanon', 'chanonth@buffalo.edu'),\n",
+       " ('Upadhyay, Aparna', 'aparnaup@buffalo.edu'),\n",
+       " ('Vinal, Gregory', 'gregoryv@buffalo.edu'),\n",
+       " ('Wang, Biao', 'bwang32@buffalo.edu'),\n",
+       " ('Wang, Daxun', 'daxunwan@buffalo.edu'),\n",
+       " ('Wang, Shiruo', 'shiruowa@buffalo.edu'),\n",
+       " ('Wang, Weiqi', 'weiqiwan@buffalo.edu'),\n",
+       " ('Winton, Daniel', 'dmwinton@buffalo.edu'),\n",
+       " ('Yuan, Cheng', 'chengyua@buffalo.edu'),\n",
+       " ('Zhang, Baoming', 'baomingz@buffalo.edu'),\n",
+       " ('Zhao, Bojun', 'bojunzha@buffalo.edu'),\n",
+       " ('Ziegler, Cameron', 'cz22@buffalo.edu')]"
+      ]
+     },
+     "execution_count": 23,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "re.findall(r\"<b>([\\w,. ()]+)<.+?Email:.*?>([\\w@.]*)?</a>\",grad)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "A more general approach -> Use regex to grab each student info,, and then refine the information with a combination of regex and string operations."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['<p><b>COVID-19 UPDATES&nbsp; &bull;&nbsp; 4/20/2021</b></p>',\n",
+       " '<p>UB is committed to achieving inclusive excellence in a deliberate, intentional and coordinated fashion, embedding it in every aspect of our operations. We aspire to foster a healthy, productive, ethical, fair, and affirming campus community to allow all students, faculty and staff to thrive and realize their full potential.&nbsp;<br/></p>',\n",
+       " '<p><a href=\"#letter_a\">A</a> | <a href=\"#letter_b\">B</a> | <a href=\"#letter_c\">C</a> | <a href=\"#letter_d\">D</a> | E | <a href=\"#letter_f\">F</a> | <a href=\"#letter_g\">G</a> | <a href=\"#letter_h\">H</a> | I | <a href=\"#letter_j\">J</a> | <a href=\"#letter_h\">K</a> | <a href=\"#letter_l\">L</a> | <a href=\"#letter_m\">M</a> | <a href=\"#letter_n\">N</a> | <a href=\"#letter_o\">O</a> | <a href=\"#letter_p\">P</a> | Q | <a href=\"#letter_r\">R</a> | <a href=\"#letter_s\">S</a> | <a href=\"#letter_t\">T</a> | <a href=\"#letter_u\">U</a> | <a href=\"#letter_v\">V</a> | <a href=\"#letter_w\">W</a> | <a href=\"#letter_x\">X</a> | <a href=\"#letter_y\">Y</a> | <a href=\"#letter_z\">Z</a></p>',\n",
+       " '<p><b>Abeya Ranasinghe Mudiyanselage, Asela V.</b><br/> Office: 138&nbsp; Phone: 645-8823<br/> Email: <a href=\"mailto:aselavir@buffalo.edu\">aselavir@buffalo.edu</a></p>',\n",
+       " '<p><b>Ahn, Min Woong</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email:&nbsp;<a href=\"mailto:minwoong@buffalo.edu\">minwoong@buffalo.edu</a></p>',\n",
+       " '<p><b>Alegria, Linda</b><br/> Office: 138 Phone: 645-8823<br/> Email: <a href=\"mailto:lindaale@buffalo.edu\">lindaale@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Betz, Katherine</b><br/> Office: 132 Phone: 645-8820<br/> Email: <a href=\"mailto:kbetz2@buffalo.edu\">kbetz2@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Cain Charles</b><br/> Email: <a href=\"mailto:ccain2@buffalo.edu\">ccain2@buffalo.edu</a></p>',\n",
+       " '<p><b>Casper, Michael<br/> </b> Office: 222&nbsp; Phone: 645-8779<br/> Email: <a href=\"mailto:mjcasper@buffalo.edu\">mjcasper@buffalo.edu</a></p>',\n",
+       " '<p><b>Chang, Hong<br/> </b> Office: 136 Phone: 645-8821<br/> Email: <a href=\"mailto:hchang24@buffalo.edu\">hchang24@buffalo.edu</a></p>',\n",
+       " '<p><b>Chen, Yen-Lin<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:yenlinch@buffalo.edu\">yenlinch@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Cheuk, Ka Yue<br/> </b> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:kayueche@buffalo.edu\">kayueche@buffalo.edu</a></p>',\n",
+       " '<p><b>Cosgrove, Gage (Makenzie)<br/> </b> Office: 139 Phone: 645-8824<br/> Email: <a href=\"mailto:gagecosg@buffalo.edu\">gagecosg@buffalo.edu</a></p>',\n",
+       " '<p><b>Deutsch, Dustin<br/> </b> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:dustinde@buffalo.edu\">dustinde@buffalo.edu</a></p>',\n",
+       " '<p><b>Dey, Subhankar</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:subhanka@buffalo.edu\">subhanka@buffalo.edu</a><br/> <a href=\"https://sites.google.com/view/subhankardeymath\" target=\"_blank\">Subhankar Dey\\'s personal website.</a></p>',\n",
+       " '<p><b>Doga, Hakan</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:hakandog@buffalo.edu\">hakandog@buffalo.edu</a></p>',\n",
+       " '<p><b>&nbsp;</b></p>',\n",
+       " '<p><b>Engelhardt, Carolyn<br/> </b> Email: <a href=\"mailto:cengelha@buffalo.edu\">cengelha@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Fonseca dos Reis, Elohim<br/> </b> Office: 313&nbsp; Phone: 645-8804<br/> Email: <a href=\"mailto:elohimfo@buffalo.edu\">elohimfo@buffalo.edu</a></p>',\n",
+       " '<p><b>Gkogkou, Aikaterini</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email:&nbsp;<a href=\"mailto:agkogkou@buffalo.edu\">agkogkou@buffalo.edu</a></p>',\n",
+       " '<p><b>Haverlick. Justin<br/> </b> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:jmhaverl@buffalo.edu\">jmhaverl@buffalo.edu</a></p>',\n",
+       " '<p><b>Herron, Amy</b><br/> Office: 135 &nbsp;Phone:<br/> Email:&nbsp;<a href=\"mailto:ajherron@buffalo.edu\">ajherron@buffalo.edu</a></p>',\n",
+       " '<p><b>Hopfensperger, John<br/> </b> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:johnhopf@buffalo.edu\">johnhopf@buffalo.edu</a></p>',\n",
+       " '<p><b>Hong, Tao</b><br/> Email: <a href=\"mailto:thong5@buffalo.edu\">thong5@buffalo.edu</a></p>',\n",
+       " '<p><b>Hovland, Seth</b><br/> Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:sethhovl@buffalo.edu\">sethhovl@buffalo.edu</a></p>',\n",
+       " '<p><b>Hung, Tsz Fun</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:tszfunhu@buffalo.edu\">tszfunhu@buffalo.edu</a></p>',\n",
+       " '<p><b>Hutchings, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email:&nbsp;<a href=\"mailto:rhhutchi@buffalo.edu\">rhhutchi@buffalo.edu</a></p>',\n",
+       " '<p><b>Huynh, Bao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:baohuynh@buffalo.edu\">baohuynh@buffalo.edu</a></p>',\n",
+       " '<p><b>Jeong, Myeongjin<br/> </b> Office: 244<br/> Email:<a href=\"mailto:mjeong31@buffalo.edu\">mjeong31@buffalo.edu</a></p>',\n",
+       " '<p><b>Jin, Xifeng<br/> </b> Office: 244<br/> Email:<a href=\"mailto:xifengji@buffalo.edu\">xifengji@buffalo.edu</a><br/> <a href=\"https://sites.google.com/view/xifengjin\" target=\"_blank\">Personal website</a></p>',\n",
+       " '<p><b>Johnson, Megan</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:meganjoh@buffalo.edu\">meganjoh@buffalo.edu</a></p>',\n",
+       " '<p><b>Jones, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:rpjones2@buffalo.edu\">rpjones2@buffalo.edu</a></p>',\n",
+       " '<p><b>Kilic, Bengier Ulgen<br/> </b> Office: 106 Phone: 645-8763<br/> Email: <a href=\"mailto:bengieru@buffalo.edu\">bengieru@buffalo.edu</a></p>',\n",
+       " '<p><b>Kim, Jiseong<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:jiseongk@buffalo.edu\">jiseongk@buffalo.edu</a></p>',\n",
+       " '<p><b>Kireyev, Dmitri</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:dmitriki@buffalo.edu\">dmitriki@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Le, Minh Quang</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:minhquan@buffalo.edu\">minhquan@buffalo.edu</a></p>',\n",
+       " '<p><b>Leonard, Dakota</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:dl42@buffalo.edu\">dl42@buffalo.edu</a></p>',\n",
+       " '<p><b>Liao, Chang-Chih</b><br/> Office: 138&nbsp; Phone: 645-8823<br/> Email: <a href=\"mailto:cliao9@buffalo.edu\">cliao9@buffalo.edu</a></p>',\n",
+       " '<p><b>Liao, Yanzhan</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:yanzhanl@buffalo.edu\">yanzhanl@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Lin, Wei</b><br/> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:wlin27@buffalo.edu\">wlin27@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Liu, Ruodan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:rliu8@buffalo.edu\">rliu8@buffalo.edu</a></p>',\n",
+       " '<p><b>Liu,Tianmou<br/> </b> Office: 136 Phone: 645-8821<br/> Email: <a href=\"mailto:tianmoul@buffalo.edu\">tianmoul@buffalo.edu</a></p>',\n",
+       " '<p><b>Liu, Yuan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:yuanliu@buffalo.edu\">yuanliu@buffalo.edu</a></p>',\n",
+       " '<p><b>Lottes, Jonathan</b><br/> Office: 129 Phone: 645-8817<br/> Email: <a href=\"mailto:jllottes@buffalo.edu\">jllottes@buffalo.edu</a></p>',\n",
+       " '<p><b>Lyon, Caleb</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:cjlyon@buffalo.edu\">cjlyon@buffalo.edu</a></p>',\n",
+       " '<p>&nbsp;</p>',\n",
+       " '<p><b>Ma, Ning<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:nma22@buffalo.edu\">nma22@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Ma, Renda<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:rendama@buffalo.edu\">rendama@buffalo.edu</a></p>',\n",
+       " '<p><b>Ma, Yuqing</b><br/> Office: 138&nbsp; Phone: 645-8823&nbsp;<br/> Email: <a href=\"mailto:yuqingma@buffalo.edu\">yuqingma@buffalo.edu</a></p>',\n",
+       " '<p><b>Meng, Lingqi<br/> </b> Office: 130 Phone: 645-8818<br/> Email: <a href=\"mailto:lingqime@buffalo.edu\">lingqime@buffalo.edu</a></p>',\n",
+       " '<p><b>Meyer, Drew</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:drewmeye@buffalo.edu\">drewmeye@buffalo.edu</a></p>',\n",
+       " '<p><b>Montoro, Michael<br/> </b> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:mnmontor@buffalo.edu\">mnmontor@buffalo.edu</a></p>',\n",
+       " '<p><b>Moore, Robert</b><br/> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:rcmoore@buffalo.edu\">rcmoore@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Nguyen, Khanh Truong</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:kn55@buffalo.edu\">kn55@buffalo.edu</a></p>',\n",
+       " '<p><b>Oregero, Jeffrey</b><br/> Office: 129&nbsp; Phone: 645-8817&nbsp;<br/> Email: <a href=\"mailto:jaoreger@buffalo.edu\">jaoreger@buffalo.edu</a><br/> <a href=\"https://www.acsu.buffalo.edu/~jaoreger/\" target=\"_blank\">Personal website</a></p>',\n",
+       " '<p><b>Peng, Jun</b><br/> Office: 139 Phone: 645-8824<b><br/> </b> Email: <a href=\"mailto:jpeng3@buffalo.edu\">jpeng3@buffalo.edu</a></p>',\n",
+       " '<p><b>Poste, Alex</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:apposte@buffalo.edu\">apposte@buffalo.edu</a></p>',\n",
+       " '<p>&nbsp;</p>',\n",
+       " '<p><b>Rantanen, Matthew<br/> </b>Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:mattrant@buffalo.edu\">mattrant@buffalo.edu</a></p>',\n",
+       " '<p><b>Rele, Adhish</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:adhishpr@buffalo.edu\">adhishpr@buffalo.edu</a></p>',\n",
+       " '<p><b>Roseman, Marleah</b><br/> Office: 137 Phone: 645-8822<br/> Email:&nbsp;<a href=\"mailto:mroseman@buffalo.edu\">mroseman@buffalo.edu</a> &nbsp;</p>',\n",
+       " '<p><b>Russell, Madison</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:merussel@buffalo.edu\">merussel@buffalo.edu</a></p>',\n",
+       " '<p><b>Rozwood, Bud<br/> </b> Office: 125 Phone: 645-8815<b><br/> </b> Email: <a href=\"mailto:budrozwo@buffalo.edu\">budrozwo@buffalo.edu</a></p>',\n",
+       " '<p><b>Samer, Andrew<br/> </b> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:agsamer@buffalo.edu\">agsamer@buffalo.edu</a></p>',\n",
+       " '<p><b>Sarkar, Sayantan</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:sayantan@buffalo.edu\">sayantan@buffalo.edu</a></p>',\n",
+       " '<p><b>Schilder, Marc</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:mbschild@buffalo.edu\">mbschild@buffalo.edu</a></p>',\n",
+       " '<p><b>Schwartz, Hunter</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:haroldsc@buffalo.edu\">haroldsc@buffalo.edu</a></p>',\n",
+       " '<p><b>Solanki, Deepisha</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:deepisha@buffalo.edu\">deepisha@buffalo.edu</a></p>',\n",
+       " '<p><b>Som, Bratati</b><br/> Office: 132 Phone: 645-8820<br/> Email: <a href=\"mailto:bratatis@buffalo.edu\">bratatis@buffalo.edu</a></p>',\n",
+       " '<p><b>Song, Zhao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:zhaosong@buffalo.edu\">zhaosong@buffalo.edu</a></p>',\n",
+       " '<p><b>Sullivan, Mark</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:marksull@buffalo.edu\">marksull@buffalo.edu</a></p>',\n",
+       " '<p><b>Sun, Yuxun</b><br/> Office: 137 Phone: 645-8822<br/> Email: <a href=\"mailto:yuxunsun@buffalo.edu\">yuxunsun@buffalo.edu</a></p>',\n",
+       " '<p><b>Thongprayoon, Chanon</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email:&nbsp;<a href=\"mailto:chanonth@buffalo.edu\">chanonth@buffalo.edu</a><br/> <br/> <br/></p>',\n",
+       " '<p><b>Upadhyay, Aparna</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">aparnaup@buffalo.edu</a></p>',\n",
+       " '<p><b>Vinal, Gregory</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">gregoryv@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Biao<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">bwang32@buffalo.edu</a><br/> <a href=\"http://www.buffalo.edu/~bwang32\" target=\"_blank\">Biao Wang\\'s personal webpage</a></p>',\n",
+       " '<p><b>Wang, Daxun<br/> </b> Office: 141 Phone: 645-8825<br/> Email: <a href=\"mailto:daxunwan@buffalo.edu\">daxunwan@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Shiruo<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">shiruowa@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Weiqi<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:weiqiwan@buffalo.edu\">weiqiwan@buffalo.edu</a></p>',\n",
+       " '<p><b>Winton, Daniel</b><br/> Email: <a href=\"mailto:dmwinton@buffalo.edu\">dmwinton@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Yuan, Cheng</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:chengyua@buffalo.edu\">chengyua@buffalo.edu</a></p>',\n",
+       " '<p><b>Zhang, Baoming</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:baomingz@buffalo.edu\">baomingz@buffalo.edu</a></p>',\n",
+       " '<p><b>Zhao, Bojun</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:bojunzha@buffalo.edu\">bojunzha@buffalo.edu</a></p>',\n",
+       " '<p><b>Ziegler, Cameron</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:cz22@buffalo.edu\">cz22@buffalo.edu</a></p>',\n",
+       " '<p>244 Mathematics Building<br/> Buffalo, NY 14260-2900<br/> Phone: (716) 645-6284<br/> Fax: (716) 645-5039</p>',\n",
+       " '<p><b>About Our Photos and Videos:</b>&nbsp;Some photos or videos that appear on this site may have been taken prior to the COVID-19 pandemic and therefore may not accurately reflect current operations or adherence to <a href=\"https://www.buffalo.edu/coronavirus/health-and-safety.html\" target=\"_blank\">UB&rsquo;s Health and Safety Guidelines</a>.<br/></p>']"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "students=re.findall(r\"<p>.+?</p>\",grad)\n",
+    "students"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['<p><b>Abeya Ranasinghe Mudiyanselage, Asela V.</b><br/> Office: 138&nbsp; Phone: 645-8823<br/> Email: <a href=\"mailto:aselavir@buffalo.edu\">aselavir@buffalo.edu</a></p>',\n",
+       " '<p><b>Ahn, Min Woong</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email:&nbsp;<a href=\"mailto:minwoong@buffalo.edu\">minwoong@buffalo.edu</a></p>',\n",
+       " '<p><b>Alegria, Linda</b><br/> Office: 138 Phone: 645-8823<br/> Email: <a href=\"mailto:lindaale@buffalo.edu\">lindaale@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Betz, Katherine</b><br/> Office: 132 Phone: 645-8820<br/> Email: <a href=\"mailto:kbetz2@buffalo.edu\">kbetz2@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Cain Charles</b><br/> Email: <a href=\"mailto:ccain2@buffalo.edu\">ccain2@buffalo.edu</a></p>',\n",
+       " '<p><b>Casper, Michael<br/> </b> Office: 222&nbsp; Phone: 645-8779<br/> Email: <a href=\"mailto:mjcasper@buffalo.edu\">mjcasper@buffalo.edu</a></p>',\n",
+       " '<p><b>Chang, Hong<br/> </b> Office: 136 Phone: 645-8821<br/> Email: <a href=\"mailto:hchang24@buffalo.edu\">hchang24@buffalo.edu</a></p>',\n",
+       " '<p><b>Chen, Yen-Lin<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:yenlinch@buffalo.edu\">yenlinch@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Cheuk, Ka Yue<br/> </b> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:kayueche@buffalo.edu\">kayueche@buffalo.edu</a></p>',\n",
+       " '<p><b>Cosgrove, Gage (Makenzie)<br/> </b> Office: 139 Phone: 645-8824<br/> Email: <a href=\"mailto:gagecosg@buffalo.edu\">gagecosg@buffalo.edu</a></p>',\n",
+       " '<p><b>Deutsch, Dustin<br/> </b> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:dustinde@buffalo.edu\">dustinde@buffalo.edu</a></p>',\n",
+       " '<p><b>Dey, Subhankar</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:subhanka@buffalo.edu\">subhanka@buffalo.edu</a><br/> <a href=\"https://sites.google.com/view/subhankardeymath\" target=\"_blank\">Subhankar Dey\\'s personal website.</a></p>',\n",
+       " '<p><b>Doga, Hakan</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:hakandog@buffalo.edu\">hakandog@buffalo.edu</a></p>',\n",
+       " '<p><b>&nbsp;</b></p>',\n",
+       " '<p><b>Engelhardt, Carolyn<br/> </b> Email: <a href=\"mailto:cengelha@buffalo.edu\">cengelha@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Fonseca dos Reis, Elohim<br/> </b> Office: 313&nbsp; Phone: 645-8804<br/> Email: <a href=\"mailto:elohimfo@buffalo.edu\">elohimfo@buffalo.edu</a></p>',\n",
+       " '<p><b>Gkogkou, Aikaterini</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email:&nbsp;<a href=\"mailto:agkogkou@buffalo.edu\">agkogkou@buffalo.edu</a></p>',\n",
+       " '<p><b>Haverlick. Justin<br/> </b> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:jmhaverl@buffalo.edu\">jmhaverl@buffalo.edu</a></p>',\n",
+       " '<p><b>Herron, Amy</b><br/> Office: 135 &nbsp;Phone:<br/> Email:&nbsp;<a href=\"mailto:ajherron@buffalo.edu\">ajherron@buffalo.edu</a></p>',\n",
+       " '<p><b>Hopfensperger, John<br/> </b> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:johnhopf@buffalo.edu\">johnhopf@buffalo.edu</a></p>',\n",
+       " '<p><b>Hong, Tao</b><br/> Email: <a href=\"mailto:thong5@buffalo.edu\">thong5@buffalo.edu</a></p>',\n",
+       " '<p><b>Hovland, Seth</b><br/> Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:sethhovl@buffalo.edu\">sethhovl@buffalo.edu</a></p>',\n",
+       " '<p><b>Hung, Tsz Fun</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:tszfunhu@buffalo.edu\">tszfunhu@buffalo.edu</a></p>',\n",
+       " '<p><b>Hutchings, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email:&nbsp;<a href=\"mailto:rhhutchi@buffalo.edu\">rhhutchi@buffalo.edu</a></p>',\n",
+       " '<p><b>Huynh, Bao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:baohuynh@buffalo.edu\">baohuynh@buffalo.edu</a></p>',\n",
+       " '<p><b>Jeong, Myeongjin<br/> </b> Office: 244<br/> Email:<a href=\"mailto:mjeong31@buffalo.edu\">mjeong31@buffalo.edu</a></p>',\n",
+       " '<p><b>Jin, Xifeng<br/> </b> Office: 244<br/> Email:<a href=\"mailto:xifengji@buffalo.edu\">xifengji@buffalo.edu</a><br/> <a href=\"https://sites.google.com/view/xifengjin\" target=\"_blank\">Personal website</a></p>',\n",
+       " '<p><b>Johnson, Megan</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:meganjoh@buffalo.edu\">meganjoh@buffalo.edu</a></p>',\n",
+       " '<p><b>Jones, Raymond</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:rpjones2@buffalo.edu\">rpjones2@buffalo.edu</a></p>',\n",
+       " '<p><b>Kilic, Bengier Ulgen<br/> </b> Office: 106 Phone: 645-8763<br/> Email: <a href=\"mailto:bengieru@buffalo.edu\">bengieru@buffalo.edu</a></p>',\n",
+       " '<p><b>Kim, Jiseong<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:jiseongk@buffalo.edu\">jiseongk@buffalo.edu</a></p>',\n",
+       " '<p><b>Kireyev, Dmitri</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:dmitriki@buffalo.edu\">dmitriki@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Le, Minh Quang</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:minhquan@buffalo.edu\">minhquan@buffalo.edu</a></p>',\n",
+       " '<p><b>Leonard, Dakota</b><br/> Office: 131&nbsp; Phone: 645-8819<br/> Email: <a href=\"mailto:dl42@buffalo.edu\">dl42@buffalo.edu</a></p>',\n",
+       " '<p><b>Liao, Chang-Chih</b><br/> Office: 138&nbsp; Phone: 645-8823<br/> Email: <a href=\"mailto:cliao9@buffalo.edu\">cliao9@buffalo.edu</a></p>',\n",
+       " '<p><b>Liao, Yanzhan</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:yanzhanl@buffalo.edu\">yanzhanl@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Lin, Wei</b><br/> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:wlin27@buffalo.edu\">wlin27@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Liu, Ruodan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:rliu8@buffalo.edu\">rliu8@buffalo.edu</a></p>',\n",
+       " '<p><b>Liu,Tianmou<br/> </b> Office: 136 Phone: 645-8821<br/> Email: <a href=\"mailto:tianmoul@buffalo.edu\">tianmoul@buffalo.edu</a></p>',\n",
+       " '<p><b>Liu, Yuan</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:yuanliu@buffalo.edu\">yuanliu@buffalo.edu</a></p>',\n",
+       " '<p><b>Lottes, Jonathan</b><br/> Office: 129 Phone: 645-8817<br/> Email: <a href=\"mailto:jllottes@buffalo.edu\">jllottes@buffalo.edu</a></p>',\n",
+       " '<p><b>Lyon, Caleb</b><br/> Office: 132&nbsp; Phone: 645-8820<br/> Email: <a href=\"mailto:cjlyon@buffalo.edu\">cjlyon@buffalo.edu</a></p>',\n",
+       " '<p>&nbsp;</p>',\n",
+       " '<p><b>Ma, Ning<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:nma22@buffalo.edu\">nma22@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Ma, Renda<br/> </b> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:rendama@buffalo.edu\">rendama@buffalo.edu</a></p>',\n",
+       " '<p><b>Ma, Yuqing</b><br/> Office: 138&nbsp; Phone: 645-8823&nbsp;<br/> Email: <a href=\"mailto:yuqingma@buffalo.edu\">yuqingma@buffalo.edu</a></p>',\n",
+       " '<p><b>Meng, Lingqi<br/> </b> Office: 130 Phone: 645-8818<br/> Email: <a href=\"mailto:lingqime@buffalo.edu\">lingqime@buffalo.edu</a></p>',\n",
+       " '<p><b>Meyer, Drew</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:drewmeye@buffalo.edu\">drewmeye@buffalo.edu</a></p>',\n",
+       " '<p><b>Montoro, Michael<br/> </b> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:mnmontor@buffalo.edu\">mnmontor@buffalo.edu</a></p>',\n",
+       " '<p><b>Moore, Robert</b><br/> Office: 139&nbsp; Phone: 645-8824<br/> Email: <a href=\"mailto:rcmoore@buffalo.edu\">rcmoore@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Nguyen, Khanh Truong</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:kn55@buffalo.edu\">kn55@buffalo.edu</a></p>',\n",
+       " '<p><b>Oregero, Jeffrey</b><br/> Office: 129&nbsp; Phone: 645-8817&nbsp;<br/> Email: <a href=\"mailto:jaoreger@buffalo.edu\">jaoreger@buffalo.edu</a><br/> <a href=\"https://www.acsu.buffalo.edu/~jaoreger/\" target=\"_blank\">Personal website</a></p>',\n",
+       " '<p><b>Peng, Jun</b><br/> Office: 139 Phone: 645-8824<b><br/> </b> Email: <a href=\"mailto:jpeng3@buffalo.edu\">jpeng3@buffalo.edu</a></p>',\n",
+       " '<p><b>Poste, Alex</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:apposte@buffalo.edu\">apposte@buffalo.edu</a></p>',\n",
+       " '<p>&nbsp;</p>',\n",
+       " '<p><b>Rantanen, Matthew<br/> </b>Office: 130&nbsp; Phone: 645-8818<br/> Email: <a href=\"mailto:mattrant@buffalo.edu\">mattrant@buffalo.edu</a></p>',\n",
+       " '<p><b>Rele, Adhish</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:adhishpr@buffalo.edu\">adhishpr@buffalo.edu</a></p>',\n",
+       " '<p><b>Roseman, Marleah</b><br/> Office: 137 Phone: 645-8822<br/> Email:&nbsp;<a href=\"mailto:mroseman@buffalo.edu\">mroseman@buffalo.edu</a> &nbsp;</p>',\n",
+       " '<p><b>Russell, Madison</b><br/> Office: 129&nbsp; Phone: 645-8817<br/> Email: <a href=\"mailto:merussel@buffalo.edu\">merussel@buffalo.edu</a></p>',\n",
+       " '<p><b>Rozwood, Bud<br/> </b> Office: 125 Phone: 645-8815<b><br/> </b> Email: <a href=\"mailto:budrozwo@buffalo.edu\">budrozwo@buffalo.edu</a></p>',\n",
+       " '<p><b>Samer, Andrew<br/> </b> Office: 135&nbsp; Phone: 645-8832<br/> Email: <a href=\"mailto:agsamer@buffalo.edu\">agsamer@buffalo.edu</a></p>',\n",
+       " '<p><b>Sarkar, Sayantan</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email: <a href=\"mailto:sayantan@buffalo.edu\">sayantan@buffalo.edu</a></p>',\n",
+       " '<p><b>Schilder, Marc</b><br/> Office: 135 Phone: 645-8832<br/> Email: <a href=\"mailto:mbschild@buffalo.edu\">mbschild@buffalo.edu</a></p>',\n",
+       " '<p><b>Schwartz, Hunter</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:haroldsc@buffalo.edu\">haroldsc@buffalo.edu</a></p>',\n",
+       " '<p><b>Solanki, Deepisha</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:deepisha@buffalo.edu\">deepisha@buffalo.edu</a></p>',\n",
+       " '<p><b>Som, Bratati</b><br/> Office: 132 Phone: 645-8820<br/> Email: <a href=\"mailto:bratatis@buffalo.edu\">bratatis@buffalo.edu</a></p>',\n",
+       " '<p><b>Song, Zhao<br/> </b> Office: 131 Phone: 645-8819<br/> Email: <a href=\"mailto:zhaosong@buffalo.edu\">zhaosong@buffalo.edu</a></p>',\n",
+       " '<p><b>Sullivan, Mark</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:marksull@buffalo.edu\">marksull@buffalo.edu</a></p>',\n",
+       " '<p><b>Sun, Yuxun</b><br/> Office: 137 Phone: 645-8822<br/> Email: <a href=\"mailto:yuxunsun@buffalo.edu\">yuxunsun@buffalo.edu</a></p>',\n",
+       " '<p><b>Thongprayoon, Chanon</b><br/> Office: 125&nbsp; Phone: 645-8815<br/> Email:&nbsp;<a href=\"mailto:chanonth@buffalo.edu\">chanonth@buffalo.edu</a><br/> <br/> <br/></p>',\n",
+       " '<p><b>Upadhyay, Aparna</b><br/> Office: 136&nbsp; Phone: 645-8821<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">aparnaup@buffalo.edu</a></p>',\n",
+       " '<p><b>Vinal, Gregory</b><br/> Office: 126&nbsp; Phone: 645-8816<br/> Email: <a href=\"mailto:chanonth@buffalo.edu\">gregoryv@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Biao<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">bwang32@buffalo.edu</a><br/> <a href=\"http://www.buffalo.edu/~bwang32\" target=\"_blank\">Biao Wang\\'s personal webpage</a></p>',\n",
+       " '<p><b>Wang, Daxun<br/> </b> Office: 141 Phone: 645-8825<br/> Email: <a href=\"mailto:daxunwan@buffalo.edu\">daxunwan@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Shiruo<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:bwang32@buffalo.edu\">shiruowa@buffalo.edu</a></p>',\n",
+       " '<p><b>Wang, Weiqi<br/> </b> Office: 125 Phone: 645-8815<br/> Email: <a href=\"mailto:weiqiwan@buffalo.edu\">weiqiwan@buffalo.edu</a></p>',\n",
+       " '<p><b>Winton, Daniel</b><br/> Email: <a href=\"mailto:dmwinton@buffalo.edu\">dmwinton@buffalo.edu</a><br/></p>',\n",
+       " '<p><b>Yuan, Cheng</b><br/> Office: 137&nbsp; Phone: 645-8822<br/> Email: <a href=\"mailto:chengyua@buffalo.edu\">chengyua@buffalo.edu</a></p>',\n",
+       " '<p><b>Zhang, Baoming</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:baomingz@buffalo.edu\">baomingz@buffalo.edu</a></p>',\n",
+       " '<p><b>Zhao, Bojun</b><br/> Office: 140 Phone: 645-8825<br/> Email: <a href=\"mailto:bojunzha@buffalo.edu\">bojunzha@buffalo.edu</a></p>',\n",
+       " '<p><b>Ziegler, Cameron</b><br/> Office: 140&nbsp; Phone: 645-8825<br/> Email: <a href=\"mailto:cz22@buffalo.edu\">cz22@buffalo.edu</a></p>']"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "students[3:-2]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Project 7"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "url=\"http://pharmacy.buffalo.edu/faculty-staff/faculty.html\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "* from `url` get all faculty links/webpages (store the webpages in a list)\n",
+    "* get each staff/faculty page\n",
+    "* retrieve their contact information\n",
+    "    * grab the chunk of html text containing the information\n",
+    "    * clean/refine the information\n",
+    "* Figure out if something is missing (and fix it if necessary)\n",
+    "* Format phone numbers correctly\n",
+    "* Save all info in a container\n",
+    "* Print all info with the formatting from the project page"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
