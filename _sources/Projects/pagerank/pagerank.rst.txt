@@ -1,0 +1,44 @@
+PageRank
+========
+
+.. rubric:: (due: Saturday, May 8, 8:00 AM)
+
+
+PageRank algorithm is a method for ranking web pages. This
+algorithm assigns to each page :math:`P` in some network of web pages its
+ranking which is a number :math:`0 \leq r(P) \leq 1`. Higher ranking
+is supposed to indicate a more significant page in the network.
+
+PageRank ranking of a web page is computed as follows. Assume that́
+:math:`l_1, \dots, l_k` are all links pointing to a page :math:`P`,
+where the link :math:`l_i` starts on a page :math:`P_i`. Then
+
+.. math:: r(P) = \sum_{i=1}^k \frac{r(P_i)}{n(P_i)}
+
+where:
+
+-  :math:`r(P_i)` is the PageRank of the web page :math:`P_i`
+
+
+-  :math:`n(P_i)` is the number of all links originating from :math:`P_i`.
+
+In addition, PageRank rankings must satisfy the condition that if
+:math:`P_1, \dots P_N` are all pages in the network then
+:math:`r(P_1) + \dots + r(P_N) =1`.
+
+Project
+-------
+
+-  The website of the UB Math Department consists of about 280 web pages.
+   Compute PageRank rankings of all these web pages.
+
+-  Let :math:`P_1, \dots, P_N` be the list of all pages of the Math
+   Department website ordered according to their rankings, from the
+   biggest to the smallest. Create a plot consisting of points with
+   coordinates :math:`(i, j)` if there is a link from the page
+   :math:`P_i` to the page :math:`P_j`. Use different colors to indicate
+   how many links there are  from :math:`P_i` to :math:`P_j`.
+
+-  Describe your observations about the structure of the Math Department
+   website. Comment if in this case PageRank rankings make sense, i.e. if they
+   correctly indicate which pages are more important.
