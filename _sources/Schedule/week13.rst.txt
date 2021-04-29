@@ -19,7 +19,7 @@ Reminder: Weekly Summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
 The weekly summary google form is due on Friday April 30 at midnight, and is available `here <https://forms.gle/8GTq8nBsxkJb7Xkj6>>`_
 
-Week 12 notebook
+Week 13 notebook
 ~~~~~~~~~~~~~~~
 
 - `View online <../_static/week13_in_class.html>`_
