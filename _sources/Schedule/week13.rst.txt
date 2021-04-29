@@ -17,7 +17,7 @@ Python
 
 Reminder: Weekly Summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
-The weekly summary google form is due on Friday April 30 at midnight, and is available `here <https://forms.gle/8GTq8nBsxkJb7Xkj6>>`_
+The weekly summary google form is due on Friday April 30 at midnight, and is available `here <https://forms.gle/8GTq8nBsxkJb7Xkj6>`_
 
 Week 13 notebook
 ~~~~~~~~~~~~~~~
