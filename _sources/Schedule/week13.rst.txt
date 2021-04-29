@@ -1,0 +1,31 @@
+Week 13: April 26 - 30
+=========================
+
+Projects 
+~~~~~~~~~
+
+* :doc:`Address book  </Projects/address_book/address_book>`.
+
+* :doc:`Page Rank  </Projects/pagerank/pagerank>`.
+
+Python
+~~~~~~
+
+* requests
+* regular expressions
+* sets
+
+Reminder: Weekly Summary
+~~~~~~~~~~~~~~~~~~~~~~~~
+The weekly summary google form is due on Friday April 30 at midnight, and is available `here <https://forms.gle/8GTq8nBsxkJb7Xkj6>>`_
+
+Week 12 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week13_in_class.html>`_
+- `Download  <../_static/week13_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+No quiz
