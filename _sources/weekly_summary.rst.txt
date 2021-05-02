@@ -1,6 +1,114 @@
 Answers to Weekly Summary questions
 ===================================
 
+Week 13
+~~~~~~~
+
+* Why is it that sometimes writing the \b within the re.findall code changes the result and sometimes it doesn't?
+
+It depends on the specific instruction you are looking for. 
+
+* Will we have to take the weekly summary next week as class attendance is not mandatory?
+
+no
+
+* Can you explain more about regular expression and explain more about each symbol and use of that?
+
+You are always asking the same type of question. Your question should be more specific. If you want to see more example you can come to office hours.
+
+* How do we traverse through a adjacency matrix? 
+
+Do you meant the transpose? ``myarray.T`` or ``np.transpose(myarray)`` will do the transpose
+
+* When using json, does it automatically create a file for you to save on?
+
+It depends on how you are opeing the file.
+
+* What is the current class average? 
+
+83%
+
+* After all the things we have done in this class it seems like Python is useful in almost all situations, is there any programming language that can do as much as Python?  
+
+I believe languages like C++ and Java (for example), will allow for the same level of flexibility of applications. Python however is more user-friendly and a little less syntax heavy (so very good for beginners)
+
+* In PJ7, I use len() to sort out people who do not have information, but this method does not work for the people who have only half of the information. Is there any other way to sort out the (half) incomplete information(address,email,phone)?
+
+You could check for patterns. For example if you decided that an address should have the zip code you could check for 5 consecutive digits using regex.
+
+* How do you add strings together by the corresponding elements of each string?
+
+Do you mean if you have a list of strings? 
+
+::
+
+	mylist=[ ['name1','add1','phone1'], ['name2','add2','phone2'], ['name3','add3','phone3'] ]
+
+	for info in mystr:
+
+		mystr=''
+
+		for k in info:
+
+			mystr+=k+'\n'
+		
+		print(mystr+'\n')
+
+
+Something like this shoudl work
+
+* Is it alright to return a text file as output instead of printing them?  
+
+Technically you shoudl print them to screen, but I guess it shoudl work as well.
+
+* Will we connect to excel sheets and manipulate data?
+
+no. If you are interested in that, ``pandas`` is a very interesting module to look into
+
+* In the project, as long as it is the links in UB math departemnt, we must count their PageRank or the links containing `/cas/math/` will be counted to calculate their PageRank?
+
+all of the links in the math deparment website contains 'cas/math/`
+
+* Are we learning any new material this week in lecture?
+
+I was planning to talk about recursion on Monday.
+
+* Could you give an example of what page rank is?
+
+It's a measure of how important the page is compared to others.
+
+* What are more applications for regular expressions.
+
+Same question was asked last week.
+
+* Will be there office hours next week for project 8?
+
+yes, They will be on Thursday as I woll not be available on Wednesday.
+
+* I was wondering if you have decided for sure if you will be dropping a project?
+
+The course evaluation survey is at 87%. So yes, I will be dropping the lowest project score
+
+* what is a true real world application of collecting data from websites. 
+
+One unfortunate example I can think of is scam emails.
+
+* For the address book was there any way to add a space inbetween people without just appending a bunch of space to the list?
+
+You could put the different people in a list.
+ 
+* If not enough people fill out the evals, will there still be some smaller benefit for people who submitted?
+
+The evals are anonymous, so there is not way for me to know who filled them and who did not. However, the evals reached 87%.
+
+* Do we have anything after the last day of classes?
+
+Prject 8 due on Saturday of week 14
+
+* Will you be replacing the score on the last quiz for those who got a Tombola? 
+
+Yes. It should already be updated.
+
 Week 12
 ~~~~~~~
 

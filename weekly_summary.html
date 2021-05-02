@@ -27,7 +27,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Week 12: April 19 - 23" href="Schedule/week12.html" />
+    <link rel="prev" title="Week 13: April 26 - 30" href="Schedule/week13.html" />
   
    
 
@@ -39,7 +39,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Schedule/week12.html" title="Week 12: April 19 - 23"
+          <a href="Schedule/week13.html" title="Week 13: April 26 - 30"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MTH337_S21  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Answers to Weekly Summary questions</a></li> 
@@ -58,6 +58,7 @@
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">Answers to Weekly Summary questions</a><ul>
+<li><a class="reference internal" href="#week-13">Week 13</a></li>
 <li><a class="reference internal" href="#week-12">Week 12</a></li>
 <li><a class="reference internal" href="#week-11">Week 11</a></li>
 <li><a class="reference internal" href="#week-10">Week 10</a></li>
@@ -78,8 +79,8 @@
   </div>
 </div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="Schedule/week12.html"
-                        title="previous chapter">Week 12: April 19 - 23</a></p>
+  <p class="topless"><a href="Schedule/week13.html"
+                        title="previous chapter">Week 13: April 26 - 30</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -117,6 +118,111 @@
             
   <div class="section" id="answers-to-weekly-summary-questions">
 <h1>Answers to Weekly Summary questions<a class="headerlink" href="#answers-to-weekly-summary-questions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="week-13">
+<h2>Week 13<a class="headerlink" href="#week-13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Why is it that sometimes writing the b within the re.findall code changes the result and sometimes it doesn’t?</p></li>
+</ul>
+<p>It depends on the specific instruction you are looking for.</p>
+<ul class="simple">
+<li><p>Will we have to take the weekly summary next week as class attendance is not mandatory?</p></li>
+</ul>
+<p>no</p>
+<ul class="simple">
+<li><p>Can you explain more about regular expression and explain more about each symbol and use of that?</p></li>
+</ul>
+<p>You are always asking the same type of question. Your question should be more specific. If you want to see more example you can come to office hours.</p>
+<ul class="simple">
+<li><p>How do we traverse through a adjacency matrix?</p></li>
+</ul>
+<p>Do you meant the transpose? <code class="docutils literal notranslate"><span class="pre">myarray.T</span></code> or <code class="docutils literal notranslate"><span class="pre">np.transpose(myarray)</span></code> will do the transpose</p>
+<ul class="simple">
+<li><p>When using json, does it automatically create a file for you to save on?</p></li>
+</ul>
+<p>It depends on how you are opeing the file.</p>
+<ul class="simple">
+<li><p>What is the current class average?</p></li>
+</ul>
+<p>83%</p>
+<ul class="simple">
+<li><p>After all the things we have done in this class it seems like Python is useful in almost all situations, is there any programming language that can do as much as Python?</p></li>
+</ul>
+<p>I believe languages like C++ and Java (for example), will allow for the same level of flexibility of applications. Python however is more user-friendly and a little less syntax heavy (so very good for beginners)</p>
+<ul class="simple">
+<li><p>In PJ7, I use len() to sort out people who do not have information, but this method does not work for the people who have only half of the information. Is there any other way to sort out the (half) incomplete information(address,email,phone)?</p></li>
+</ul>
+<p>You could check for patterns. For example if you decided that an address should have the zip code you could check for 5 consecutive digits using regex.</p>
+<ul class="simple">
+<li><p>How do you add strings together by the corresponding elements of each string?</p></li>
+</ul>
+<p>Do you mean if you have a list of strings?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="o">=</span><span class="p">[</span> <span class="p">[</span><span class="s1">&#39;name1&#39;</span><span class="p">,</span><span class="s1">&#39;add1&#39;</span><span class="p">,</span><span class="s1">&#39;phone1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name2&#39;</span><span class="p">,</span><span class="s1">&#39;add2&#39;</span><span class="p">,</span><span class="s1">&#39;phone2&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name3&#39;</span><span class="p">,</span><span class="s1">&#39;add3&#39;</span><span class="p">,</span><span class="s1">&#39;phone3&#39;</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="n">mystr</span><span class="p">:</span>
+
+        <span class="n">mystr</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
+
+                <span class="n">mystr</span><span class="o">+=</span><span class="n">k</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="n">mystr</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Something like this shoudl work</p>
+<ul class="simple">
+<li><p>Is it alright to return a text file as output instead of printing them?</p></li>
+</ul>
+<p>Technically you shoudl print them to screen, but I guess it shoudl work as well.</p>
+<ul class="simple">
+<li><p>Will we connect to excel sheets and manipulate data?</p></li>
+</ul>
+<p>no. If you are interested in that, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a very interesting module to look into</p>
+<ul class="simple">
+<li><p>In the project, as long as it is the links in UB math departemnt, we must count their PageRank or the links containing <cite>/cas/math/</cite> will be counted to calculate their PageRank?</p></li>
+</ul>
+<p>all of the links in the math deparment website contains ‘cas/math/`</p>
+<ul class="simple">
+<li><p>Are we learning any new material this week in lecture?</p></li>
+</ul>
+<p>I was planning to talk about recursion on Monday.</p>
+<ul class="simple">
+<li><p>Could you give an example of what page rank is?</p></li>
+</ul>
+<p>It’s a measure of how important the page is compared to others.</p>
+<ul class="simple">
+<li><p>What are more applications for regular expressions.</p></li>
+</ul>
+<p>Same question was asked last week.</p>
+<ul class="simple">
+<li><p>Will be there office hours next week for project 8?</p></li>
+</ul>
+<p>yes, They will be on Thursday as I woll not be available on Wednesday.</p>
+<ul class="simple">
+<li><p>I was wondering if you have decided for sure if you will be dropping a project?</p></li>
+</ul>
+<p>The course evaluation survey is at 87%. So yes, I will be dropping the lowest project score</p>
+<ul class="simple">
+<li><p>what is a true real world application of collecting data from websites.</p></li>
+</ul>
+<p>One unfortunate example I can think of is scam emails.</p>
+<ul class="simple">
+<li><p>For the address book was there any way to add a space inbetween people without just appending a bunch of space to the list?</p></li>
+</ul>
+<p>You could put the different people in a list.</p>
+<ul class="simple">
+<li><p>If not enough people fill out the evals, will there still be some smaller benefit for people who submitted?</p></li>
+</ul>
+<p>The evals are anonymous, so there is not way for me to know who filled them and who did not. However, the evals reached 87%.</p>
+<ul class="simple">
+<li><p>Do we have anything after the last day of classes?</p></li>
+</ul>
+<p>Prject 8 due on Saturday of week 14</p>
+<ul class="simple">
+<li><p>Will you be replacing the score on the last quiz for those who got a Tombola?</p></li>
+</ul>
+<p>Yes. It should already be updated.</p>
+</div>
 <div class="section" id="week-12">
 <h2>Week 12<a class="headerlink" href="#week-12" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -1316,7 +1422,7 @@ plt.legend([&#39;green&#39;,&#39;black&#39;,&#39;magenta&#39;,&#39;red&#39;,&#39
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="Schedule/week12.html" title="previous chapter (use the left arrow)">Week 12: April 19 - 23</a>
+        <a class="btn btn-default" href="Schedule/week13.html" title="previous chapter (use the left arrow)">Week 13: April 26 - 30</a>
       </div>
     
     </div>
@@ -1332,7 +1438,7 @@ plt.legend([&#39;green&#39;,&#39;black&#39;,&#39;magenta&#39;,&#39;red&#39;,&#39
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Schedule/week12.html" title="Week 12: April 19 - 23"
+          <a href="Schedule/week13.html" title="Week 13: April 26 - 30"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">MTH337_S21  documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Answers to Weekly Summary questions</a></li> 
