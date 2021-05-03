@@ -1,0 +1,22 @@
+Week 14: May 3 - 8
+=========================
+
+Projects 
+~~~~~~~~~
+
+* :doc:`Page Rank  </Projects/pagerank/pagerank>`.
+
+Python
+~~~~~~
+
+
+Week 14 notebook
+~~~~~~~~~~~~~~~
+
+- `View online <../_static/week14_in_class.html>`_
+- `Download  <../_static/week14_in_class.ipynb>`_ (Right click on the link and choose 'save link as...'. After downloading put it in the directory where you keep your Jupyter notebooks).
+
+Sample quiz 
+~~~~~~~~~~~~~
+
+No quiz
